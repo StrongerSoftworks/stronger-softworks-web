@@ -1,0 +1,18 @@
+﻿@code {
+    [Parameter] public string Title { get; set; }
+    [Parameter] public string Description { get; set; }
+    [Parameter] public string IconClass { get; set; }
+    [Parameter] public string Link { get; set; }
+}
+
+<div class="service-item d-flex">
+    <div class="icon flex-shrink-0">
+        <i class="@IconClass"></i>
+    </div>
+    <div>
+        <h4 class="title">
+            <a href="@Link" class="stretched-link">@Title</a>
+        </h4>
+        <p class="description">@Description</p>
+    </div>
+</div>

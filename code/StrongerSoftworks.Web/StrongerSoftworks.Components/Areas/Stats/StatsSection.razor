@@ -1,0 +1,19 @@
+﻿@using StrongerSoftworks.Models
+
+@code {
+    [Parameter] public StatsSectionModel StatsData { get; set; }
+}
+
+<section id="stats" class="stats section accent-background">
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+            @foreach (var item in StatsData.StatsItems)
+            {
+                <div class="col-lg-3 col-md-6">
+                    <StatsItem StartValue="@item.StartValue" EndValue="@item.EndValue" Duration="@item.Duration" Label="@item.Label" />
+                </div>
+            }
+        </div>
+    </div>
+</section>
+

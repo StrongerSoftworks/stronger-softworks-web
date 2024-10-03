@@ -1,0 +1,13 @@
+﻿@using StrongerSoftworks.Models
+@code {
+    [Parameter] public FaqItemModel FaqItemData { get; set; }
+    [Parameter] public bool IsActive { get; set; }
+}
+
+<div class="faq-item @(IsActive ? "faq-active" : "")">
+    <h3>@FaqItemData.Question</h3>
+    <div class="faq-content">
+        <p>@FaqItemData.Answer</p>
+    </div>
+    <i class="faq-toggle bi bi-chevron-right"></i>
+</div><!-- End Faq item-->

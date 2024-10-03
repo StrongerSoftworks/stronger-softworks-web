@@ -1,0 +1,40 @@
+﻿@using StrongerSoftworks.Models
+
+@code {
+    [Parameter] public PortfolioSectionModel PortfolioData { get; set; }
+}
+
+<section id="portfolio" class="portfolio section">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>@PortfolioData.SectionTitle</h2>
+        <p>@PortfolioData.SectionDescription</p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+            <!-- Portfolio Filters -->
+            <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+                <li data-filter="*" class="filter-active">All</li>
+                @foreach (var category in PortfolioData.Categories)
+                {
+                    <li data-filter="@(".filter-" + category.ToLower().Replace(" ", "-"))">@category</li>
+                }
+            </ul><!-- End Portfolio Filters -->
+
+            <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+                @foreach (var item in PortfolioData.PortfolioItems)
+                {
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item @item.Category">
+                        <PortfolioItem 
+                            ImageUrl="@item.ImageUrl"
+                            Title="@item.Title"
+                            Description="@item.Description"
+                            DetailsUrl="@item.DetailsUrl" />
+                    </div><!-- End Portfolio Item -->
+                }
+            </div><!-- End Portfolio Container -->
+        </div>
+    </div>
+</section>
