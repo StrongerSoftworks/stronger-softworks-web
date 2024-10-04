@@ -20,16 +20,32 @@
                         <h3>@item.PlanName</h3>
                         <h4><sup>$</sup>@item.Price<span>@item.Frequency</span></h4>
                         <ul>
-                            @foreach (var feature in item.Features)
+                            @if (item.Features != null)
                             {
-                                <li><i class="bi bi-check"></i> <span>@feature</span></li>
+                                @foreach (var feature in item.Features)
+                                {
+                                    <li><i class="bi bi-check"></i> <span>@feature</span></li>
+                                }
                             }
-                            @foreach (var excludedFeature in item.ExcludedFeatures)
+                            @if (item.ExcludedFeatures != null)
                             {
-                                <li class="na"><i class="bi bi-x"></i> <span>@excludedFeature</span></li>
+                                @foreach (var excludedFeature in item.ExcludedFeatures)
+                                {
+                                    <li class="na"><i class="bi bi-x"></i> <span>@excludedFeature</span></li>
+                                }
                             }
                         </ul>
-                        <a href="#" class="buy-btn">Buy Now</a>
+                        @if (item.Addons != null)
+                        {
+                            <h6>Add-ons</h6>
+                            <ul>
+                            @foreach (var addon in item.Addons)
+                            {
+                                <li><span>@addon</span></li>
+                            }
+                            </ul>
+                        }
+                        <a href="#@PricingData.CallToActionTarget" class="buy-btn">@PricingData.CallToAction</a>
                     </div>
                 </div>
 

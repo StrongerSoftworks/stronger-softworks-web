@@ -1,4 +1,5 @@
-﻿@using StrongerSoftworks.Models
+﻿@using Microsoft.AspNetCore.Html
+@using StrongerSoftworks.Models
 
 @code {
     [Parameter] public HeroSectionModel HeroData { get; set; }
@@ -9,14 +10,23 @@
         <div class="row gy-4">
             <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
                 <h1>@HeroData.Title</h1>
-                <p>@HeroData.Subtitle</p>
-                <div class="d-flex">
-                    <a href="@HeroData.ButtonLink" class="btn-get-started">@HeroData.ButtonText</a>
+                @if (HeroData.Subtitle != null)
+                {
+                    <p>@HeroData.Subtitle</p>
+                }
+                @if (HeroData.ButtonText != null)
+                {
+                    <div class="d-flex">
+                        <a href="@HeroData.ButtonLink" class="btn-get-started">@((MarkupString)(HeroData.ButtonText))</a>
+                    </div>
+                }
+            </div>
+            @if (HeroData.ImageUrl != null)
+            {
+                <div class="col-lg-6 order-1 order-lg-2 hero-img">
+                    <HeroImage ImageUrl="@HeroData.ImageUrl" ImageAltText="@HeroData.ImageAltText" />
                 </div>
-            </div>
-            <div class="col-lg-6 order-1 order-lg-2 hero-img">
-                <HeroImage ImageUrl="@HeroData.ImageUrl" ImageAltText="@HeroData.ImageAltText" />
-            </div>
+            }
         </div>
     </div>
 </section>

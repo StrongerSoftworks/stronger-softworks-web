@@ -26,12 +26,9 @@ namespace StrongerSoftworks.Web.Pages
 
             HeroSection = new HeroSectionModel
             {
-                Title = "Better Digital Experience With Techie",
-                Subtitle = "We are a team of talented designers making websites with Bootstrap",
-                ButtonText = "Get Started",
+                Title = "Stronger Softworks",
+                ButtonText = "<i class=\"bi bi-arrow-return-left\"></i> enter",
                 ButtonLink = "#about",
-                ImageUrl = "/img/hero-img.png",
-                ImageAltText = "Hero Image"
             };
 
             AboutSection = new AboutSectionModel
@@ -232,31 +229,91 @@ namespace StrongerSoftworks.Web.Pages
                 {
                     new PricingItemModel
                     {
-                        PlanName = "Free Plan",
-                        Price = 0,
-                        Frequency = " / month",
-                        Features = new List<string> { "Quam adipiscing vitae proin", "Nec feugiat nisl pretium", "Nulla at volutpat diam uteera" },
-                        ExcludedFeatures = new List<string> { "Pharetra massa massa ultricies", "Massa ultricies mi quis hendrerit" },
+                        PlanName = "Business Starter",
+                        Price = 625,
+                        Frequency = "",
+                        Features = new List<string> {
+                            "Single page website",
+                            "Contact form",
+                            "Map",
+                            "Google Analytics integration (GTM, GA4)",
+                            "$15/month hosting and maintenance fees",
+                        },
+                        ExcludedFeatures = new List<string>()
+                        {
+                            "Content Management System with Strapi"
+                        },
                         IsFeatured = false
                     },
                     new PricingItemModel
                     {
-                        PlanName = "Business Plan",
-                        Price = 29,
-                        Frequency = " / month",
-                        Features = new List<string> { "Quam adipiscing vitae proin", "Nec feugiat nisl pretium", "Nulla at volutpat diam uteera", "Pharetra massa massa ultricies", "Massa ultricies mi quis hendrerit" },
-                        ExcludedFeatures = new List<string>(),
+                        PlanName = "Business Starter With CMS",
+                        Price = 1000,
+                        Frequency = "",
+                        Features = new List<string> {
+                            "Single page website with CMS",
+                            "Contact form",
+                            "Map",
+                            "Google Analytics integration (GTM, GA4)",
+                            "Content Management System with Strapi",
+                            "50gb storage",
+                            "Weekly backups",
+                            "$30/month hosting and maintenance fees",
+                        },
+                        Addons = new List<string>()
+                        {
+                            "Each additional page +$200",
+                            "Appointment booking +$500",
+                            "Blog +$1000",
+                        },
                         IsFeatured = true
                     },
                     new PricingItemModel
                     {
-                        PlanName = "Developer Plan",
-                        Price = 49,
-                        Frequency = " / month",
-                        Features = new List<string> { "Quam adipiscing vitae proin", "Nec feugiat nisl pretium", "Nulla at volutpat diam uteera", "Pharetra massa massa ultricies", "Massa ultricies mi quis hendrerit" },
-                        ExcludedFeatures = new List<string>(),
+                        PlanName = "Business Starter With CMS",
+                        Price = 125,
+                        Frequency = "/ month",
+                        Features = new List<string> {
+                            "Single page website with CMS",
+                            "Contact form",
+                            "Map",
+                            "Google Analytics integration (GTM, GA4)",
+                            "Content Management System with Strapi",
+                            "50gb storage",
+                            "Weekly backups",
+                            "$0 up front for base package, 12 month obligation, add-ons paid on delivery",
+                        },
+                        Addons = new List<string>()
+                        {
+                            "Each additional page +$200",
+                            "Appointment booking +$500",
+                            "Blog +$1000",
+                        },
                         IsFeatured = false
-                    }
+                    },
+                    //new PricingItemModel
+                    //{
+                    //    PlanName = "E-Commerce",
+                    //    Price = 4500,
+                    //    Frequency = "",
+                    //    Features = new List<string> {
+                    //        "Contact form",
+                    //        "Map",
+                    //        "Google Analytics integration (GTM, GA4)",
+                    //        "Content Management System",
+                    //        "Integration with your ecommerce platform",
+                    //        "200gb storage",
+                    //        "Daily backups",
+                    //        "150/month hosting and maintenance fees",
+                    //    },
+                    //    Addons = new List<string>()
+                    //    {
+                    //        "Each additional page +$200",
+                    //        "Appointment booking +$500",
+                    //        "Blog +$1000",
+                    //    },
+                    //    IsFeatured = false
+                    //},
                 }
             };
 

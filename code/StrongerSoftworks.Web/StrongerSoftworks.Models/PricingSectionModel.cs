@@ -13,6 +13,7 @@ namespace StrongerSoftworks.Models
         public string Frequency { get; set; } // e.g., " / month"
         public List<string> Features { get; set; } // Features included in the plan
         public List<string> ExcludedFeatures { get; set; } // Features not included in the plan
+        public List<string> Addons { get; set; } // Features not included in the plan
         public bool IsFeatured { get; set; } // For the featured plan
     }
 
@@ -21,6 +22,8 @@ namespace StrongerSoftworks.Models
         public string SectionTitle { get; set; }
         public string SectionDescription { get; set; }
         public List<PricingItemModel> PricingItems { get; set; }
+        public string CallToAction { get; set; } = "Buy Now";
+        public string CallToActionTarget { get; set; } = "contact";
     }
 
 }

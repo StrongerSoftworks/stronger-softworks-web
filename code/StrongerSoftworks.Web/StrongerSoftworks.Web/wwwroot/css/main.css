@@ -1846,3 +1846,39 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+.hero {
+    background: black;
+}
+
+.hero .btn-get-started:hover {
+    color: black;
+    background: var(--contrast-color);
+}
+
+#hero h1 {
+    font-family: MorePerfectDOSVGA;
+    font-weight: 500;
+    word-spacing: -24px;
+    white-space: nowrap;
+}
+
+    #hero h1:before {
+        content: 'C:\\>';
+    }
+
+    #hero h1:after {
+        content: '_';
+        animation: blinker 1s step-start infinite;
+    }
+
+@font-face {
+    font-family: 'MorePerfectDOSVGA';
+    src: url('/fonts/moreperfectdosvga.ttf');
+}
