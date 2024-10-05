@@ -20,6 +20,8 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+app.UseAntiforgery();
+
 app.MapRazorPages();
 
 app.Run();
