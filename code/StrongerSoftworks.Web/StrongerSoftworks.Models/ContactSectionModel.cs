@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StrongerSoftworks.Models
 {
-    public class ContactSectionModel
+    public class ContactSectionModel : SectionModel
     {
         public List<ContactInfo> ContactInfos { get; set; }
     }

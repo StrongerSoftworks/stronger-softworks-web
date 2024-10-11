@@ -14,7 +14,7 @@ namespace StrongerSoftworks.Models
         public string Label { get; set; }
     }
 
-    public class StatsSectionModel
+    public class StatsSectionModel : SectionModel
     {
         public List<StatsItemModel> StatsItems { get; set; }
     }

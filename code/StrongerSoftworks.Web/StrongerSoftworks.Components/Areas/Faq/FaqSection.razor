@@ -4,7 +4,7 @@
     [Parameter] public FaqSectionModel FaqData { get; set; }
 }
 
-<section id="faq" class="faq section">
+<section id="@(FaqData.Id ?? "faq")" class="faq section">
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
         <h2>@FaqData.SectionTitle</h2>
