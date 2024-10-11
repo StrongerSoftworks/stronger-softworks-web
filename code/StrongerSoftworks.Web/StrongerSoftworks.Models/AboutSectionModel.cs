@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StrongerSoftworks.Models
 {
-    public class AboutSectionModel
+    public class AboutSectionModel : SectionModel
     {
         public string Header { get; set; }
         public string Paragraph { get; set; }

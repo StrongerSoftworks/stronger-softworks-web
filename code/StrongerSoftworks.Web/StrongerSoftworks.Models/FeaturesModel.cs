@@ -13,10 +13,11 @@ namespace StrongerSoftworks.Models
         public string IconClass { get; set; }
     }
 
-    public class FeaturesSectionModel
+    public class FeaturesSectionModel : SectionModel
     {
         public string SectionTitle { get; set; }
         public string SectionDescription { get; set; }
+        public string LowerDescription { get; set; }
         public string ImageUrl { get; set; }
         public List<FeatureItemModel> FeatureItems { get; set; }
     }

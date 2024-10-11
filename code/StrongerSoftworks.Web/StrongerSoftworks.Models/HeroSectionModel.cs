@@ -1,6 +1,6 @@
 ﻿namespace StrongerSoftworks.Models
 {
-    public class HeroSectionModel
+    public class HeroSectionModel : SectionModel
     {
         public string Title { get; set; }
         public string Subtitle { get; set; }

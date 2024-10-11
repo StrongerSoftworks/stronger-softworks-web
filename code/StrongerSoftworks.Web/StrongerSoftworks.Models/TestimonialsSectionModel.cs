@@ -14,7 +14,7 @@ namespace StrongerSoftworks.Models
         public string Title { get; set; }
     }
 
-    public class TestimonialsSectionModel
+    public class TestimonialsSectionModel : SectionModel
     {
         public string SectionTitle { get; set; }
         public string SectionDescription { get; set; }

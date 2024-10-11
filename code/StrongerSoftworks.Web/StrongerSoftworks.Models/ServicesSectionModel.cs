@@ -14,7 +14,7 @@ namespace StrongerSoftworks.Models
         public string Link { get; set; }
     }
 
-    public class ServicesSectionModel
+    public class ServicesSectionModel : SectionModel
     {
         public string SectionTitle { get; set; }
         public string SectionDescription { get; set; }

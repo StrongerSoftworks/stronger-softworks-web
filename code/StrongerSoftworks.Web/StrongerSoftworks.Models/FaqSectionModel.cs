@@ -12,7 +12,7 @@ namespace StrongerSoftworks.Models
         public string Answer { get; set; }   // The FAQ answer
     }
 
-    public class FaqSectionModel
+    public class FaqSectionModel : SectionModel
     {
         public string SectionTitle { get; set; }    // Title of the FAQ section
         public string SectionDescription { get; set; } // Description of the FAQ section

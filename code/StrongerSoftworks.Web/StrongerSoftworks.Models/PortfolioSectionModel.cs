@@ -15,7 +15,7 @@ namespace StrongerSoftworks.Models
         public string DetailsUrl { get; set; } // e.g., URL to the details page
     }
 
-    public class PortfolioSectionModel
+    public class PortfolioSectionModel : SectionModel
     {
         public string SectionTitle { get; set; }
         public string SectionDescription { get; set; }

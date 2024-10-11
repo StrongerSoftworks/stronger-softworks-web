@@ -33,111 +33,144 @@ namespace StrongerSoftworks.Web.Pages
 
             AboutSection = new AboutSectionModel
             {
-                Header = "Voluptatem dignissimos provident quasi corporis",
-                Paragraph = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                Header = "Let Us Help You Grow Your Business",
+                Paragraph = "",
                 ListItems = new List<string>
                 {
-                    "Ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                    "Duis aute irure dolor in reprehenderit in voluptate velit.",
-                    "Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur."
+                    "In today's digital age, having a strong online presence is crucial for small and medium businesses (SMBs) to thrive. At our web development business, we specialize in creating custom websites that not only reflect your brand's unique identity but also drive business growth. Whether you're looking to attract more customers, sell products online, or improve your customer experience, we provide tailored solutions designed to meet your goals.",
+                    "We understand the specific challenges that SMBs face, which is why we focus on building websites that are affordable, easy to manage, and scalable. Our responsive designs ensure that your site looks and works perfectly across all devices—whether it's a desktop, tablet, or mobile phone. We also integrate features like content management systems (CMS) that allow you to easily update your website, keeping it fresh and relevant without the need for technical expertise.",
+                    "Beyond web design, we offer search engine optimization (SEO) services to help your business get noticed. We optimize your site with the right keywords, improve page load times, and ensure a user-friendly experience—all to help you rank higher on search engines like Google. Our local SEO strategies will also ensure that customers in your area can find you quickly and easily. Let us help you grow your business with a website that not only looks great but also drives results.",
                 },
-                ButtonText = "Read More",
-                ButtonLink = "#",
-                ImageUrl = "/img/about.jpg",
+                // ButtonText = "Read More",
+                // ButtonLink = "#",
+                ImageUrl = "/img/about.webp",
                 ImageAltText = "About Image"
             };
 
-            StatsSection = new StatsSectionModel
-            {
-                StatsItems = new List<StatsItemModel>
-                {
-                    new StatsItemModel { StartValue = 0, EndValue = 232, Duration = 1, Label = "Clients" },
-                    new StatsItemModel { StartValue = 0, EndValue = 521, Duration = 1, Label = "Projects" },
-                    new StatsItemModel { StartValue = 0, EndValue = 1453, Duration = 1, Label = "Hours Of Support" },
-                    new StatsItemModel { StartValue = 0, EndValue = 32, Duration = 1, Label = "Workers" }
-                }
-            };
+            // StatsSection = new StatsSectionModel
+            // {
+            //     StatsItems = new List<StatsItemModel>
+            //     {
+            //         new StatsItemModel { StartValue = 0, EndValue = 232, Duration = 1, Label = "Clients" },
+            //         new StatsItemModel { StartValue = 0, EndValue = 521, Duration = 1, Label = "Projects" },
+            //         new StatsItemModel { StartValue = 0, EndValue = 1453, Duration = 1, Label = "Hours Of Support" },
+            //         new StatsItemModel { StartValue = 0, EndValue = 32, Duration = 1, Label = "Workers" }
+            //     }
+            // };
 
             ServicesSection = new ServicesSectionModel
             {
-                SectionTitle = "Services",
-                SectionDescription = "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit",
+                Id = "web-development",
+                SectionTitle = "Our Web Development Services",
+                SectionDescription = "At our web development company, we specialize in creating, designing, and maintaining websites that help businesses of all sizes succeed online. We handle the entire website development process—from the initial concept and design to the final deployment—ensuring that each website meets the unique needs of our clients and aligns with their business goals.",
                 ServiceItems = new List<ServiceItemModel>
                 {
                     new ServiceItemModel
                     {
-                        Title = "Lorem Ipsum",
-                        Description = "Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi",
+                        Title = "Custom Website Design",
+                        Description = "We craft custom designs tailored to your brand, ensuring your website stands out and leaves a lasting impression on your target audience.",
                         IconClass = "bi bi-briefcase",
-                        Link = "#"
                     },
                     new ServiceItemModel
                     {
-                        Title = "Dolor Sitema",
-                        Description = "Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exa",
+                        Title = "Responsive Design",
+                        Description = "Our websites are fully responsive, meaning they work seamlessly across all devices, from desktops to smartphones, delivering an optimal experience no matter how your customers view your site.",
                         IconClass = "bi bi-card-checklist",
-                        Link = "#"
                     },
                     new ServiceItemModel
                     {
-                        Title = "Sed ut perspiciatis",
-                        Description = "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum",
+                        Title = "User-Friendly Interfaces",
+                        Description = "We prioritize usability by developing intuitive, easy-to-navigate websites that enhance user experience and encourage engagement.",
                         IconClass = "bi bi-bar-chart",
-                        Link = "#"
                     },
                     new ServiceItemModel
                     {
-                        Title = "Magni Dolores",
-                        Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt",
+                        Title = "E-Commerce Solutions",
+                        Description = "For businesses looking to sell products or services online, we provide e-commerce platforms with secure payment processing, inventory management, and shipping integration to meet your online sales needs.",
                         IconClass = "bi bi-binoculars",
-                        Link = "#"
                     },
                     new ServiceItemModel
                     {
-                        Title = "Nemo Enim",
-                        Description = "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praese",
+                        Title = "Content Management Systems (CMS)",
+                        Description = "We empower businesses by implementing easy-to-use CMS platforms like WordPress or Shopify, allowing you to update content effortlessly without needing technical expertise.",
                         IconClass = "bi bi-brightness-high",
-                        Link = "#"
                     },
                     new ServiceItemModel
                     {
-                        Title = "Eiusmod Tempor",
-                        Description = "Et harum quidem rerum facilis est et expedita distinctio dasa fermo lind saca",
+                        Title = "Website Security",
+                        Description = "Protecting your site and user data is a top priority. We integrate SSL certificates, security plugins, and monitoring systems to ensure your site is secure against potential threats.",
                         IconClass = "bi bi-calendar4-week",
-                        Link = "#"
+                    },
+                    new ServiceItemModel
+                    {
+                        Title = "Scalability",
+                        Description = "We build websites that are designed to grow with your business, making it easy to add new features or handle increased traffic as your company expands.",
+                        IconClass = "bi bi-calendar4-week",
+                    },
+                    new ServiceItemModel
+                    {
+                        Title = "Ongoing Maintenance and Support",
+                        Description = "Our services don’t stop at launch. We provide ongoing maintenance, updates, and technical support to keep your website running smoothly and securely.",
+                        IconClass = "bi bi-calendar4-week",
                     }
                 }
             };
 
             FeaturesSection = new FeaturesSectionModel
             {
-                SectionTitle = "Features",
-                SectionDescription = "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit",
+                Id = "seo",
+                SectionTitle = "SEO Services to Boost Your Business",
+                SectionDescription = "In addition to web development, we offer a range of search engine optimization (SEO) services to help your business get noticed and drive traffic.",
+                LowerDescription = "By offering these comprehensive web development and SEO services, we help small and medium businesses not only create a strong online presence but also turn that presence into growth, engagement, and success.",
                 ImageUrl = "/img/features.svg",
                 FeatureItems = new List<FeatureItemModel>
                 {
                     new FeatureItemModel
                     {
-                        Title = "Est labore ad",
-                        Description = "Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip",
+                        Title = "Keyword Research",
+                        Description = "We identify the keywords that matter most to your business, targeting what your potential customers are searching for to improve your site's search engine rankings.",
                         IconClass = "bi bi-archive"
                     },
                     new FeatureItemModel
                     {
-                        Title = "Harum esse qui",
-                        Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt",
+                        Title = "On-Page SEO Optimization",
+                        Description = "By optimizing titles, meta descriptions, and content, we ensure your site is fully optimized for search engines like Google, helping you rank higher and attract more traffic.",
                         IconClass = "bi bi-basket"
                     },
                     new FeatureItemModel
                     {
-                        Title = "Aut occaecati",
-                        Description = "Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere",
+                        Title = "Content Creation",
+                        Description = "We produce high-quality, SEO-optimized content, including blog posts, landing pages, and product descriptions, that attract visitors and establish your authority in your industry.",
                         IconClass = "bi bi-broadcast"
                     },
                     new FeatureItemModel
                     {
-                        Title = "Beatae veritatis",
-                        Description = "Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta",
+                        Title = "Local SEO",
+                        Description = "We help local businesses by optimizing your site for location-specific searches, ensuring your business appears in relevant local search results and maps.",
+                        IconClass = "bi bi-camera-reels"
+                    },
+                    new FeatureItemModel
+                    {
+                        Title = "Mobile Optimization",
+                        Description = "With mobile devices being a primary way people browse, we ensure your website is fast, functional, and fully optimized for mobile to keep you ahead in search rankings.",
+                        IconClass = "bi bi-camera-reels"
+                    },
+                    new FeatureItemModel
+                    {
+                        Title = "Technical SEO",
+                        Description = "We improve your website’s technical aspects, from site speed and crawlability to indexing and site architecture, to ensure optimal performance in search engines.",
+                        IconClass = "bi bi-camera-reels"
+                    },
+                    new FeatureItemModel
+                    {
+                        Title = "Analytics and Reporting",
+                        Description = "We provide detailed reports on website traffic, keyword rankings, and user behavior, helping you make data-driven decisions to grow your online presence.",
+                        IconClass = "bi bi-camera-reels"
+                    },
+                    new FeatureItemModel
+                    {
+                        Title = "Link Building",
+                        Description = "Our team develops strategies to acquire high-quality backlinks from reputable sites, boosting your site’s credibility and improving search rankings.",
                         IconClass = "bi bi-camera-reels"
                     }
                 }
@@ -356,72 +389,72 @@ namespace StrongerSoftworks.Web.Pages
                 }
             };
 
-            TeamSection = new TeamSectionModel
-            {
-                TeamMembers = new List<TeamMember>
-                {
-                    new TeamMember
-                    {
-                        Name = "Walter White",
-                        Position = "Chief Executive Officer",
-                        Description = "Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa quae aut. Ipsum exercitationem iure minima enim corporis et voluptate.",
-                        ImageUrl = "/img/team/team-1.jpg",
-                        Delay = 100,
-                        SocialLinks = new List<SocialLink>
-                        {
-                            new SocialLink { Url = "#", IconClass = "bi bi-twitter-x" },
-                            new SocialLink { Url = "#", IconClass = "bi bi-facebook" },
-                            new SocialLink { Url = "#", IconClass = "bi bi-instagram" },
-                            new SocialLink { Url = "#", IconClass = "bi bi-linkedin" }
-                        }
-                    },
-                    new TeamMember
-                    {
-                        Name = "Sarah Jhonson",
-                        Position = "Product Manager",
-                        Description = "Quo esse repellendus quia id. Est eum et accusantium pariatur fugit nihil minima suscipit corporis. Voluptate sed quas reiciendis animi neque sapiente.",
-                        ImageUrl = "/img/team/team-2.jpg",
-                        Delay = 200,
-                        SocialLinks = new List<SocialLink>
-                        {
-                            new SocialLink { Url = "#", IconClass = "bi bi-twitter-x" },
-                            new SocialLink { Url = "#", IconClass = "bi bi-facebook" },
-                            new SocialLink { Url = "#", IconClass = "bi bi-instagram" },
-                            new SocialLink { Url = "#", IconClass = "bi bi-linkedin" }
-                        }
-                    },
-                    new TeamMember
-                    {
-                        Name = "William Anderson",
-                        Position = "CTO",
-                        Description = "Vero omnis enim consequatur. Voluptas consectetur unde qui molestiae deserunt. Voluptates enim aut architecto porro aspernatur molestiae modi.",
-                        ImageUrl = "/img/team/team-3.jpg",
-                        Delay = 300,
-                        SocialLinks = new List<SocialLink>
-                        {
-                            new SocialLink { Url = "#", IconClass = "bi bi-twitter-x" },
-                            new SocialLink { Url = "#", IconClass = "bi bi-facebook" },
-                            new SocialLink { Url = "#", IconClass = "bi bi-instagram" },
-                            new SocialLink { Url = "#", IconClass = "bi bi-linkedin" }
-                        }
-                    },
-                    new TeamMember
-                    {
-                        Name = "Amanda Jepson",
-                        Position = "Accountant",
-                        Description = "Rerum voluptate non adipisci animi distinctio et deserunt amet voluptas. Quia aut aliquid doloremque ut possimus ipsum officia.",
-                        ImageUrl = "/img/team/team-4.jpg",
-                        Delay = 400,
-                        SocialLinks = new List<SocialLink>
-                        {
-                            new SocialLink { Url = "#", IconClass = "bi bi-twitter-x" },
-                            new SocialLink { Url = "#", IconClass = "bi bi-facebook" },
-                            new SocialLink { Url = "#", IconClass = "bi bi-instagram" },
-                            new SocialLink { Url = "#", IconClass = "bi bi-linkedin" }
-                        }
-                    }
-                }
-            };
+            // TeamSection = new TeamSectionModel
+            // {
+            //     TeamMembers = new List<TeamMember>
+            //     {
+            //         new TeamMember
+            //         {
+            //             Name = "Walter White",
+            //             Position = "Chief Executive Officer",
+            //             Description = "Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa quae aut. Ipsum exercitationem iure minima enim corporis et voluptate.",
+            //             ImageUrl = "/img/team/team-1.jpg",
+            //             Delay = 100,
+            //             SocialLinks = new List<SocialLink>
+            //             {
+            //                 new SocialLink { Url = "#", IconClass = "bi bi-twitter-x" },
+            //                 new SocialLink { Url = "#", IconClass = "bi bi-facebook" },
+            //                 new SocialLink { Url = "#", IconClass = "bi bi-instagram" },
+            //                 new SocialLink { Url = "#", IconClass = "bi bi-linkedin" }
+            //             }
+            //         },
+            //         new TeamMember
+            //         {
+            //             Name = "Sarah Jhonson",
+            //             Position = "Product Manager",
+            //             Description = "Quo esse repellendus quia id. Est eum et accusantium pariatur fugit nihil minima suscipit corporis. Voluptate sed quas reiciendis animi neque sapiente.",
+            //             ImageUrl = "/img/team/team-2.jpg",
+            //             Delay = 200,
+            //             SocialLinks = new List<SocialLink>
+            //             {
+            //                 new SocialLink { Url = "#", IconClass = "bi bi-twitter-x" },
+            //                 new SocialLink { Url = "#", IconClass = "bi bi-facebook" },
+            //                 new SocialLink { Url = "#", IconClass = "bi bi-instagram" },
+            //                 new SocialLink { Url = "#", IconClass = "bi bi-linkedin" }
+            //             }
+            //         },
+            //         new TeamMember
+            //         {
+            //             Name = "William Anderson",
+            //             Position = "CTO",
+            //             Description = "Vero omnis enim consequatur. Voluptas consectetur unde qui molestiae deserunt. Voluptates enim aut architecto porro aspernatur molestiae modi.",
+            //             ImageUrl = "/img/team/team-3.jpg",
+            //             Delay = 300,
+            //             SocialLinks = new List<SocialLink>
+            //             {
+            //                 new SocialLink { Url = "#", IconClass = "bi bi-twitter-x" },
+            //                 new SocialLink { Url = "#", IconClass = "bi bi-facebook" },
+            //                 new SocialLink { Url = "#", IconClass = "bi bi-instagram" },
+            //                 new SocialLink { Url = "#", IconClass = "bi bi-linkedin" }
+            //             }
+            //         },
+            //         new TeamMember
+            //         {
+            //             Name = "Amanda Jepson",
+            //             Position = "Accountant",
+            //             Description = "Rerum voluptate non adipisci animi distinctio et deserunt amet voluptas. Quia aut aliquid doloremque ut possimus ipsum officia.",
+            //             ImageUrl = "/img/team/team-4.jpg",
+            //             Delay = 400,
+            //             SocialLinks = new List<SocialLink>
+            //             {
+            //                 new SocialLink { Url = "#", IconClass = "bi bi-twitter-x" },
+            //                 new SocialLink { Url = "#", IconClass = "bi bi-facebook" },
+            //                 new SocialLink { Url = "#", IconClass = "bi bi-instagram" },
+            //                 new SocialLink { Url = "#", IconClass = "bi bi-linkedin" }
+            //             }
+            //         }
+            //     }
+            // };
 
             ContactSection = new ContactSectionModel
             {

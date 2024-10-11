@@ -4,7 +4,7 @@
     [Parameter] public TestimonialsSectionModel TestimonialsData { get; set; }
 }
 
-<section id="testimonials" class="testimonials section light-background">
+<section id="@(TestimonialsData.Id ?? "testimonials")" class="testimonials section light-background">
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
         <h2>@TestimonialsData.SectionTitle</h2>

@@ -4,7 +4,7 @@
     [Parameter] public AboutSectionModel AboutData { get; set; }
 }
 
-<section id="about" class="about section">
+<section id="@(AboutData.Id ?? "about")" class="about section">
     <div class="container">
         <div class="row gy-4">
             <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
@@ -20,10 +20,12 @@
                         <li><i class="bi bi-check-circle"></i> <span>@item</span></li>
                     }
                 </ul>
-                <a href="@AboutData.ButtonLink" class="read-more">
-                    <span>@AboutData.ButtonText</span>
-                    <i class="bi bi-arrow-right"></i>
-                </a>
+                @if(AboutData.ButtonLink != null) {
+                    <a href="@AboutData.ButtonLink" class="read-more">
+                        <span>@AboutData.ButtonText</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                }
             </div>
         </div>
     </div>

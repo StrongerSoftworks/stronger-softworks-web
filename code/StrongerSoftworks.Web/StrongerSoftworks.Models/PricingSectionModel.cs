@@ -17,7 +17,7 @@ namespace StrongerSoftworks.Models
         public bool IsFeatured { get; set; } // For the featured plan
     }
 
-    public class PricingSectionModel
+    public class PricingSectionModel : SectionModel
     {
         public string SectionTitle { get; set; }
         public string SectionDescription { get; set; }

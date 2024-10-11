@@ -4,7 +4,7 @@
     [Parameter] public PortfolioSectionModel PortfolioData { get; set; }
 }
 
-<section id="portfolio" class="portfolio section">
+<section id="@(PortfolioData.Id ?? "portfolio")" class="portfolio section">
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
         <h2>@PortfolioData.SectionTitle</h2>

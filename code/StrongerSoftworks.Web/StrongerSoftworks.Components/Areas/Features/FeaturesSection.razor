@@ -4,7 +4,7 @@
     [Parameter] public FeaturesSectionModel FeaturesData { get; set; }
 }
 
-<section id="features" class="features section">
+<section id="@(FeaturesData.Id ?? "features")" class="features section">
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
         <h2>@FeaturesData.SectionTitle</h2>
@@ -31,6 +31,10 @@
                 }
             </div>
         </div>
+    </div>
+
+    <div class="container">
+        <p>@FeaturesData.LowerDescription</p>
     </div>
 </section>
 
