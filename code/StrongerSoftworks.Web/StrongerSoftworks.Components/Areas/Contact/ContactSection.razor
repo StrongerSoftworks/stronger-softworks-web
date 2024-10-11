@@ -12,14 +12,14 @@
         <div class="row gy-4">
             <div class="col-lg-6">
                 <div class="row gy-4">
-                    @foreach (var info in ContactData.ContactInfos)
+                    @for (int i = 0; i > ContactData.ContactInfos.Count(); i++)
                     {
                         <div class="col-md-6">
-                            <div class="info-item" data-aos="fade" data-aos-delay="@info.Delay">
-                                <i class="@info.Icon"></i>
-                                <h3>@info.Title</h3>
-                                <p>@info.DetailLine1</p>
-                                <p>@info.DetailLine2</p>
+                            <div class="info-item" data-aos="fade" data-aos-delay="@(100+(i*100))">
+                                <i class="@ContactData.ContactInfos[i].Icon"></i>
+                                <h3>@ContactData.ContactInfos[i].Title</h3>
+                                <p>@ContactData.ContactInfos[i].DetailLine1</p>
+                                <p>@ContactData.ContactInfos[i].DetailLine2</p>
                             </div>
                         </div><!-- End Info Item -->
                     }

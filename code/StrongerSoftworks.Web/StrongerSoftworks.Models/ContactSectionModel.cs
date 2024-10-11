@@ -17,7 +17,6 @@ namespace StrongerSoftworks.Models
         public string DetailLine1 { get; set; }
         public string DetailLine2 { get; set; }
         public string Icon { get; set; }
-        public int Delay { get; set; }
     }
 
     public class ContactFormModel

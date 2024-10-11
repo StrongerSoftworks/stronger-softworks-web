@@ -427,10 +427,10 @@ namespace StrongerSoftworks.Web.Pages
             {
                 ContactInfos = new List<ContactInfo>
                 {
-                    new ContactInfo { Title = "Address", DetailLine1 = "A108 Adam Street", DetailLine2 = "New York, NY 535022", Icon = "bi bi-geo-alt", Delay = 200 },
-                    new ContactInfo { Title = "Call Us", DetailLine1 = "+1 5589 55488 55", DetailLine2 = "+1 6678 254445 41", Icon = "bi bi-telephone", Delay = 300 },
-                    new ContactInfo { Title = "Email Us", DetailLine1 = "info@example.com", DetailLine2 = "contact@example.com", Icon = "bi bi-envelope", Delay = 400 },
-                    new ContactInfo { Title = "Open Hours", DetailLine1 = "Monday - Friday", DetailLine2 = "9:00AM - 05:00PM", Icon = "bi bi-clock", Delay = 500 }
+                    new ContactInfo { Title = "Address", DetailLine1 = "A108 Adam Street", DetailLine2 = "New York, NY 535022", Icon = "bi bi-geo-alt" },
+                    new ContactInfo { Title = "Call Us", DetailLine1 = "+1 5589 55488 55", DetailLine2 = "+1 6678 254445 41", Icon = "bi bi-telephone" },
+                    new ContactInfo { Title = "Email Us", DetailLine1 = "info@example.com", DetailLine2 = "contact@example.com", Icon = "bi bi-envelope" },
+                    //new ContactInfo { Title = "Open Hours", DetailLine1 = "Monday - Friday", DetailLine2 = "9:00AM - 05:00PM", Icon = "bi bi-clock" }
                 }
             };
         }
