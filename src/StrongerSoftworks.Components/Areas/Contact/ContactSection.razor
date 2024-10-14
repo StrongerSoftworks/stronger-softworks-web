@@ -1,0 +1,94 @@
+﻿@using Microsoft.AspNetCore.Components.Forms
+@using StrongerSoftworks.Models
+
+<section id="@(ContactData.Id ?? "contact")" class="contact section">
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+    </div>
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+            <div class="col-lg-6">
+                <div class="row gy-4">
+                    @for (int i = 0; i > ContactData.ContactInfos.Count(); i++)
+                    {
+                        <div class="col-md-6">
+                            <div class="info-item" data-aos="fade" data-aos-delay="@(100+(i*100))">
+                                <i class="@ContactData.ContactInfos[i].Icon"></i>
+                                <h3>@ContactData.ContactInfos[i].Title</h3>
+                                <p>@ContactData.ContactInfos[i].DetailLine1</p>
+                                <p>@ContactData.ContactInfos[i].DetailLine2</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <EditForm Model="ContactFormData" OnValidSubmit="HandleValidSubmit" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row gy-4">
+                        <div class="col-md-6">
+                            <InputText id="name" class="form-control" @bind-Value="ContactFormData.Name" placeholder="Your Name" required />
+                        </div>
+
+                        <div class="col-md-6">
+                            <InputText id="email" type="email" class="form-control" @bind-Value="ContactFormData.Email" placeholder="Your Email" required />
+                        </div>
+
+                        <div class="col-12">
+                            <InputText id="subject" class="form-control" @bind-Value="ContactFormData.Subject" placeholder="Subject" required />
+                        </div>
+
+                        <div class="col-12">
+                            <InputTextArea id="message" class="form-control" @bind-Value="ContactFormData.Message" rows="6" placeholder="Message" required />
+                        </div>
+
+                        <div class="col-12 text-center">
+                            <div class="loading" hidden="@(IsLoading ? false : true)">Loading</div>
+                            <div class="error-message" hidden="@(IsError ? false : true)">Error sending message.</div>
+                            <div class="sent-message" hidden="@(IsSuccess ? false : true)">Your message has been sent. Thank you!</div>
+
+                            <button type="submit" disabled="@IsLoading">Send Message</button>
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+</section>
+
+@code {
+    [Parameter] public ContactSectionModel ContactData { get; set; }
+
+    private ContactFormModel ContactFormData = new ContactFormModel();
+
+    // Flags for form status
+    private bool IsLoading = false;
+    private bool IsError = false;
+    private bool IsSuccess = false;
+
+
+    // Method to handle form submission
+    private async Task HandleValidSubmit()
+    {
+        IsLoading = true;
+        IsError = false;
+        IsSuccess = false;
+
+        try
+        {
+            // Simulate email sending
+            await Task.Delay(2000); // Mock email sending delay
+            IsSuccess = true;
+        }
+        catch
+        {
+            IsError = true;
+        }
+        finally
+        {
+            IsLoading = false;
+        }
+    }
+}

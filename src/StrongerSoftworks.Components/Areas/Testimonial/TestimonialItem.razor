@@ -1,0 +1,17 @@
+﻿@code {
+    [Parameter] public string Quote { get; set; }
+    [Parameter] public string ImageUrl { get; set; }
+    [Parameter] public string Name { get; set; }
+    [Parameter] public string Title { get; set; }
+}
+
+<div class="testimonial-item">
+    <p>
+        <i class="bi bi-quote quote-icon-left"></i>
+        <span>@Quote</span>
+        <i class="bi bi-quote quote-icon-right"></i>
+    </p>
+    <img loading="lazy" src="@ImageUrl" class="testimonial-img" alt="@Name">
+    <h3>@Name</h3>
+    <h4>@Title</h4>
+</div>

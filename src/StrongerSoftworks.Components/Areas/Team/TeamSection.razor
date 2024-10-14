@@ -1,0 +1,41 @@
+﻿@using StrongerSoftworks.Models
+
+@code {
+    [Parameter] public TeamSectionModel TeamData { get; set; }
+}
+
+<section id="@(TeamData.Id ?? "team")" class="team section">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Team</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+        <div class="row gy-4">
+            @foreach (var member in TeamData.TeamMembers)
+            {
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="@member.Delay">
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img loading="lazy" src="@member.ImageUrl" class="img-fluid" alt="@member.Name">
+                            <div class="social">
+                                @foreach (var social in member.SocialLinks)
+                                {
+                                    <a href="@social.Url"><i class="@social.IconClass"></i></a>
+                                }
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>@member.Name</h4>
+                            <span>@member.Position</span>
+                            <p>@member.Description</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- End Team Member -->
+            }
+        </div>
+    </div>
+</section>

@@ -1,0 +1,6 @@
+﻿@code {
+    [Parameter] public string ImageUrl { get; set; }
+    [Parameter] public string ImageAltText { get; set; }
+}
+
+<img loading="lazy" src="@ImageUrl" class="img-fluid" alt="@ImageAltText" />
