@@ -1,4 +1,5 @@
 ﻿@using StrongerSoftworks.Models
+@using StrongerSoftworks.Components.Common
 
 @code {
     [Parameter] public FeaturesSectionModel FeaturesData { get; set; }
@@ -14,7 +15,7 @@
     <div class="container">
         <div class="row gy-4 justify-content-between">
             <div class="features-image col-lg-5 order-lg-2 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
-                <img loading="lazy" src="@FeaturesData.ImageUrl" class="img-fluid" alt="Features Image">
+                <Picture PngPath="@FeaturesData.PngUrl" AltText="Features Image" />
             </div>
             <div class="col-lg-6 d-flex flex-column justify-content-center">
                 @foreach (var feature in FeaturesData.FeatureItems)

@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrongerSoftworks.Component
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrongerSoftworks.Models", "StrongerSoftworks.Models\StrongerSoftworks.Models.csproj", "{986A71FC-179F-4FDF-91B1-3854907C74F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrongerSoftworks.Web", "StrongerSoftworks.Web\StrongerSoftworks.Web.csproj", "{2FB06354-AECF-499F-AD2F-C342500AEECD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrongerSoftworks.Web", "StrongerSoftworks.Web\StrongerSoftworks.Web.csproj", "{2FB06354-AECF-499F-AD2F-C342500AEECD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace StrongerSoftworks.Models
+﻿namespace StrongerSoftworks.Models
 {
     public class TestimonialModel
     {
         public string Quote { get; set; }
-        public string ImageUrl { get; set; }
+        public string PngUrl { get; set; }
         public string Name { get; set; }
         public string Title { get; set; }
     }

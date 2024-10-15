@@ -6,14 +6,14 @@ namespace StrongerSoftworks.Web.Components.Pages
     {
         public HeroSectionModel? HeroData { get; private set; }
         public AboutSectionModel? AboutData { get; private set; }
-        public StatsSectionModel? StatsData { get; private set; }
+        //public StatsSectionModel? StatsData { get; private set; }
         public ServicesSectionModel? ServicesData { get; private set; }
         public FeaturesSectionModel? FeaturesData { get; private set; }
-        public TestimonialsSectionModel? TestimonialsData { get; private set; }
+        //public TestimonialsSectionModel? TestimonialsData { get; private set; }
         public PortfolioSectionModel? PortfolioData { get; private set; }
         public PricingSectionModel? PricingData { get; private set; }
         public FaqSectionModel? FaqData { get; private set; }
-        public TeamSectionModel? TeamData { get; private set; }
+        //public TeamSectionModel? TeamData { get; private set; }
         public ContactSectionModel? ContactData { get; private set; }
 
         protected override void OnParametersSet()
@@ -37,7 +37,7 @@ namespace StrongerSoftworks.Web.Components.Pages
                 },
                 // ButtonText = "Read More",
                 // ButtonLink = "#",
-                ImageUrl = "/bundle/img/about.webp",
+                PngUrl = "/bundle/img/about.png",
                 ImageAltText = "About Image"
             };
 
@@ -116,7 +116,7 @@ namespace StrongerSoftworks.Web.Components.Pages
                 SectionTitle = "SEO Services to Boost Your Business",
                 SectionDescription = "In addition to web development, we offer a range of search engine optimization (SEO) services to help your business get noticed and drive traffic.",
                 LowerDescription = "By offering these comprehensive web development and SEO services, we help small and medium businesses not only create a strong online presence but also turn that presence into growth, engagement, and success.",
-                ImageUrl = "/bundle/img/features.svg",
+                PngUrl = "/bundle/img/features.png",
                 FeatureItems = new List<FeatureItemModel>
                 {
                     new FeatureItemModel
@@ -170,49 +170,49 @@ namespace StrongerSoftworks.Web.Components.Pages
                 }
             };
 
-            TestimonialsData = new TestimonialsSectionModel
-            {
-                SectionTitle = "Testimonials",
-                SectionDescription = "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit",
-                Testimonials = new List<TestimonialModel>
-                {
-                    new TestimonialModel
-                    {
-                        Quote = "Proin iaculis purus consequat sem cure dignissim donec porttitora...",
-                        ImageUrl = "/bundle/img/testimonials/testimonials-1.jpg",
-                        Name = "Saul Goodman",
-                        Title = "CEO & Founder"
-                    },
-                    new TestimonialModel
-                    {
-                        Quote = "Export tempor illum tamen malis malis eram quae irure esse labore...",
-                        ImageUrl = "/bundle/img/testimonials/testimonials-2.jpg",
-                        Name = "Sara Wilsson",
-                        Title = "Designer"
-                    },
-                    new TestimonialModel
-                    {
-                        Quote = "Enim nisi quem export duis labore cillum quae magna enim sint...",
-                        ImageUrl = "/bundle/img/testimonials/testimonials-3.jpg",
-                        Name = "Jena Karlis",
-                        Title = "Store Owner"
-                    },
-                    new TestimonialModel
-                    {
-                        Quote = "Fugiat enim eram quae cillum dolore dolor amet nulla culpa...",
-                        ImageUrl = "/bundle/img/testimonials/testimonials-4.jpg",
-                        Name = "Matt Brandon",
-                        Title = "Freelancer"
-                    },
-                    new TestimonialModel
-                    {
-                        Quote = "Quis quorum aliqua sint quem legam fore sunt eram irure aliqua...",
-                        ImageUrl = "/bundle/img/testimonials/testimonials-5.jpg",
-                        Name = "John Larson",
-                        Title = "Entrepreneur"
-                    }
-                }
-            };
+            //TestimonialsData = new TestimonialsSectionModel
+            //{
+            //    SectionTitle = "Testimonials",
+            //    SectionDescription = "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit",
+            //    Testimonials = new List<TestimonialModel>
+            //    {
+            //        new TestimonialModel
+            //        {
+            //            Quote = "Proin iaculis purus consequat sem cure dignissim donec porttitora...",
+            //            PngUrl = "/bundle/img/testimonials/testimonials-1.png",
+            //            Name = "Saul Goodman",
+            //            Title = "CEO & Founder"
+            //        },
+            //        new TestimonialModel
+            //        {
+            //            Quote = "Export tempor illum tamen malis malis eram quae irure esse labore...",
+            //            PngUrl = "/bundle/img/testimonials/testimonials-2.png",
+            //            Name = "Sara Wilsson",
+            //            Title = "Designer"
+            //        },
+            //        new TestimonialModel
+            //        {
+            //            Quote = "Enim nisi quem export duis labore cillum quae magna enim sint...",
+            //            PngUrl = "/bundle/img/testimonials/testimonials-3.png",
+            //            Name = "Jena Karlis",
+            //            Title = "Store Owner"
+            //        },
+            //        new TestimonialModel
+            //        {
+            //            Quote = "Fugiat enim eram quae cillum dolore dolor amet nulla culpa...",
+            //            PngUrl = "/bundle/img/testimonials/testimonials-4.png",
+            //            Name = "Matt Brandon",
+            //            Title = "Freelancer"
+            //        },
+            //        new TestimonialModel
+            //        {
+            //            Quote = "Quis quorum aliqua sint quem legam fore sunt eram irure aliqua...",
+            //            PngUrl = "/bundle/img/testimonials/testimonials-5.png",
+            //            Name = "John Larson",
+            //            Title = "Entrepreneur"
+            //        }
+            //    }
+            //};
 
             PortfolioData = new PortfolioSectionModel
             {
@@ -224,7 +224,7 @@ namespace StrongerSoftworks.Web.Components.Pages
                     new PortfolioItemModel
                     {
                         Category = "filter-app",
-                        ImageUrl = "/bundle/img/portfolio/app-1.jpg",
+                        PngUrl = "/bundle/img/portfolio/app-1.png",
                         Title = "App 1",
                         Description = "Lorem ipsum, dolor sit amet consectetur",
                         DetailsUrl = "portfolio-details.html"
@@ -232,7 +232,7 @@ namespace StrongerSoftworks.Web.Components.Pages
                     new PortfolioItemModel
                     {
                         Category = "filter-product",
-                        ImageUrl = "/bundle/img/portfolio/product-1.jpg",
+                        PngUrl = "/bundle/img/portfolio/product-1.png",
                         Title = "Product 1",
                         Description = "Lorem ipsum, dolor sit amet consectetur",
                         DetailsUrl = "portfolio-details.html"
@@ -240,7 +240,7 @@ namespace StrongerSoftworks.Web.Components.Pages
                     new PortfolioItemModel
                     {
                         Category = "filter-branding",
-                        ImageUrl = "/bundle/img/portfolio/branding-1.jpg",
+                        PngUrl = "/bundle/img/portfolio/branding-1.png",
                         Title = "Branding 1",
                         Description = "Lorem ipsum, dolor sit amet consectetur",
                         DetailsUrl = "portfolio-details.html"
@@ -392,7 +392,7 @@ namespace StrongerSoftworks.Web.Components.Pages
             //             Name = "Walter White",
             //             Position = "Chief Executive Officer",
             //             Description = "Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa quae aut. Ipsum exercitationem iure minima enim corporis et voluptate.",
-            //             ImageUrl = "/bundle/img/team/team-1.jpg",
+            //             PngUrl = "/bundle/img/team/team-1.png",
             //             Delay = 100,
             //             SocialLinks = new List<SocialLink>
             //             {
@@ -407,7 +407,7 @@ namespace StrongerSoftworks.Web.Components.Pages
             //             Name = "Sarah Jhonson",
             //             Position = "Product Manager",
             //             Description = "Quo esse repellendus quia id. Est eum et accusantium pariatur fugit nihil minima suscipit corporis. Voluptate sed quas reiciendis animi neque sapiente.",
-            //             ImageUrl = "/bundle/img/team/team-2.jpg",
+            //             PngUrl = "/bundle/img/team/team-2.png",
             //             Delay = 200,
             //             SocialLinks = new List<SocialLink>
             //             {
@@ -422,7 +422,7 @@ namespace StrongerSoftworks.Web.Components.Pages
             //             Name = "William Anderson",
             //             Position = "CTO",
             //             Description = "Vero omnis enim consequatur. Voluptas consectetur unde qui molestiae deserunt. Voluptates enim aut architecto porro aspernatur molestiae modi.",
-            //             ImageUrl = "/bundle/img/team/team-3.jpg",
+            //             PngUrl = "/bundle/img/team/team-3.png",
             //             Delay = 300,
             //             SocialLinks = new List<SocialLink>
             //             {
@@ -437,7 +437,7 @@ namespace StrongerSoftworks.Web.Components.Pages
             //             Name = "Amanda Jepson",
             //             Position = "Accountant",
             //             Description = "Rerum voluptate non adipisci animi distinctio et deserunt amet voluptas. Quia aut aliquid doloremque ut possimus ipsum officia.",
-            //             ImageUrl = "/bundle/img/team/team-4.jpg",
+            //             PngUrl = "/bundle/img/team/team-4.png",
             //             Delay = 400,
             //             SocialLinks = new List<SocialLink>
             //             {

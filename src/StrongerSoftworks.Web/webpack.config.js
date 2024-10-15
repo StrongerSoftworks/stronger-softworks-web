@@ -3,8 +3,6 @@ const glob = require('glob');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { PurgeCSSPlugin } = require('purgecss-webpack-plugin');
-const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 //const ExtractCSSChunksPlugin = require('extract-css-chunks-webpack-plugin');
 
 const isDebugMode = process.env.buildMode === 'Debug';
@@ -48,6 +46,8 @@ module.exports = [
         output: {
             path: path.resolve(__dirname, 'wwwroot/bundle/js'),
             publicPath: '/',
+            library: '[name]',
+            libraryTarget: 'var'
         },
         resolve: {
             extensions: ['.js'],
@@ -99,7 +99,16 @@ module.exports = [
                             options: {
                                 sourceMap: true,
                                 esModule: false,
-                            }
+                                url: {
+                                    // ignore images
+                                    filter: (url, resourcePath) => {
+                                        if (url.includes(".png") || url.includes(".jpg") || url.includes(".svg") || url.includes(".avif")) {
+                                            return false;
+                                        }
+                                        return true;
+                                    },
+                                },
+                            },
                         },
                         {
                             loader: 'sass-loader',
@@ -122,18 +131,6 @@ module.exports = [
                         }
                     }],
                 },
-                {
-                    test: /\.(png|jpe?g|webp|gif|svg)$/,
-                    use: [{
-                        loader: 'file-loader',
-                        options: {
-                            publicPath: '../img',
-                            outputPath: '../img',
-                            name: '[name].[ext]',
-                            //esModule: false
-                        }
-                    }],
-                }
             ],
         },
         plugins: [
@@ -156,57 +153,11 @@ module.exports = [
                 paths: glob.sync(`${path.join(__dirname, '../')}/**/*.{razor,cs,js}`, { ignore: ['**/node_modules/**'], noDir: true }),
                 skippedContentGlobs: ['node_modules']
             }),
-            new CopyPlugin(
-            {
-                patterns: [
-                    {
-                        from: "wwwroot/img/**/*",
-                        to({ context, absoluteFilename }) {
-                            return `../img/${path.relative(path.join(context, 'wwwroot', 'img'), absoluteFilename)}`;
-                        }
-                    },
-                ],
-            }),
             //new ExtractCSSChunksPlugin({
             //    filename: 'wwwroot/bundle/css/[name].css',
             //    chunkFilename: 'wwwroot/bundle/css/[id].css',
             //}),
         ],
-        optimization: {
-            minimizer: [
-                new ImageMinimizerPlugin({
-                    include: /\.\/\.(jpe?g|png|gif|svg)$/i,
-                    loader: true,
-                    minimizer: {
-                        implementation: ImageMinimizerPlugin.sharpMinify,
-                        options: {
-                            encodeOptions: {
-                                jpeg: {
-                                    // https://sharp.pixelplumbing.com/api-output#jpeg
-                                    quality: 100,
-                                },
-                                webp: {
-                                    // https://sharp.pixelplumbing.com/api-output#webp
-                                    lossless: true,
-                                },
-                                avif: {
-                                    // https://sharp.pixelplumbing.com/api-output#avif
-                                    lossless: true,
-                                },
-
-                                // png by default sets the quality to 100%, which is same as lossless
-                                // https://sharp.pixelplumbing.com/api-output#png
-                                png: {},
-
-                                // gif does not support lossless compression at all
-                                // https://sharp.pixelplumbing.com/api-output#gif
-                                gif: {},
-                            },
-                        },
-                    },
-                }),
-            ]
-        },
         devtool: isDebugMode ? 'source-map' : false,
     }
 ];

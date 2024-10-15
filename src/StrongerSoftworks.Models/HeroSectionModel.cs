@@ -6,7 +6,7 @@
         public string Subtitle { get; set; }
         public string ButtonText { get; set; }
         public string ButtonLink { get; set; }
-        public string ImageUrl { get; set; }
+        public string PngUrl { get; set; }
         public string ImageAltText { get; set; }
     }
 

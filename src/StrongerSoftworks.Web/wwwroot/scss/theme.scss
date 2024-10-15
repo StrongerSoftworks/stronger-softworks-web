@@ -489,7 +489,12 @@ h6 a {
 --------------------------------------------------------------*/
 .footer {
     color: var(--default-color);
-    background: linear-gradient(45deg, var(--background-color) 0%, color-mix(in srgb, var(--surface-color), transparent 10%) 100%), url("../img/footer-bg.jpg") center center no-repeat;
+    background: linear-gradient(45deg, var(--background-color) 0%, color-mix(in srgb, var(--surface-color), transparent 10%) 100%), url("/bundle/img/footer-bg.avif") center center no-repeat;
+    /*background-image: url("/bundle/img/footer-bg.png") center center no-repeat;
+    background-image: image-set(
+        url("/bundle/img/footer-bg.avif") type(image/avif),
+        url("/bundle/img/footer-bg.png") type(image/png)
+    );*/
     background-size: cover;
     font-size: 14px;
     padding-bottom: 50px;
@@ -1880,5 +1885,6 @@ section,
 
 @font-face {
     font-family: 'MorePerfectDOSVGA';
-    src: url('../fonts/moreperfectdosvga.ttf');
+    src: local('Roboto'), url('../fonts/moreperfectdosvga.ttf');
+    font-display: swap;
 }

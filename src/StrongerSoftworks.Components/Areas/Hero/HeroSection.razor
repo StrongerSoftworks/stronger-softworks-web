@@ -1,5 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Html
 @using StrongerSoftworks.Models
+@using StrongerSoftworks.Components.Common
 
 @code {
     [Parameter] public HeroSectionModel HeroData { get; set; }
@@ -8,7 +9,7 @@
 <section id="@(HeroData.Id ?? "hero")" class="hero section accent-background">
     <div class="container">
         <div class="row gy-4">
-            <div class="@(HeroData.ImageUrl != null ? "col-lg-6 order-2 order-lg-1" : "col-lg-12") d-flex flex-column justify-content-center">
+            <div class="@(HeroData.PngUrl != null ? "col-lg-6 order-2 order-lg-1" : "col-lg-12") d-flex flex-column justify-content-center">
                 <h1>@HeroData.Title</h1>
                 @if (HeroData.Subtitle != null)
                 {
@@ -16,15 +17,15 @@
                 }
                 @if (HeroData.ButtonText != null)
                 {
-                    <div class="d-flex @(HeroData.ImageUrl != null ? "" : "justify-content-center pt-4") ">
+                    <div class="d-flex @(HeroData.PngUrl != null ? "" : "justify-content-center pt-4") ">
                         <a href="@HeroData.ButtonLink" class="btn-get-started">@((MarkupString)(HeroData.ButtonText))</a>
                     </div>
                 }
             </div>
-            @if (HeroData.ImageUrl != null)
+            @if (HeroData.PngUrl != null)
             {
                 <div class="col-lg-6 order-1 order-lg-2 hero-img">
-                    <HeroImage ImageUrl="@HeroData.ImageUrl" ImageAltText="@HeroData.ImageAltText" />
+                    <Picture PngPath="@HeroData.PngUrl" AltText="@HeroData.ImageAltText" />
                 </div>
             }
         </div>

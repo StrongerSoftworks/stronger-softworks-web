@@ -18,7 +18,7 @@ namespace StrongerSoftworks.Models
         public string SectionTitle { get; set; }
         public string SectionDescription { get; set; }
         public string LowerDescription { get; set; }
-        public string ImageUrl { get; set; }
+        public string PngUrl { get; set; }
         public List<FeatureItemModel> FeatureItems { get; set; }
     }
 

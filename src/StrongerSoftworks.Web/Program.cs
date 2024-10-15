@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.AspNetCore.StaticFiles;
 using StrongerSoftworks.Web.Components;
 using System.Globalization;
 
@@ -26,6 +27,10 @@ if (!app.Environment.IsDevelopment())
     app.UseResponseCompression();
 }
 
+// ContentType mappings
+var provider = new FileExtensionContentTypeProvider();
+provider.Mappings[".avif"] = "image/avif";
+
 app.UseStaticFiles(new StaticFileOptions
 {
     OnPrepareResponse = ctx =>
@@ -33,7 +38,8 @@ app.UseStaticFiles(new StaticFileOptions
         // Cache static files for 1 year
         ctx.Context.Response.Headers.Append("Cache-Control", "public,max-age=31536000");
         ctx.Context.Response.Headers.Append("Expires", DateTime.UtcNow.AddDays(60).ToString("R", CultureInfo.InvariantCulture));
-    }
+    },
+    ContentTypeProvider = provider
 });
 app.UseAntiforgery();
 

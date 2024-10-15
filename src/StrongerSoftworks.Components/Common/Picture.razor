@@ -1,0 +1,22 @@
+﻿<picture>
+    <source srcset="@(PngPath.Replace(".png", "-240.avif"))" type="image/avif" media="(max-width: 240px)">
+    <source srcset="@(PngPath.Replace(".png", "-480.avif"))" type="image/avif" media="(max-width: 480px)">
+    <source srcset="@(PngPath.Replace(".png", "-720.avif"))" type="image/avif" media="(max-width: 720px)">
+    <source srcset="@(PngPath.Replace(".png", ".avif"))" type="image/avif">
+    <img
+        loading="lazy"
+        src="@PngPath"
+        alt="@AltText"
+        class="@(CssClass ?? "img-fluid")"
+        onerror="app.onPictureError.call(this)"
+        />
+</picture>
+
+
+@code {
+    [Parameter] public string PngPath { get; set; }
+    [Parameter] public string AltText { get; set; }
+    [Parameter] public string CssClass { get; set; }
+    // [Parameter] public int Width { get; set; }
+    // [Parameter] public int Height { get; set; }
+}
