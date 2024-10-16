@@ -61,4 +61,8 @@ function processImagesInDir(dir) {
 }
 
 console.log('Processing images')
+
+if (!fs.existsSync('wwwroot/bundle')) {
+    fs.mkdirSync('wwwroot/bundle');
+}
 processImagesInDir('wwwroot/img');

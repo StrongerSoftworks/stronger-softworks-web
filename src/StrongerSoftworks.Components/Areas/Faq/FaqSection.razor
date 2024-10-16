@@ -6,29 +6,16 @@
 
 <section id="@(FaqData.Id ?? "faq")" class="faq section">
     <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
+    <div class="container section-title">
         <h2>@FaqData.SectionTitle</h2>
         <p>@FaqData.SectionDescription</p>
     </div><!-- End Section Title -->
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
-                <div class="faq-container">
-                    @foreach (var faq in FaqData.FaqItems)
-                    {
-                        <div class="faq-item @(FaqData.FaqItems.IndexOf(faq) == 0 ? "faq-active" : "")">
-                            <h3>@faq.Question</h3>
-                            <div class="faq-content">
-                                <p>@faq.Answer</p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div>
-
-                        <!-- End Faq item-->
-                    }
-                </div>
-            </div><!-- End Faq Column-->
+            <div class="col-lg-10">
+                <FrequentlyAskedQuestions Faqs="@FaqData.FaqItems" />
+            </div>
         </div>
     </div>
 </section>

@@ -76,9 +76,9 @@ module.exports = [
     {
         mode: isDebugMode ? 'development' : 'production',
         entry: {
-            theme: './wwwroot/scss/theme.scss',
             bootstrap: './wwwroot/scss/bootstrap.scss',
             fonts: './wwwroot/scss/fonts.scss',
+            theme: './wwwroot/scss/theme.scss',
         },
         output: {
             path: path.resolve(__dirname, 'wwwroot/bundle/css'),

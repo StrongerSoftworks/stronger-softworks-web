@@ -214,39 +214,39 @@ namespace StrongerSoftworks.Web.Components.Pages
             //    }
             //};
 
-            PortfolioData = new PortfolioSectionModel
-            {
-                SectionTitle = "Portfolio",
-                SectionDescription = "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit",
-                Categories = new List<string> { "App", "Product", "Branding", "Books" },
-                PortfolioItems = new List<PortfolioItemModel>
-                {
-                    new PortfolioItemModel
-                    {
-                        Category = "filter-app",
-                        PngUrl = "/bundle/img/portfolio/app-1.png",
-                        Title = "App 1",
-                        Description = "Lorem ipsum, dolor sit amet consectetur",
-                        DetailsUrl = "portfolio-details.html"
-                    },
-                    new PortfolioItemModel
-                    {
-                        Category = "filter-product",
-                        PngUrl = "/bundle/img/portfolio/product-1.png",
-                        Title = "Product 1",
-                        Description = "Lorem ipsum, dolor sit amet consectetur",
-                        DetailsUrl = "portfolio-details.html"
-                    },
-                    new PortfolioItemModel
-                    {
-                        Category = "filter-branding",
-                        PngUrl = "/bundle/img/portfolio/branding-1.png",
-                        Title = "Branding 1",
-                        Description = "Lorem ipsum, dolor sit amet consectetur",
-                        DetailsUrl = "portfolio-details.html"
-                    },
-                }
-            };
+            // PortfolioData = new PortfolioSectionModel
+            // {
+            //     SectionTitle = "Portfolio",
+            //     SectionDescription = "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit",
+            //     Categories = new List<string> { "App", "Product", "Branding", "Books" },
+            //     PortfolioItems = new List<PortfolioItemModel>
+            //     {
+            //         new PortfolioItemModel
+            //         {
+            //             Category = "filter-app",
+            //             PngUrl = "/bundle/img/portfolio/app-1.png",
+            //             Title = "App 1",
+            //             Description = "Lorem ipsum, dolor sit amet consectetur",
+            //             DetailsUrl = "portfolio-details.html"
+            //         },
+            //         new PortfolioItemModel
+            //         {
+            //             Category = "filter-product",
+            //             PngUrl = "/bundle/img/portfolio/product-1.png",
+            //             Title = "Product 1",
+            //             Description = "Lorem ipsum, dolor sit amet consectetur",
+            //             DetailsUrl = "portfolio-details.html"
+            //         },
+            //         new PortfolioItemModel
+            //         {
+            //             Category = "filter-branding",
+            //             PngUrl = "/bundle/img/portfolio/branding-1.png",
+            //             Title = "Branding 1",
+            //             Description = "Lorem ipsum, dolor sit amet consectetur",
+            //             DetailsUrl = "portfolio-details.html"
+            //         },
+            //     }
+            // };
 
             PricingData = new PricingSectionModel
             {

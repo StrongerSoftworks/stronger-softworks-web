@@ -3,11 +3,9 @@
   "name": "stronger-softworks",
   "private": true,
   "scripts": {
-    "prebundle:watch": "node ./webpack.preprocess-images.mjs",
+    "images": "node ./process-images.mjs",
     "bundle:watch": "npx cross-env buildMode=Debug npx webpack --config webpack.config.js --watch",
-    "prebundle:dev": "node ./webpack.preprocess-images.mjs",
     "bundle:dev": "npx cross-env buildMode=Debug npx webpack --config webpack.config.js",
-    "prebundle": "node ./webpack.preprocess-images.mjs",
     "bundle": "npx webpack --config webpack.config.js"
   },
   "dependencies": {
