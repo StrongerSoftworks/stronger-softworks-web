@@ -14,7 +14,11 @@ if (!builder.Environment.IsDevelopment())
     {
         options.Providers.Add<BrotliCompressionProvider>();
         options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
-            new[] { "application/octet-stream" });
+            [
+                "application/octet-stream",
+                "text/javascript",
+                "text/css"
+            ]);
     });
 }
 

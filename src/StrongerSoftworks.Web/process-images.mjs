@@ -1,6 +1,8 @@
 ﻿import sharp from 'sharp'
 import fs from 'fs'
 
+const sizes = [720, 480, 240];
+
 function processImagesInDir(dir) {
     const fileList = fs.readdirSync(dir);
     for (const file of fileList) {
@@ -9,7 +11,7 @@ function processImagesInDir(dir) {
             processImagesInDir(name);
         } else {
             const newDir = `${dir}`.replace('wwwroot', 'wwwroot/bundle');
-            const newFile = file.substr(0, file.lastIndexOf("."));
+            const newFile = file.slice(0, file.lastIndexOf("."));
             if (!fs.existsSync(newDir)) {
                 fs.mkdirSync(newDir);
             }
@@ -53,7 +55,7 @@ function processImagesInDir(dir) {
                             .toFile(`${newDir}/${newFile}-${size}.avif`);
 
                         Promise
-                            .all([720, 480, 240].map(resize));
+                            .all(sizes.map(resize));
                     }
                 });
         }

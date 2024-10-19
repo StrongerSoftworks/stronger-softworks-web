@@ -318,29 +318,6 @@ namespace StrongerSoftworks.Web.Components.Pages
                         },
                         IsFeatured = false
                     },
-                    //new PricingItemModel
-                    //{
-                    //    PlanName = "E-Commerce",
-                    //    Price = 4500,
-                    //    Frequency = "",
-                    //    Features = new List<string> {
-                    //        "Contact form",
-                    //        "Map",
-                    //        "Google Analytics integration (GTM, GA4)",
-                    //        "Content Management System",
-                    //        "Integration with your ecommerce platform",
-                    //        "200gb storage",
-                    //        "Daily backups",
-                    //        "150/month hosting and maintenance fees",
-                    //    },
-                    //    Addons = new List<string>()
-                    //    {
-                    //        "Each additional page +$200",
-                    //        "Appointment booking +$500",
-                    //        "Blog +$1000",
-                    //    },
-                    //    IsFeatured = false
-                    //},
                 }
             };
 
@@ -454,9 +431,9 @@ namespace StrongerSoftworks.Web.Components.Pages
             {
                 ContactInfos = new List<ContactInfo>
                 {
-                    new ContactInfo { Title = "Address", DetailLine1 = "A108 Adam Street", DetailLine2 = "New York, NY 535022", Icon = "bi bi-geo-alt" },
-                    new ContactInfo { Title = "Call Us", DetailLine1 = "+1 5589 55488 55", DetailLine2 = "+1 6678 254445 41", Icon = "bi bi-telephone" },
-                    new ContactInfo { Title = "Email Us", DetailLine1 = "info@example.com", DetailLine2 = "contact@example.com", Icon = "bi bi-envelope" },
+                    // new ContactInfo { Title = "Address", DetailLine1 = "A108 Adam Street", DetailLine2 = "New York, NY 535022", Icon = "bi bi-geo-alt" },
+                    new ContactInfo { Title = "Call Us", DetailLine1 = "(519)701-2014", DetailLine2 = "", Icon = "bi bi-telephone" },
+                    new ContactInfo { Title = "Email Us", DetailLine1 = "strongersoftworks@gmail.com", DetailLine2 = "", Icon = "bi bi-envelope" },
                     //new ContactInfo { Title = "Open Hours", DetailLine1 = "Monday - Friday", DetailLine2 = "9:00AM - 05:00PM", Icon = "bi bi-clock" }
                 }
             };

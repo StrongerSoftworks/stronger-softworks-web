@@ -3,7 +3,6 @@ const glob = require('glob');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { PurgeCSSPlugin } = require('purgecss-webpack-plugin');
-//const ExtractCSSChunksPlugin = require('extract-css-chunks-webpack-plugin');
 
 const isDebugMode = process.env.buildMode === 'Debug';
 
@@ -74,6 +73,7 @@ module.exports = [
         devtool: isDebugMode ? 'source-map' : false,
     },
     {
+        stats: {warnings:false},
         mode: isDebugMode ? 'development' : 'production',
         entry: {
             bootstrap: './wwwroot/scss/bootstrap.scss',
@@ -149,14 +149,10 @@ module.exports = [
                 filename: "[name].css",
                 chunkFilename: "[id].css",
             }),
-            new PurgeCSSPlugin({
+            isDebugMode ? false : new PurgeCSSPlugin({
                 paths: glob.sync(`${path.join(__dirname, '../')}/**/*.{razor,cs,js}`, { ignore: ['**/node_modules/**'], noDir: true }),
                 skippedContentGlobs: ['node_modules']
             }),
-            //new ExtractCSSChunksPlugin({
-            //    filename: 'wwwroot/bundle/css/[name].css',
-            //    chunkFilename: 'wwwroot/bundle/css/[id].css',
-            //}),
         ],
         devtool: isDebugMode ? 'source-map' : false,
     }
