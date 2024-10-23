@@ -10,7 +10,7 @@ function processImagesInDir(dir) {
         if (fs.statSync(name).isDirectory()) {
             processImagesInDir(name);
         } else {
-            const newDir = `${dir}`.replace('wwwroot', 'wwwroot/bundle');
+            const newDir = `${dir}`.replace('assets', 'wwwroot/bundle');
             const newFile = file.slice(0, file.lastIndexOf("."));
             if (!fs.existsSync(newDir)) {
                 fs.mkdirSync(newDir);
@@ -67,4 +67,4 @@ console.log('Processing images')
 if (!fs.existsSync('wwwroot/bundle')) {
     fs.mkdirSync('wwwroot/bundle');
 }
-processImagesInDir('wwwroot/img');
+processImagesInDir('assets/img');

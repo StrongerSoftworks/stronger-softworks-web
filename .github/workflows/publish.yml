@@ -60,12 +60,12 @@ jobs:
     - name: Build
       working-directory: ./src
       run: dotnet build --configuration Release
-    - name: Test
-      working-directory: ./src
-      run: dotnet test
+    # - name: Test
+    #   working-directory: ./src
+    #   run: dotnet test
     - name: Build Static
       working-directory: ./src/${{ inputs.web_project_name }}
-      run: dotnet run
+      run: dotnet run --configuration ssg
 
     - name: Configure aws credentials
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'

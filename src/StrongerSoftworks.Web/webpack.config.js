@@ -12,8 +12,8 @@ module.exports = [
     {
         mode: isDebugMode ? 'development' : 'production',
         entry: {
-            bootstrap: './wwwroot/js/bootstrap.js',
-            GLightbox: 'glightbox',
+            bootstrap: './assets/js/bootstrap.js',
+            // GLightbox: 'glightbox',
         },
         output: {
             filename: '[name].js',
@@ -40,7 +40,7 @@ module.exports = [
     {
         mode: isDebugMode ? 'development' : 'production',
         entry: {
-            app: './wwwroot/js/main.js',
+            app: './assets/js/main.js',
         },
         output: {
             path: path.resolve(__dirname, 'wwwroot/bundle/js'),
@@ -76,9 +76,9 @@ module.exports = [
         stats: {warnings:false},
         mode: isDebugMode ? 'development' : 'production',
         entry: {
-            bootstrap: './wwwroot/scss/bootstrap.scss',
-            fonts: './wwwroot/scss/fonts.scss',
-            theme: './wwwroot/scss/theme.scss',
+            bootstrap: './assets/scss/bootstrap.scss',
+            fonts: './assets/scss/fonts.scss',
+            theme: './assets/scss/theme.scss',
         },
         output: {
             path: path.resolve(__dirname, 'wwwroot/bundle/css'),

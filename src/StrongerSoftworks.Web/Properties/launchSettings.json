@@ -27,6 +27,16 @@
         "ASPNETCORE_ENVIRONMENT": "Production"
       }
     },
+    "ssg": {
+      "commandName": "Project",
+      "commandLineArgs": "ssg",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "http://localhost:5160",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      }
+    },
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,

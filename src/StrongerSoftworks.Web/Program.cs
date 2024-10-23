@@ -1,6 +1,9 @@
+using AspNetStatic;
+using AspNetStaticContrib.AspNetStatic;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.AspNetCore.StaticFiles;
 using StrongerSoftworks.Web.Components;
+using StrongerSoftworks.Web.Helpers;
 using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +24,11 @@ if (!builder.Environment.IsDevelopment())
             ]);
     });
 }
+
+builder.Services.AddSingleton<IStaticResourcesInfoProvider>(provider =>
+{
+    return StaticWebSiteHelper.GetStaticResourcesInfo(builder.Environment.WebRootPath);
+});
 
 var app = builder.Build();
 
@@ -48,5 +56,16 @@ app.UseStaticFiles(new StaticFileOptions
 app.UseAntiforgery();
 
 app.MapRazorComponents<App>();
+
+const string SSG_DEST_ROOT_FOLDER_NAME = "out";
+
+var SsgOutputPath = Path.Combine(
+    "../../", SSG_DEST_ROOT_FOLDER_NAME);
+
+Directory.CreateDirectory(SsgOutputPath);
+
+app.GenerateStaticContent(
+    SsgOutputPath,
+    exitWhenDone: true);
 
 app.Run();

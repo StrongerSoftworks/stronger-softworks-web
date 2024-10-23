@@ -69,9 +69,9 @@ export function onPictureError() {
   /**
    * Initiate glightbox
    */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
+  // const glightbox = GLightbox({
+  //   selector: '.glightbox'
+  // });
 
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
