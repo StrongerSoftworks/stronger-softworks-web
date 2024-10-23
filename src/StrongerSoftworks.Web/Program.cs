@@ -6,6 +6,10 @@ using StrongerSoftworks.Web.Components;
 using StrongerSoftworks.Web.Helpers;
 using System.Globalization;
 
+
+const string RUN_MODE_SSG = "ssg";
+const string SSG_DEST_ROOT_FOLDER_NAME = "out";
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -25,10 +29,14 @@ if (!builder.Environment.IsDevelopment())
     });
 }
 
-builder.Services.AddSingleton<IStaticResourcesInfoProvider>(provider =>
-{
-    return StaticWebSiteHelper.GetStaticResourcesInfo(builder.Environment.WebRootPath);
-});
+string runMode = Environment.GetEnvironmentVariable("RUN_MODE") ?? "ssr";
+
+if (runMode == RUN_MODE_SSG) {
+    builder.Services.AddSingleton<IStaticResourcesInfoProvider>(provider =>
+    {
+        return StaticWebSiteHelper.GetStaticResourcesInfo(builder.Environment.WebRootPath);
+    });
+}
 
 var app = builder.Build();
 
@@ -57,15 +65,15 @@ app.UseAntiforgery();
 
 app.MapRazorComponents<App>();
 
-const string SSG_DEST_ROOT_FOLDER_NAME = "out";
+if (runMode == RUN_MODE_SSG) {
+    var SsgOutputPath = Path.Combine(
+        "../../", SSG_DEST_ROOT_FOLDER_NAME);
 
-var SsgOutputPath = Path.Combine(
-    "../../", SSG_DEST_ROOT_FOLDER_NAME);
+    Directory.CreateDirectory(SsgOutputPath);
 
-Directory.CreateDirectory(SsgOutputPath);
-
-app.GenerateStaticContent(
-    SsgOutputPath,
-    exitWhenDone: true);
+    app.GenerateStaticContent(
+        SsgOutputPath,
+        exitWhenDone: true);
+}
 
 app.Run();
