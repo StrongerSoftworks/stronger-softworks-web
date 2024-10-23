@@ -3,6 +3,7 @@
   "name": "stronger-softworks",
   "private": true,
   "scripts": {
+    "build": "npm run bundle:prod",
     "images": "node ./process-images.mjs",
     "bundle:watch": "npx cross-env buildMode=Debug npx webpack --config webpack.config.js --watch",
     "bundle": "npx cross-env buildMode=Debug npx webpack --config webpack.config.js",
