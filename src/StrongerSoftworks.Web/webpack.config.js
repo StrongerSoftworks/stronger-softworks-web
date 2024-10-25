@@ -1,9 +1,8 @@
 ﻿const path = require('path');
 const glob = require('glob');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { PurgeCSSPlugin } = require('purgecss-webpack-plugin');
 
 const isDebugMode = process.env.buildMode === 'Debug';
 
@@ -13,28 +12,15 @@ module.exports = [
     {
         mode: isDebugMode ? 'development' : 'production',
         entry: {
-            bootstrap: 'bootstrap',
+            bootstrap: './assets/js/bootstrap.js',
+            // GLightbox: 'glightbox',
         },
         output: {
-            filename: 'bootstrap.js',
-            path: path.resolve(__dirname, 'wwwroot/bundle'),
+            filename: '[name].js',
+            path: path.resolve(__dirname, 'wwwroot/bundle/vendor/js'),
             publicPath: '/',
             library: '[name]',
             libraryTarget: 'var'
-        },
-        optimization: {
-            splitChunks: {
-                chunks: 'all',
-            },
-            minimize: !isDebugMode,
-            minimizer: !isDebugMode ? [
-                new TerserPlugin({
-                    terserOptions: {
-                        compress: !isDebugMode,
-                        mangle: !isDebugMode,
-                    },
-                })
-            ] : [],
         },
         plugins: [
             new HtmlWebpackPlugin({
@@ -44,7 +30,7 @@ module.exports = [
                 hash: true,
                 minify: !isDebugMode,
                 templateParameters: (compilation, assets) => {
-                    const scripts = assets.js.map((filePath) => `<script src="/bundle${filePath}"></script>`).join("\n");
+                    const scripts = assets.js.map((filePath) => `<script src="/bundle/vendor/js${filePath}"></script>`).join("\n");
                     return { scripts };
                 },
             }),
@@ -54,40 +40,96 @@ module.exports = [
     {
         mode: isDebugMode ? 'development' : 'production',
         entry: {
-            styles: './Styles/app.scss',
+            app: './assets/js/main.js',
         },
         output: {
-            filename: '[name].js',
-            path: path.resolve(__dirname, 'wwwroot/bundle'),
+            path: path.resolve(__dirname, 'wwwroot/bundle/js'),
+            publicPath: '/',
+            library: '[name]',
+            libraryTarget: 'var'
+        },
+        resolve: {
+            extensions: ['.js'],
+            preferRelative: true,
+        },
+        module: {
+            rules: [
+
+            ],
+        },
+        plugins: [
+            new HtmlWebpackPlugin({
+                inject: false,
+                template: './WebpackTemplates/Scripts.ejs',
+                filename: path.join(__dirname, "./Components/Webpack/Scripts.razor"),
+                hash: true,
+                minify: !isDebugMode,
+                templateParameters: (compilation, assets) => {
+                    const scripts = assets.js.map((filePath) => `<script src="/bundle/js${filePath}"></script>`).join("\n");
+                    return { scripts };
+                },
+            }),
+        ],
+        devtool: isDebugMode ? 'source-map' : false,
+    },
+    {
+        stats: {warnings:false},
+        mode: isDebugMode ? 'development' : 'production',
+        entry: {
+            bootstrap: './assets/scss/bootstrap.scss',
+            fonts: './assets/scss/fonts.scss',
+            theme: './assets/scss/theme.scss',
+        },
+        output: {
+            path: path.resolve(__dirname, 'wwwroot/bundle/css'),
             publicPath: '/',
         },
         resolve: {
-            extensions: ['.js', '.scss'],
+            extensions: ['.scss'],
             preferRelative: true,
         },
         module: {
             rules: [
                 {
-                    test: /\.js$/,
-                    exclude: /node_modules/,
-                    use: {
-                        loader: 'babel-loader',
-                        options: {
-                            presets: ['@babel/preset-env'],
-                        },
-                    },
-                },
-                {
-                    test: /\.scss$/,
+                    test: /\.s?css$/,
                     use: [
                         MiniCssExtractPlugin.loader,
-                        'css-loader',
-                        'sass-loader',
-                    ],
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                sourceMap: true,
+                                esModule: false,
+                                url: {
+                                    // ignore images
+                                    filter: (url, resourcePath) => {
+                                        if (url.includes(".png") || url.includes(".jpg") || url.includes(".svg") || url.includes(".avif")) {
+                                            return false;
+                                        }
+                                        return true;
+                                    },
+                                },
+                            },
+                        },
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                sourceMap: true,
+                            }
+                        },
+
+                    ]
                 },
                 {
                     test: /\.(woff|woff2|eot|ttf|otf)$/i,
-                    type: "asset/inline",
+                    use: [{
+                        loader: 'file-loader',
+                        options: {
+                            publicPath: '../fonts',
+                            outputPath: '../fonts',
+                            name: '[name].[ext]',
+                            //esModule: false
+                        }
+                    }],
                 },
             ],
         },
@@ -99,40 +141,19 @@ module.exports = [
                 hash: true,
                 minify: !isDebugMode,
                 templateParameters: (compilation, assets) => {
-                    const styleSheets = assets.css.map((filePath) => `<link rel="stylesheet" href="/bundle${filePath}" />`).join("\n");
+                    const styleSheets = assets.css.map((filePath) => `<link rel="stylesheet" href="/bundle/css${filePath}" />`).join("\n");
                     return { styleSheets };
                 },
             }),
-            new HtmlWebpackPlugin({
-                inject: false,
-                template: './WebpackTemplates/Scripts.ejs',
-                filename: path.join(__dirname, "./Components/Webpack/Scripts.razor"),
-                hash: true,
-                minify: !isDebugMode,
-                templateParameters: (compilation, assets) => {
-                    const scripts = assets.js.map((filePath) => `<script src="/bundle${filePath}"></script>`).join("\n");
-                    return { scripts };
-                },
-            }),
             new MiniCssExtractPlugin({
-                filename: '[name].css',
-            })
+                filename: "[name].css",
+                chunkFilename: "[id].css",
+            }),
+            isDebugMode ? false : new PurgeCSSPlugin({
+                paths: glob.sync(`${path.join(__dirname, '../')}/**/*.{razor,cs,js}`, { ignore: ['**/node_modules/**'], noDir: true }),
+                skippedContentGlobs: ['node_modules']
+            }),
         ],
-        optimization: {
-            splitChunks: {
-                chunks: 'all',
-            },
-            minimize: !isDebugMode,
-            minimizer: !isDebugMode ? [
-                new TerserPlugin({
-                    terserOptions: {
-                        compress: !isDebugMode,
-                        mangle: !isDebugMode,
-                    },
-                }),
-                new CssMinimizerPlugin(),
-            ] : [],
-        },
         devtool: isDebugMode ? 'source-map' : false,
     }
 ];

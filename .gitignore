@@ -399,10 +399,7 @@ FodyWeavers.xsd
 
 # generated CSS and JS
 .DS_Store
-*.LICENSE.txt
-src/**/wwwroot/*.css
-src/**/wwwroot/*.js
-src/**/wwwroot/*.map
-src/**/wwwroot/*.woff
-src/**/wwwroot/*.woff2
-!src/**/wwwroot/decode.min.js
+src/**/wwwroot/bundle/**/*
+
+# static site build
+out/

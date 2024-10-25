@@ -1,0 +1,24 @@
+﻿@using StrongerSoftworks.Models
+
+@code {
+    [Parameter] public ServicesSectionModel ServicesData { get; set; }
+}
+
+<section id="@(ServicesData.Id ?? "services")" class="services section">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>@ServicesData.SectionTitle</h2>
+        <p>@ServicesData.SectionDescription</p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+        <div class="row gy-4">
+            @foreach (var service in ServicesData.ServiceItems)
+            {
+                <div class="col-xl-4 col-lg-6" data-aos="fade-up" data-aos-delay="@(100 * (ServicesData.ServiceItems.IndexOf(service) + 1))">
+                    <ServiceItem Title="@service.Title" Description="@service.Description" IconClass="@service.IconClass" Link="@service.Link" />
+                </div>
+            }
+        </div>
+    </div>
+</section>

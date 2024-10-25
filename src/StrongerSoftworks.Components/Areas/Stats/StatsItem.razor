@@ -1,0 +1,11 @@
+﻿@code {
+    [Parameter] public int StartValue { get; set; }
+    [Parameter] public int EndValue { get; set; }
+    [Parameter] public int Duration { get; set; }
+    [Parameter] public string Label { get; set; }
+}
+
+<div class="stats-item text-center w-100 h-100">
+    <span data-purecounter-start="@StartValue" data-purecounter-end="@EndValue" data-purecounter-duration="@Duration" class="purecounter"></span>
+    <p>@Label</p>
+</div>

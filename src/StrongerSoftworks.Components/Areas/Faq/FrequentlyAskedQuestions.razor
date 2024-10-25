@@ -1,0 +1,12 @@
+﻿@using StrongerSoftworks.Models
+<div class="accordion accordion-flush" id="faqAccordion">
+    @foreach (var faq in Faqs)
+    {
+        <FrequentlyAskedQuestion Faq=@faq />
+    }
+</div>
+
+@code {
+    [Parameter]
+    public List<FaqItemModel> Faqs { get; set; }
+}

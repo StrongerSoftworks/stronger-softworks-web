@@ -1,0 +1,28 @@
+﻿@using StrongerSoftworks.Models
+
+@code {
+    [Parameter] public TestimonialsSectionModel TestimonialsData { get; set; }
+}
+
+<section id="@(TestimonialsData.Id ?? "testimonials")" class="testimonials section light-background">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>@TestimonialsData.SectionTitle</h2>
+        <p>@TestimonialsData.SectionDescription</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper init-swiper" data-speed="600" data-delay="5000">
+            <div class="swiper-wrapper">
+                @foreach (var testimonial in TestimonialsData.Testimonials)
+                {
+                    <div class="swiper-slide">
+                        <TestimonialItem Quote="@testimonial.Quote" PngUrl="@testimonial.PngUrl" Name="@testimonial.Name" Title="@testimonial.Title" />
+                    </div><!-- End testimonial item -->
+                }
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+
