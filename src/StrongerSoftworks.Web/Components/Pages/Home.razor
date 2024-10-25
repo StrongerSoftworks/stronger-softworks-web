@@ -2,6 +2,15 @@
 
 <PageTitle>Home</PageTitle>
 
+@* <open-graph-website site-name="Stronger Softworks"
+                    title="Stronger Softworks - Web Development and SEO"
+                    main-image="@(new OpenGraphImage(
+                        Url.AbsoluteContent("~/bundle/img/about-720.png"),
+                        ContentType.Png,
+                        720,
+                        720))"
+                    determiner="OpenGraphDeterminer.Blank"/> *@
+
 <HeroSection HeroData="@HeroData" />
 <AboutSection AboutData="@AboutData" />
 @* <StatsSection StatsData="@StatsData" /> *@

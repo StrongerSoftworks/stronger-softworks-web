@@ -18,6 +18,7 @@
   <ItemGroup>
     <PackageReference Include="AspNetStatic" Version="0.24.0" />
     <PackageReference Include="AspNetStaticContrib" Version="1.0.0" />
+    <PackageReference Include="Boxed.AspNetCore.TagHelpers" Version="9.0.1" />
   </ItemGroup>
 
 </Project>
