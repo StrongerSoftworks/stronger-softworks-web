@@ -34,7 +34,8 @@
       "applicationUrl": "http://localhost:5160",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Production",
-        "RUN_MODE": "ssg"
+        "RUN_MODE": "ssg",
+        "HOST_URL": "https://strongersoftworks.com"
       }
     },
     "IIS Express": {
