@@ -2,6 +2,7 @@ using AspNetStatic;
 using AspNetStaticContrib.AspNetStatic;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.AspNetCore.StaticFiles;
+using StrongerSoftworks.Web;
 using StrongerSoftworks.Web.Components;
 using StrongerSoftworks.Web.Helpers;
 using System.Globalization;
@@ -36,6 +37,10 @@ if (runMode == RUN_MODE_SSG) {
     {
         return StaticWebSiteHelper.GetStaticResourcesInfo(builder.Environment.WebRootPath);
     });
+    builder.Services.AddScoped<IDomainProvider, ConfigDomainProvider>();
+} else {
+    builder.Services.AddHttpContextAccessor();
+    builder.Services.AddScoped<IDomainProvider, HttpRequestDomainProvider>();
 }
 
 var app = builder.Build();
