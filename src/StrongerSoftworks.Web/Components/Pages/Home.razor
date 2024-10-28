@@ -1,4 +1,5 @@
 ﻿@page "/"
+@using StrongerSoftworks.Web.Models
 
 @inject IDomainProvider DomainProvider;
 
@@ -13,10 +14,21 @@
         url: domain, 
         description: "My Description", 
         siteName: "Stronger Softworks");
+
+    var websiteSchema = new WebSite()
+    {
+        AlternateName = "Stronger Softworks - Web Development and SEO",
+        Name = "Stronger Softworks",
+        Url = DomainProvider.DomainUri,
+    };
 }
 
 <HeadContent>
     @((MarkupString)graph.ToString())
+
+    <script type="application/ld+json">
+        @((MarkupString)websiteSchema.ToString())
+    </script>
 </HeadContent>
 
 <HeroSection HeroData="@HeroData" />

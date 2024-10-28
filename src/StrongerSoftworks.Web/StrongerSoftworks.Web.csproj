@@ -19,6 +19,7 @@
     <PackageReference Include="AspNetStatic" Version="0.24.0" />
     <PackageReference Include="AspNetStaticContrib" Version="1.0.0" />
     <PackageReference Include="OpenGraph-Net" Version="4.0.1" />
+    <PackageReference Include="Schema.NET" Version="13.0.0" />
   </ItemGroup>
 
 </Project>

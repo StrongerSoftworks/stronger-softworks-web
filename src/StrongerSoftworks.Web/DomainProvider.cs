@@ -3,6 +3,8 @@ namespace StrongerSoftworks.Web;
 public interface IDomainProvider
 {
     public string Domain { get; }
+    public Uri DomainUri { get; }
+    public UriBuilder BaseUriBuilder { get; }
 }
 
 public class HttpRequestDomainProvider : IDomainProvider
@@ -13,8 +15,35 @@ public class HttpRequestDomainProvider : IDomainProvider
     {
         get
         {
-            return _httpContextAccessor.HttpContext.Request.Scheme +
+            return _httpContextAccessor.HttpContext == null ? "" :
+            _httpContextAccessor.HttpContext.Request.Scheme +
             "://" + _httpContextAccessor.HttpContext.Request.Host.Value;
+        }
+    }
+
+    public Uri DomainUri
+    {
+        get
+        {
+            return new Uri(Domain);
+        }
+    }
+
+    public UriBuilder BaseUriBuilder
+    {
+        get
+        {
+            var builder = new UriBuilder
+            {
+                Scheme = _httpContextAccessor.HttpContext.Request.Scheme,
+                Host = _httpContextAccessor.HttpContext.Request.Host.Host
+            };
+            var port = _httpContextAccessor.HttpContext.Request.Host.Port;
+            if (port.HasValue && (port != 80 && port != 443))
+            {
+                builder.Port = port.Value;
+            }
+            return builder;
         }
     }
 
@@ -32,6 +61,28 @@ public class ConfigDomainProvider : IDomainProvider
         get
         {
             return Environment.GetEnvironmentVariable("HOST_URL") ?? "";
+        }
+    }
+
+    public Uri DomainUri
+    {
+        get
+        {
+            return new Uri(Domain);
+        }
+    }
+
+    public UriBuilder BaseUriBuilder
+    {
+        get
+        {
+            // TODO get scheme, host and port from parsing HOST_URL
+            var builder = new UriBuilder
+            {
+                Scheme = "https",
+                Host = "strongersoftworks.ca"
+            };
+            return builder;
         }
     }
 }
