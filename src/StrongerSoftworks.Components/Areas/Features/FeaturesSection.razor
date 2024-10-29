@@ -3,32 +3,35 @@
 
 @code {
     [Parameter] public FeaturesSectionModel FeaturesData { get; set; }
+
+    private PhotoSize[] featureImageSizes = [
+        new PhotoSize() { Breakpoint = 576, Width = 240 },
+        new PhotoSize() { Breakpoint = 992, Width = 480 },
+        new PhotoSize() { Breakpoint = 1200, Width = 360 },
+    ];
 }
 
 <section id="@(FeaturesData.Id ?? "features")" class="features section">
-    <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
+    <div class="container section-title">
         <h2>@FeaturesData.SectionTitle</h2>
         <p>@FeaturesData.SectionDescription</p>
-    </div><!-- End Section Title -->
+    </div>
 
     <div class="container">
         <div class="row gy-4 justify-content-between">
-            <div class="features-image col-lg-5 order-lg-2 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
-                <Picture PngPath="@FeaturesData.PngUrl" AltText="Features Image" />
+            <div class="features-image col-lg-5 order-lg-2 d-flex flex-column flex-lg-row align-items-center"
+                <Picture ImageUrl="@FeaturesData.ImageUrl" AltText="Features Image" Width="480" Sizes="featureImageSizes" />
             </div>
             <div class="col-lg-6 d-flex flex-column justify-content-center">
                 @foreach (var feature in FeaturesData.FeatureItems)
                 {
-                    <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="@(200 + (100 * FeaturesData.FeatureItems.IndexOf(feature)))">
+                    <div class="features-item d-flex mt-5 ps-0 ps-lg-3">
                         <i class="@feature.IconClass flex-shrink-0"></i>
                         <div>
                             <h4>@feature.Title</h4>
                             <p>@feature.Description</p>
                         </div>
                     </div>
-
-                    <!-- End Features Item-->
                 }
             </div>
         </div>

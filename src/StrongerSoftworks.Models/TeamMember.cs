@@ -16,7 +16,7 @@ namespace StrongerSoftworks.Models
         public string Name { get; set; }
         public string Position { get; set; }
         public string Description { get; set; }
-        public string PngUrl { get; set; }
+        public string ImageUrl { get; set; }
         public int Delay { get; set; }
         public List<SocialLink> SocialLinks { get; set; }
     }

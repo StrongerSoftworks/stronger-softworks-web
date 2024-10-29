@@ -1,9 +1,15 @@
 ﻿import sharp from 'sharp'
 import fs from 'fs'
+import { readFile } from 'fs/promises';
 
-const sizes = [720, 480, 240];
+const defaultSizes = [ 240, 360, 480 ];
 
 function processImagesInDir(dir) {
+    let dirSizes = defaultSizes;
+    if (fs.existsSync(`${dir}/image-settings.json`)) {
+        const data = fs.readFileSync(`${dir}/image-settings.json`);
+        dirSizes = JSON.parse(data);
+    }
     const fileList = fs.readdirSync(dir);
     for (const file of fileList) {
         const name = `${dir}/${file}`;
@@ -15,6 +21,9 @@ function processImagesInDir(dir) {
             if (!fs.existsSync(newDir)) {
                 fs.mkdirSync(newDir);
             }
+            if (file.endsWith('.json')) {
+                continue;
+            }
 
             // keep original SVGs
             if (file.endsWith('.svg')) {
@@ -25,18 +34,18 @@ function processImagesInDir(dir) {
                 });
             }
 
-            // PNG
-            sharp(name)
-                .png({
-                    quality: 90,
-                    compressionLevel: 5,
-                    effort: 3,
-                })
-                .toFile(`${newDir}/${newFile}.png`, (err) => {
-                    if (err) {
-                        console.error(err);
-                    }
-                });
+            // // PNG
+            // sharp(name)
+            //     .png({
+            //         quality: 90,
+            //         compressionLevel: 5,
+            //         effort: 3,
+            //     })
+            //     .toFile(`${newDir}/${newFile}.png`, (err) => {
+            //         if (err) {
+            //             console.error(err);
+            //         }
+            //     });
 
             // AVIF
             sharp(name)
@@ -55,7 +64,7 @@ function processImagesInDir(dir) {
                             .toFile(`${newDir}/${newFile}-${size}.avif`);
 
                         Promise
-                            .all(sizes.map(resize));
+                            .all(dirSizes.map(resize));
                     }
                 });
         }

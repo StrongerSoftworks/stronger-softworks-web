@@ -65,7 +65,7 @@ jobs:
     #   run: dotnet test
     - name: Build Static
       working-directory: ./src/${{ inputs.web_project_name }}
-      run: dotnet run --configuration ssg
+      run: dotnet run --launch-profile ssg
 
     - name: Configure aws credentials
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'

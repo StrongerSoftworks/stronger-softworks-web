@@ -1,21 +1,3 @@
-
-export function onPictureError() {
-    console.log(this);
-    this.onerror = null;
-    // 240 AVIF
-    this.parentNode.children[0].srcset = this.src;
-    this.parentNode.children[0].type = 'image/png';
-    // 480 AVIF
-    this.parentNode.children[1].srcset = this.src;
-    this.parentNode.children[1].type = 'image/png';
-    // 720 AVIF
-    this.parentNode.children[2].srcset = this.src;
-    this.parentNode.children[2].type = 'image/png';
-    // Largest AVIF
-    this.parentNode.children[3].srcset = this.src;
-    this.parentNode.children[3].type = 'image/png';
-}
-
 (function () {
   "use strict";
 

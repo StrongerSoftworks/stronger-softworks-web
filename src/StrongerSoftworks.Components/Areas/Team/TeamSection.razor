@@ -3,6 +3,11 @@
 
 @code {
     [Parameter] public TeamSectionModel TeamData { get; set; }
+
+    private PhotoSize[] teamMemberPhotoSizes = [
+        new PhotoSize() { Breakpoint = 576, Width = 160 },
+        new PhotoSize() { Breakpoint = 768, Width = 200 },
+    ];
 }
 
 <section id="@(TeamData.Id ?? "team")" class="team section">
@@ -13,13 +18,13 @@
     </div><!-- End Section Title -->
 
     <div class="container">
-        <div class="row gy-4">
+        <div class="row gy-4 justify-content-center">
             @foreach (var member in TeamData.TeamMembers)
             {
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="@member.Delay">
+                <div class="col-xl-4 col-lg-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="@member.Delay">
                     <div class="team-member">
                         <div class="member-img">
-                            <Picture PngPath="@member.PngUrl" AltText="@member.Name" />
+                            <Picture ImageUrl="@member.ImageUrl" AltText="@member.Name" Sizes="teamMemberPhotoSizes" Width="200" />
                             <div class="social">
                                 @foreach (var social in member.SocialLinks)
                                 {

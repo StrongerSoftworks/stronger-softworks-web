@@ -16,6 +16,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents();
 
+Console.WriteLine(builder.Environment.IsDevelopment());
 if (!builder.Environment.IsDevelopment())
 {
     builder.Services.AddResponseCompression(options =>

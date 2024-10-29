@@ -13,7 +13,7 @@ namespace StrongerSoftworks.Web.Components.Pages
         public PortfolioSectionModel? PortfolioData { get; private set; }
         public PricingSectionModel? PricingData { get; private set; }
         public FaqSectionModel? FaqData { get; private set; }
-        //public TeamSectionModel? TeamData { get; private set; }
+        public TeamSectionModel? TeamData { get; private set; }
         public ContactSectionModel? ContactData { get; private set; }
 
         protected override void OnParametersSet()
@@ -37,7 +37,7 @@ namespace StrongerSoftworks.Web.Components.Pages
                 },
                 // ButtonText = "Read More",
                 // ButtonLink = "#",
-                PngUrl = "/bundle/img/about.png",
+                ImageUrl = "/bundle/img/about.png",
                 ImageAltText = "About Image"
             };
 
@@ -116,7 +116,7 @@ namespace StrongerSoftworks.Web.Components.Pages
                 SectionTitle = "SEO Services to Boost Your Business",
                 SectionDescription = "In addition to web development, we offer a range of search engine optimization (SEO) services to help your business get noticed and drive traffic.",
                 LowerDescription = "By offering these comprehensive web development and SEO services, we help small and medium businesses not only create a strong online presence but also turn that presence into growth, engagement, and success.",
-                PngUrl = "/bundle/img/features.png",
+                ImageUrl = "/bundle/img/features.png",
                 FeatureItems = new List<FeatureItemModel>
                 {
                     new FeatureItemModel
@@ -179,35 +179,35 @@ namespace StrongerSoftworks.Web.Components.Pages
             //        new TestimonialModel
             //        {
             //            Quote = "Proin iaculis purus consequat sem cure dignissim donec porttitora...",
-            //            PngUrl = "/bundle/img/testimonials/testimonials-1.png",
+            //            ImageUrl = "/bundle/img/testimonials/testimonials-1.png",
             //            Name = "Saul Goodman",
             //            Title = "CEO & Founder"
             //        },
             //        new TestimonialModel
             //        {
             //            Quote = "Export tempor illum tamen malis malis eram quae irure esse labore...",
-            //            PngUrl = "/bundle/img/testimonials/testimonials-2.png",
+            //            ImageUrl = "/bundle/img/testimonials/testimonials-2.png",
             //            Name = "Sara Wilsson",
             //            Title = "Designer"
             //        },
             //        new TestimonialModel
             //        {
             //            Quote = "Enim nisi quem export duis labore cillum quae magna enim sint...",
-            //            PngUrl = "/bundle/img/testimonials/testimonials-3.png",
+            //            ImageUrl = "/bundle/img/testimonials/testimonials-3.png",
             //            Name = "Jena Karlis",
             //            Title = "Store Owner"
             //        },
             //        new TestimonialModel
             //        {
             //            Quote = "Fugiat enim eram quae cillum dolore dolor amet nulla culpa...",
-            //            PngUrl = "/bundle/img/testimonials/testimonials-4.png",
+            //            ImageUrl = "/bundle/img/testimonials/testimonials-4.png",
             //            Name = "Matt Brandon",
             //            Title = "Freelancer"
             //        },
             //        new TestimonialModel
             //        {
             //            Quote = "Quis quorum aliqua sint quem legam fore sunt eram irure aliqua...",
-            //            PngUrl = "/bundle/img/testimonials/testimonials-5.png",
+            //            ImageUrl = "/bundle/img/testimonials/testimonials-5.png",
             //            Name = "John Larson",
             //            Title = "Entrepreneur"
             //        }
@@ -224,7 +224,7 @@ namespace StrongerSoftworks.Web.Components.Pages
             //         new PortfolioItemModel
             //         {
             //             Category = "filter-app",
-            //             PngUrl = "/bundle/img/portfolio/app-1.png",
+            //             ImageUrl = "/bundle/img/portfolio/app-1.png",
             //             Title = "App 1",
             //             Description = "Lorem ipsum, dolor sit amet consectetur",
             //             DetailsUrl = "portfolio-details.html"
@@ -232,7 +232,7 @@ namespace StrongerSoftworks.Web.Components.Pages
             //         new PortfolioItemModel
             //         {
             //             Category = "filter-product",
-            //             PngUrl = "/bundle/img/portfolio/product-1.png",
+            //             ImageUrl = "/bundle/img/portfolio/product-1.png",
             //             Title = "Product 1",
             //             Description = "Lorem ipsum, dolor sit amet consectetur",
             //             DetailsUrl = "portfolio-details.html"
@@ -240,7 +240,7 @@ namespace StrongerSoftworks.Web.Components.Pages
             //         new PortfolioItemModel
             //         {
             //             Category = "filter-branding",
-            //             PngUrl = "/bundle/img/portfolio/branding-1.png",
+            //             ImageUrl = "/bundle/img/portfolio/branding-1.png",
             //             Title = "Branding 1",
             //             Description = "Lorem ipsum, dolor sit amet consectetur",
             //             DetailsUrl = "portfolio-details.html"
@@ -360,72 +360,27 @@ namespace StrongerSoftworks.Web.Components.Pages
                 }
             };
 
-            // TeamData = new TeamSectionModel
-            // {
-            //     TeamMembers = new List<TeamMember>
-            //     {
-            //         new TeamMember
-            //         {
-            //             Name = "Walter White",
-            //             Position = "Chief Executive Officer",
-            //             Description = "Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa quae aut. Ipsum exercitationem iure minima enim corporis et voluptate.",
-            //             PngUrl = "/bundle/img/team/team-1.png",
-            //             Delay = 100,
-            //             SocialLinks = new List<SocialLink>
-            //             {
-            //                 new SocialLink { Url = "#", IconClass = "bi bi-twitter-x" },
-            //                 new SocialLink { Url = "#", IconClass = "bi bi-facebook" },
-            //                 new SocialLink { Url = "#", IconClass = "bi bi-instagram" },
-            //                 new SocialLink { Url = "#", IconClass = "bi bi-linkedin" }
-            //             }
-            //         },
-            //         new TeamMember
-            //         {
-            //             Name = "Sarah Jhonson",
-            //             Position = "Product Manager",
-            //             Description = "Quo esse repellendus quia id. Est eum et accusantium pariatur fugit nihil minima suscipit corporis. Voluptate sed quas reiciendis animi neque sapiente.",
-            //             PngUrl = "/bundle/img/team/team-2.png",
-            //             Delay = 200,
-            //             SocialLinks = new List<SocialLink>
-            //             {
-            //                 new SocialLink { Url = "#", IconClass = "bi bi-twitter-x" },
-            //                 new SocialLink { Url = "#", IconClass = "bi bi-facebook" },
-            //                 new SocialLink { Url = "#", IconClass = "bi bi-instagram" },
-            //                 new SocialLink { Url = "#", IconClass = "bi bi-linkedin" }
-            //             }
-            //         },
-            //         new TeamMember
-            //         {
-            //             Name = "William Anderson",
-            //             Position = "CTO",
-            //             Description = "Vero omnis enim consequatur. Voluptas consectetur unde qui molestiae deserunt. Voluptates enim aut architecto porro aspernatur molestiae modi.",
-            //             PngUrl = "/bundle/img/team/team-3.png",
-            //             Delay = 300,
-            //             SocialLinks = new List<SocialLink>
-            //             {
-            //                 new SocialLink { Url = "#", IconClass = "bi bi-twitter-x" },
-            //                 new SocialLink { Url = "#", IconClass = "bi bi-facebook" },
-            //                 new SocialLink { Url = "#", IconClass = "bi bi-instagram" },
-            //                 new SocialLink { Url = "#", IconClass = "bi bi-linkedin" }
-            //             }
-            //         },
-            //         new TeamMember
-            //         {
-            //             Name = "Amanda Jepson",
-            //             Position = "Accountant",
-            //             Description = "Rerum voluptate non adipisci animi distinctio et deserunt amet voluptas. Quia aut aliquid doloremque ut possimus ipsum officia.",
-            //             PngUrl = "/bundle/img/team/team-4.png",
-            //             Delay = 400,
-            //             SocialLinks = new List<SocialLink>
-            //             {
-            //                 new SocialLink { Url = "#", IconClass = "bi bi-twitter-x" },
-            //                 new SocialLink { Url = "#", IconClass = "bi bi-facebook" },
-            //                 new SocialLink { Url = "#", IconClass = "bi bi-instagram" },
-            //                 new SocialLink { Url = "#", IconClass = "bi bi-linkedin" }
-            //             }
-            //         }
-            //     }
-            // };
+            TeamData = new TeamSectionModel
+            {
+                TeamMembers = new List<TeamMember>
+                {
+                    new TeamMember
+                    {
+                        Name = "Alex Leistra",
+                        Position = "Software Developer",
+                        Description = "Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa quae aut. Ipsum exercitationem iure minima enim corporis et voluptate.",
+                        ImageUrl = "/bundle/img/team/alex.png",
+                        Delay = 100,
+                        SocialLinks = new List<SocialLink>
+                        {
+                            // new SocialLink { Url = "#", IconClass = "bi bi-twitter-x" },
+                            // new SocialLink { Url = "#", IconClass = "bi bi-facebook" },
+                            // new SocialLink { Url = "#", IconClass = "bi bi-instagram" },
+                            new SocialLink { Url = "https://www.linkedin.com/in/alex-leistra-1032179a/", IconClass = "bi bi-linkedin" }
+                        }
+                    },
+                }
+            };
 
             ContactData = new ContactSectionModel
             {

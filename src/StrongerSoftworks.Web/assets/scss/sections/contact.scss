@@ -1,17 +1,24 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
 .contact {
 	.info-item {
 		background: color-mix(in srgb, var(--default-color), transparent 96%);
 		padding: 30px;
+
 		i {
 			font-size: 38px;
 			line-height: 0;
 			color: $accent-color;
 		}
+
 		h3 {
 			font-size: 20px;
 			font-weight: 700;
 			margin: 20px 0 10px 0;
 		}
+
 		p {
 			padding: 0;
 			line-height: 24px;
@@ -19,10 +26,12 @@
 			margin-bottom: 0;
 		}
 	}
+
 	.contact-form {
 		background: color-mix(in srgb, var(--default-color), transparent 96%);
 		padding: 30px;
 		height: 100%;
+
 		input[type=text] {
 			font-size: 14px;
 			padding: 10px 15px;
@@ -31,13 +40,16 @@
 			color: $default-color;
 			background-color: $background-color-t50;
 			border-color: $default-color-t80;
+
 			&:focus {
 				border-color: $accent-color;
 			}
+
 			&::placeholder {
 				color: $default-color-t70;
 			}
 		}
+
 		input[type=email] {
 			font-size: 14px;
 			padding: 10px 15px;
@@ -46,13 +58,16 @@
 			color: $default-color;
 			background-color: $background-color-t50;
 			border-color: $default-color-t80;
+
 			&:focus {
 				border-color: $accent-color;
 			}
+
 			&::placeholder {
 				color: $default-color-t70;
 			}
 		}
+
 		textarea {
 			font-size: 14px;
 			padding: 10px 15px;
@@ -61,13 +76,16 @@
 			color: $default-color;
 			background-color: $background-color-t50;
 			border-color: $default-color-t80;
+
 			&:focus {
 				border-color: $accent-color;
 			}
+
 			&::placeholder {
 				color: $default-color-t70;
 			}
 		}
+
 		button[type=submit] {
 			background: var(--accent-color);
 			color: $contrast-color;
@@ -75,9 +93,14 @@
 			padding: 10px 30px;
 			transition: 0.4s;
 			border-radius: 4px;
+
 			&:hover {
 				background: color-mix(in srgb, var(--accent-color), transparent 20%);
 			}
+		}
+
+		@include media-breakpoint-down(md) {
+			padding: 0px;
 		}
 	}
 }

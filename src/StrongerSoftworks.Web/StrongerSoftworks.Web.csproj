@@ -13,6 +13,8 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\bundle\" />
+    <Content Remove="assets\**" />
+    <Content Include="assets\**" Watch="false" />
   </ItemGroup>
 
   <ItemGroup>

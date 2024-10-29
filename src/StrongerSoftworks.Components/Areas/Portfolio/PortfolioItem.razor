@@ -1,15 +1,15 @@
 ﻿@using StrongerSoftworks.Components.Common
 
 @code {
-    [Parameter] public string PngUrl { get; set; }
+    [Parameter] public string ImageUrl { get; set; }
     [Parameter] public string Title { get; set; }
     [Parameter] public string Description { get; set; }
     [Parameter] public string DetailsUrl { get; set; }
 }
 
 <div class="portfolio-content h-100">
-    <a href="@PngUrl" data-gallery="portfolio-gallery" class="glightbox">
-        <Picture PngPath="@PngUrl" AltText="@Title" />
+    <a href="@ImageUrl" data-gallery="portfolio-gallery" class="glightbox">
+        <Picture ImageUrl="@ImageUrl" AltText="@Title" />
     </a>
     <div class="portfolio-info">
         <h4><a href="@DetailsUrl" title="More Details">@Title</a></h4>

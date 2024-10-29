@@ -3,7 +3,7 @@
     public class TestimonialModel
     {
         public string Quote { get; set; }
-        public string PngUrl { get; set; }
+        public string ImageUrl { get; set; }
         public string Name { get; set; }
         public string Title { get; set; }
     }

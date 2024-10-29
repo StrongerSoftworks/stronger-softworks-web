@@ -9,25 +9,10 @@
 <section id="@(HeroData.Id ?? "hero")" class="hero section accent-background">
     <div class="container">
         <div class="row gy-4">
-            <div class="@(HeroData.PngUrl != null ? "col-lg-6 order-2 order-lg-1" : "col-lg-12") d-flex flex-column justify-content-center">
-                <h1>@HeroData.Title</h1>
-                @if (HeroData.Subtitle != null)
-                {
-                    <p>@HeroData.Subtitle</p>
-                }
-                @if (HeroData.ButtonText != null)
-                {
-                    <div class="d-flex @(HeroData.PngUrl != null ? "" : "justify-content-center pt-4") ">
-                        <a href="@HeroData.ButtonLink" class="btn-enter">@((MarkupString)(HeroData.ButtonText))</a>
-                    </div>
-                }
+            <div class="col-lg-12 d-flex flex-column flex-wrap align-content-center align-items-center justify-content-center">
+                <h1 class="mb-5">@HeroData.Title</h1>
+                <a href="@HeroData.ButtonLink" class="btn-enter">@((MarkupString)(HeroData.ButtonText))</a>
             </div>
-            @if (HeroData.PngUrl != null)
-            {
-                <div class="col-lg-6 order-1 order-lg-2 hero-img">
-                    <Picture PngPath="@HeroData.PngUrl" AltText="@HeroData.ImageAltText" />
-                </div>
-            }
         </div>
     </div>
 </section>
