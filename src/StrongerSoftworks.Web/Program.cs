@@ -1,6 +1,4 @@
 using AspNetStatic;
-using AspNetStaticContrib.AspNetStatic;
-using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.AspNetCore.StaticFiles;
 using StrongerSoftworks.Web;
 using StrongerSoftworks.Web.Components;
@@ -16,20 +14,64 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents();
 
-Console.WriteLine(builder.Environment.IsDevelopment());
-if (!builder.Environment.IsDevelopment())
+/*if (!builder.Environment.IsDevelopment())
 {
     builder.Services.AddResponseCompression(options =>
     {
         options.Providers.Add<BrotliCompressionProvider>();
         options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
-            [
-                "application/octet-stream",
-                "text/javascript",
-                "text/css"
-            ]);
+        [
+            "application/octet-stream",
+            "text/html",
+            "text/richtext",
+            "text/plain",
+            "text/css",
+            "text/x-script",
+            "text/x-component",
+            "text/x-java-source",
+            "text/x-markdown",
+            "application/javascript",
+            "application/x-javascript",
+            "text/javascript",
+            "text/js",
+            "image/x-icon",
+            "image/vnd.microsoft.icon",
+            "application/x-perl",
+            "application/x-httpd-cgi",
+            "text/xml",
+            "application/xml",
+            "application/rss+xml",
+            "application/vnd.api+json",
+            "application/x-protobuf",
+            "application/json",
+            "multipart/bag",
+            "multipart/mixed",
+            "application/xhtml+xml",
+            "font/ttf",
+            "font/otf",
+            "font/x-woff",
+            "image/svg+xml",
+            "application/vnd.ms-fontobject",
+            "application/ttf",
+            "application/x-ttf",
+            "application/otf",
+            "application/x-otf",
+            "application/truetype",
+            "application/opentype",
+            "application/x-opentype",
+            "application/font-woff",
+            "application/eot",
+            "application/font",
+            "application/font-sfnt",
+            "application/wasm",
+            "application/javascript-binast",
+            "application/manifest+json",
+            "application/ld+json",
+            "application/graphql+json",
+            "application/geo+json",
+        ]);
     });
-}
+}*/
 
 string runMode = Environment.GetEnvironmentVariable("RUN_MODE") ?? "ssr";
 

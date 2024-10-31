@@ -388,7 +388,7 @@ namespace StrongerSoftworks.Web.Components.Pages
                 {
                     // new ContactInfo { Title = "Address", DetailLine1 = "A108 Adam Street", DetailLine2 = "New York, NY 535022", Icon = "bi bi-geo-alt" },
                     new ContactInfo { Title = "Call Us", DetailLine1 = "(519)701-2014", DetailLine2 = "", Icon = "bi bi-telephone" },
-                    new ContactInfo { Title = "Email Us", DetailLine1 = "strongersoftworks@gmail.com", DetailLine2 = "", Icon = "bi bi-envelope" },
+                    new ContactInfo { Title = "Email Us", DetailLine1 = "alex@strongersoftworks.ca", DetailLine2 = "", Icon = "bi bi-envelope" },
                     //new ContactInfo { Title = "Open Hours", DetailLine1 = "Monday - Friday", DetailLine2 = "9:00AM - 05:00PM", Icon = "bi bi-clock" }
                 }
             };

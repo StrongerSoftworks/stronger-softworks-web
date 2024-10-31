@@ -4,7 +4,7 @@
 <section id="@(ContactData.Id ?? "contact")" class="contact section">
     <div class="container section-title">
         <h2>Contact</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <p>Start the Conversation – Let Us Help!</p>
     </div>
 
     <div class="container" >
@@ -26,33 +26,29 @@
             </div>
 
             <div class="col-lg-10">
-                <EditForm Model="ContactFormData" OnValidSubmit="HandleValidSubmit" class="contact-form">
+                <form method="post" action="https://api.charbcloud.com/v1/contact" class="contact-form">
                     <div class="row gy-4">
                         <div class="col-md-6">
-                            <InputText id="name" class="form-control" @bind-Value="ContactFormData.Name" placeholder="Your Name" required />
+                            <input id="name" name="name" type="text" class="form-control" placeholder="Your Name" required />
                         </div>
 
                         <div class="col-md-6">
-                            <InputText id="email" type="email" class="form-control" @bind-Value="ContactFormData.Email" placeholder="Your Email" required />
+                            <input id="email" name="email" type="email" class="form-control" placeholder="Your Email" required />
                         </div>
 
                         <div class="col-12">
-                            <InputText id="subject" class="form-control" @bind-Value="ContactFormData.Subject" placeholder="Subject" required />
-                        </div>
-
-                        <div class="col-12">
-                            <InputTextArea id="message" class="form-control" @bind-Value="ContactFormData.Message" rows="6" placeholder="Message" required />
+                            <textarea id="message" name="message" class="form-control" rows="6" placeholder="Message" required />
                         </div>
 
                         <div class="col-12 text-center">
-                            <div class="loading" hidden="@(IsLoading ? false : true)">Loading</div>
-                            <div class="error-message" hidden="@(IsError ? false : true)">Error sending message.</div>
-                            <div class="sent-message" hidden="@(IsSuccess ? false : true)">Your message has been sent. Thank you!</div>
+                            <div class="loading" hidden>Loading</div>
+                            <div class="error-message" hidden>Error sending message.</div>
+                            <div class="sent-message" hidden>Your message has been sent. Thank you!</div>
 
-                            <button type="submit" disabled="@IsLoading">Send Message</button>
+                            <button type="submit">Send Message</button>
                         </div>
                     </div>
-                </EditForm>
+                </form>
             </div>
         </div>
     </div>
@@ -60,35 +56,4 @@
 
 @code {
     [Parameter] public ContactSectionModel ContactData { get; set; }
-
-    private ContactFormModel ContactFormData = new ContactFormModel();
-
-    // Flags for form status
-    private bool IsLoading = false;
-    private bool IsError = false;
-    private bool IsSuccess = false;
-
-
-    // Method to handle form submission
-    private async Task HandleValidSubmit()
-    {
-        IsLoading = true;
-        IsError = false;
-        IsSuccess = false;
-
-        try
-        {
-            // Simulate email sending
-            await Task.Delay(2000); // Mock email sending delay
-            IsSuccess = true;
-        }
-        catch
-        {
-            IsError = true;
-        }
-        finally
-        {
-            IsLoading = false;
-        }
-    }
 }

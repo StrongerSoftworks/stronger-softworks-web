@@ -41,6 +41,7 @@ module.exports = [
         mode: isDebugMode ? 'development' : 'production',
         entry: {
             app: './assets/js/main.js',
+            validate: './assets/js/validate.js',
         },
         output: {
             path: path.resolve(__dirname, 'wwwroot/bundle/js'),
