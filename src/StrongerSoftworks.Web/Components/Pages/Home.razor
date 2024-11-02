@@ -6,14 +6,18 @@
 
 @{
     var domain = DomainProvider.Domain;
+    
+    // Open Graph
     var graph = OpenGraph.MakeGraph(
         title: "Stronger Softworks - Web Development and SEO", 
         type: "website", 
-        image: domain + "/bundle/img/about-720.png", 
+        image: domain + "/bundle/img/stronger-softworks-logo-480.avif", 
         url: domain, 
-        description: "My Description", 
+        description: "Let Us Help You Grow Your Business", 
         siteName: "Stronger Softworks");
 
+
+    // Structured Data
     var websiteSchema = new WebSite()
     {
         AlternateName = "Stronger Softworks - Web Development and SEO",

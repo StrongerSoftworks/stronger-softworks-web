@@ -63,49 +63,49 @@ namespace StrongerSoftworks.Web.Components.Pages
                     {
                         Title = "Custom Website Design",
                         Description = "We craft custom designs tailored to your brand, ensuring your website stands out and leaves a lasting impression on your target audience.",
-                        IconClass = "bi bi-briefcase",
+                        IconClass = "bi bi-code-slash",
                     },
                     new ServiceItemModel
                     {
                         Title = "Responsive Design",
                         Description = "Our websites are fully responsive, meaning they work seamlessly across all devices, from desktops to smartphones, delivering an optimal experience no matter how your customers view your site.",
-                        IconClass = "bi bi-card-checklist",
+                        IconClass = "bi bi-phone",
                     },
                     new ServiceItemModel
                     {
                         Title = "User-Friendly Interfaces",
                         Description = "We prioritize usability by developing intuitive, easy-to-navigate websites that enhance user experience and encourage engagement.",
-                        IconClass = "bi bi-bar-chart",
+                        IconClass = "bi bi-card-checklist",
                     },
-                    new ServiceItemModel
-                    {
-                        Title = "E-Commerce Solutions",
-                        Description = "For businesses looking to sell products or services online, we provide e-commerce platforms with secure payment processing, inventory management, and shipping integration to meet your online sales needs.",
-                        IconClass = "bi bi-binoculars",
-                    },
-                    new ServiceItemModel
-                    {
-                        Title = "Content Management Systems (CMS)",
-                        Description = "We empower businesses by implementing easy-to-use CMS platforms like WordPress or Shopify, allowing you to update content effortlessly without needing technical expertise.",
-                        IconClass = "bi bi-brightness-high",
-                    },
+                    // new ServiceItemModel
+                    // {
+                    //     Title = "E-Commerce Solutions",
+                    //     Description = "For businesses looking to sell products or services online, we provide e-commerce platforms with secure payment processing, inventory management, and shipping integration to meet your online sales needs.",
+                    //     IconClass = "bi bi-binoculars",
+                    // },
+                    // new ServiceItemModel
+                    // {
+                    //     Title = "Content Management Systems (CMS)",
+                    //     Description = "We empower businesses by implementing easy-to-use CMS platforms like WordPress or Shopify, allowing you to update content effortlessly without needing technical expertise.",
+                    //     IconClass = "bi bi-brightness-high",
+                    // },
                     new ServiceItemModel
                     {
                         Title = "Website Security",
                         Description = "Protecting your site and user data is a top priority. We integrate SSL certificates, security plugins, and monitoring systems to ensure your site is secure against potential threats.",
-                        IconClass = "bi bi-calendar4-week",
+                        IconClass = "bi bi-lock",
                     },
                     new ServiceItemModel
                     {
                         Title = "Scalability",
                         Description = "We build websites that are designed to grow with your business, making it easy to add new features or handle increased traffic as your company expands.",
-                        IconClass = "bi bi-calendar4-week",
+                        IconClass = "bi bi-graph-up-arrow",
                     },
                     new ServiceItemModel
                     {
                         Title = "Ongoing Maintenance and Support",
-                        Description = "Our services don’t stop at launch. We provide ongoing maintenance, updates, and technical support to keep your website running smoothly and securely.",
-                        IconClass = "bi bi-calendar4-week",
+                        Description = "Our services don't stop at launch. We provide ongoing maintenance, updates, and technical support to keep your website running smoothly and securely.",
+                        IconClass = "bi bi-hammer",
                     }
                 }
             };
@@ -123,49 +123,49 @@ namespace StrongerSoftworks.Web.Components.Pages
                     {
                         Title = "Keyword Research",
                         Description = "We identify the keywords that matter most to your business, targeting what your potential customers are searching for to improve your site's search engine rankings.",
-                        IconClass = "bi bi-archive"
+                        IconClass = "bi bi-search"
                     },
                     new FeatureItemModel
                     {
                         Title = "On-Page SEO Optimization",
                         Description = "By optimizing titles, meta descriptions, and content, we ensure your site is fully optimized for search engines like Google, helping you rank higher and attract more traffic.",
-                        IconClass = "bi bi-basket"
+                        IconClass = "bi bi-body-text"
                     },
-                    new FeatureItemModel
-                    {
-                        Title = "Content Creation",
-                        Description = "We produce high-quality, SEO-optimized content, including blog posts, landing pages, and product descriptions, that attract visitors and establish your authority in your industry.",
-                        IconClass = "bi bi-broadcast"
-                    },
+                    // new FeatureItemModel
+                    // {
+                    //     Title = "Content Creation",
+                    //     Description = "We produce high-quality, SEO-optimized content, including blog posts, landing pages, and product descriptions, that attract visitors and establish your authority in your industry.",
+                    //     IconClass = "bi bi-camera-reels"
+                    // },
                     new FeatureItemModel
                     {
                         Title = "Local SEO",
                         Description = "We help local businesses by optimizing your site for location-specific searches, ensuring your business appears in relevant local search results and maps.",
-                        IconClass = "bi bi-camera-reels"
+                        IconClass = "bi bi-pin-map"
                     },
                     new FeatureItemModel
                     {
                         Title = "Mobile Optimization",
                         Description = "With mobile devices being a primary way people browse, we ensure your website is fast, functional, and fully optimized for mobile to keep you ahead in search rankings.",
-                        IconClass = "bi bi-camera-reels"
+                        IconClass = "bi bi-phone"
                     },
                     new FeatureItemModel
                     {
                         Title = "Technical SEO",
-                        Description = "We improve your website’s technical aspects, from site speed and crawlability to indexing and site architecture, to ensure optimal performance in search engines.",
-                        IconClass = "bi bi-camera-reels"
+                        Description = "We improve your website's technical aspects, from site speed and crawlability to indexing and site architecture, to ensure optimal performance in search engines.",
+                        IconClass = "bi bi-code-slash"
                     },
                     new FeatureItemModel
                     {
                         Title = "Analytics and Reporting",
                         Description = "We provide detailed reports on website traffic, keyword rankings, and user behavior, helping you make data-driven decisions to grow your online presence.",
-                        IconClass = "bi bi-camera-reels"
+                        IconClass = "bi bi-graph-up"
                     },
                     new FeatureItemModel
                     {
                         Title = "Link Building",
                         Description = "Our team develops strategies to acquire high-quality backlinks from reputable sites, boosting your site’s credibility and improving search rankings.",
-                        IconClass = "bi bi-camera-reels"
+                        IconClass = "bi bi-link-45deg"
                     }
                 }
             };
