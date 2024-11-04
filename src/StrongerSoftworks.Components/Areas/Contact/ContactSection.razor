@@ -4,29 +4,23 @@
 <section id="@(ContactData.Id ?? "contact")" class="contact section">
     <div class="container section-title">
         <h2>Contact</h2>
-        <p>Start the Conversation – Let Us Help!</p>
+        <p>Start the Conversation - Let Us Help!</p>
     </div>
 
     <div class="container" >
         <div class="row gy-4 justify-content-center">
+
             <div class="col-lg-10">
-                <div class="row gy-4">
-                    @for (int i = 0; i < ContactData.ContactInfos.Count(); i++)
-                    {
-                        <div class="col-md-6">
-                            <div class="info-item" data-aos="fade" data-aos-delay="@(100+(i*100))">
-                                <i class="@ContactData.ContactInfos[i].Icon"></i>
-                                <h3>@ContactData.ContactInfos[i].Title</h3>
-                                <p>@ContactData.ContactInfos[i].DetailLine1</p>
-                                <p>@ContactData.ContactInfos[i].DetailLine2</p>
-                            </div>
-                        </div>
-                    }
+                <div class="info-item"><i class="bi bi-telephone"></i>
+                    <h3>Text or Call Us</h3>
+                    <p><a href="sms:(519)701-2014">(519)701-2014</a></p>
                 </div>
             </div>
 
             <div class="col-lg-10">
-                <form method="post" action="https://api.charbcloud.com/v1/contact" class="contact-form">
+                <div class="info-item"><i class="bi bi-envelope"></i>
+                    <h3>Send Us a Message</h3>
+                     <form id="contact-form" method="post" action="https://api.charbcloud.com/v1/contact" class="contact-form">
                     <div class="row gy-4">
                         <div class="col-md-6">
                             <input id="name" name="name" type="text" class="form-control" placeholder="Your Name" required />
@@ -49,6 +43,8 @@
                         </div>
                     </div>
                 </form>
+                </div>
+               
             </div>
         </div>
     </div>

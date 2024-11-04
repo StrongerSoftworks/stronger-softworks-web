@@ -31,13 +31,13 @@ namespace StrongerSoftworks.Web.Components.Pages
                 Paragraph = "",
                 ListItems = new List<string>
                 {
-                    "In today's digital age, having a strong online presence is crucial for small and medium businesses (SMBs) to thrive. At our web development business, we specialize in creating custom websites that not only reflect your brand's unique identity but also drive business growth. Whether you're looking to attract more customers, sell products online, or improve your customer experience, we provide tailored solutions designed to meet your goals.",
-                    "We understand the specific challenges that SMBs face, which is why we focus on building websites that are affordable, easy to manage, and scalable. Our responsive designs ensure that your site looks and works perfectly across all devices—whether it's a desktop, tablet, or mobile phone. We also integrate features like content management systems (CMS) that allow you to easily update your website, keeping it fresh and relevant without the need for technical expertise.",
+                    "In today's digital age, having a strong online presence is crucial for businesses to thrive. At Stronger Softworks, we specialize in creating custom websites that not only reflect your brand's unique identity but also drive business growth. Whether you're looking to attract more customers or improve your customer experience, we provide tailored solutions designed to meet your goals.",
+                    "We understand the specific challenges that businesses face, which is why we focus on building websites that are affordable, easy to manage, and scalable. Our responsive designs ensure that your site looks and works perfectly across all devices—whether it's a desktop, tablet, or mobile phone. We also integrate features like content management systems (CMS) that allow you to easily update your website, keeping it fresh and relevant without the need for technical expertise.",
                     "Beyond web design, we offer search engine optimization (SEO) services to help your business get noticed. We optimize your site with the right keywords, improve page load times, and ensure a user-friendly experience—all to help you rank higher on search engines like Google. Our local SEO strategies will also ensure that customers in your area can find you quickly and easily. Let us help you grow your business with a website that not only looks great but also drives results.",
                 },
                 // ButtonText = "Read More",
                 // ButtonLink = "#",
-                ImageUrl = "/bundle/img/about.png",
+                ImageUrl = "/bundle/img/stronger-softworks.webp",
                 ImageAltText = "About Image"
             };
 
@@ -92,7 +92,7 @@ namespace StrongerSoftworks.Web.Components.Pages
                     new ServiceItemModel
                     {
                         Title = "Website Security",
-                        Description = "Protecting your site and user data is a top priority. We integrate SSL certificates, security plugins, and monitoring systems to ensure your site is secure against potential threats.",
+                        Description = "Protecting your site and user data is a top priority. We integrate SSL certificates, security scans, and monitoring systems to ensure your site is secure against potential threats.",
                         IconClass = "bi bi-lock",
                     },
                     new ServiceItemModel
@@ -116,7 +116,7 @@ namespace StrongerSoftworks.Web.Components.Pages
                 SectionTitle = "SEO Services to Boost Your Business",
                 SectionDescription = "In addition to web development, we offer a range of search engine optimization (SEO) services to help your business get noticed and drive traffic.",
                 LowerDescription = "By offering these comprehensive web development and SEO services, we help small and medium businesses not only create a strong online presence but also turn that presence into growth, engagement, and success.",
-                ImageUrl = "/bundle/img/features.png",
+                ImageUrl = "/bundle/img/desk.png",
                 FeatureItems = new List<FeatureItemModel>
                 {
                     new FeatureItemModel
@@ -164,7 +164,7 @@ namespace StrongerSoftworks.Web.Components.Pages
                     new FeatureItemModel
                     {
                         Title = "Link Building",
-                        Description = "Our team develops strategies to acquire high-quality backlinks from reputable sites, boosting your site’s credibility and improving search rankings.",
+                        Description = "Our team develops strategies to acquire high-quality backlinks from reputable sites, boosting your site's credibility and improving search rankings.",
                         IconClass = "bi bi-link-45deg"
                     }
                 }
@@ -248,117 +248,117 @@ namespace StrongerSoftworks.Web.Components.Pages
             //     }
             // };
 
-            PricingData = new PricingSectionModel
-            {
-                SectionTitle = "Pricing",
-                SectionDescription = "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit",
-                PricingItems = new List<PricingItemModel>
-                {
-                    new PricingItemModel
-                    {
-                        PlanName = "Business Starter",
-                        Price = 625,
-                        Frequency = "",
-                        Features = new List<string> {
-                            "Single page website",
-                            "Contact form",
-                            "Map",
-                            "Google Analytics integration (GTM, GA4)",
-                            "$15/month hosting and maintenance fees",
-                        },
-                        ExcludedFeatures = new List<string>()
-                        {
-                            "Content Management System with Strapi"
-                        },
-                        IsFeatured = false
-                    },
-                    new PricingItemModel
-                    {
-                        PlanName = "Business Starter With CMS",
-                        Price = 1000,
-                        Frequency = "",
-                        Features = new List<string> {
-                            "Single page website with CMS",
-                            "Contact form",
-                            "Map",
-                            "Google Analytics integration (GTM, GA4)",
-                            "Content Management System with Strapi",
-                            "50gb storage",
-                            "Weekly backups",
-                            "$30/month hosting and maintenance fees",
-                        },
-                        Addons = new List<string>()
-                        {
-                            "Each additional page +$200",
-                            "Appointment booking +$500",
-                            "Blog +$1000",
-                        },
-                        IsFeatured = true
-                    },
-                    new PricingItemModel
-                    {
-                        PlanName = "Business Starter With CMS",
-                        Price = 125,
-                        Frequency = "/ month",
-                        Features = new List<string> {
-                            "Single page website with CMS",
-                            "Contact form",
-                            "Map",
-                            "Google Analytics integration (GTM, GA4)",
-                            "Content Management System with Strapi",
-                            "50gb storage",
-                            "Weekly backups",
-                            "$0 up front for base package, 12 month obligation, add-ons paid on delivery",
-                        },
-                        Addons = new List<string>()
-                        {
-                            "Each additional page +$200",
-                            "Appointment booking +$500",
-                            "Blog +$1000",
-                        },
-                        IsFeatured = false
-                    },
-                }
-            };
+            // PricingData = new PricingSectionModel
+            // {
+            //     SectionTitle = "Pricing",
+            //     SectionDescription = "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit",
+            //     PricingItems = new List<PricingItemModel>
+            //     {
+            //         new PricingItemModel
+            //         {
+            //             PlanName = "Business Starter",
+            //             Price = 625,
+            //             Frequency = "",
+            //             Features = new List<string> {
+            //                 "Single page website",
+            //                 "Contact form",
+            //                 "Map",
+            //                 "Google Analytics integration (GTM, GA4)",
+            //                 "$15/month hosting and maintenance fees",
+            //             },
+            //             ExcludedFeatures = new List<string>()
+            //             {
+            //                 "Content Management System with Strapi"
+            //             },
+            //             IsFeatured = false
+            //         },
+            //         new PricingItemModel
+            //         {
+            //             PlanName = "Business Starter With CMS",
+            //             Price = 1000,
+            //             Frequency = "",
+            //             Features = new List<string> {
+            //                 "Single page website with CMS",
+            //                 "Contact form",
+            //                 "Map",
+            //                 "Google Analytics integration (GTM, GA4)",
+            //                 "Content Management System with Strapi",
+            //                 "50gb storage",
+            //                 "Weekly backups",
+            //                 "$30/month hosting and maintenance fees",
+            //             },
+            //             Addons = new List<string>()
+            //             {
+            //                 "Each additional page +$200",
+            //                 "Appointment booking +$500",
+            //                 "Blog +$1000",
+            //             },
+            //             IsFeatured = true
+            //         },
+            //         new PricingItemModel
+            //         {
+            //             PlanName = "Business Starter With CMS",
+            //             Price = 125,
+            //             Frequency = "/ month",
+            //             Features = new List<string> {
+            //                 "Single page website with CMS",
+            //                 "Contact form",
+            //                 "Map",
+            //                 "Google Analytics integration (GTM, GA4)",
+            //                 "Content Management System with Strapi",
+            //                 "50gb storage",
+            //                 "Weekly backups",
+            //                 "$0 up front for base package, 12 month obligation, add-ons paid on delivery",
+            //             },
+            //             Addons = new List<string>()
+            //             {
+            //                 "Each additional page +$200",
+            //                 "Appointment booking +$500",
+            //                 "Blog +$1000",
+            //             },
+            //             IsFeatured = false
+            //         },
+            //     }
+            // };
 
-            FaqData = new FaqSectionModel
-            {
-                SectionTitle = "Frequently Asked Questions",
-                SectionDescription = "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit",
-                FaqItems = new List<FaqItemModel>
-                {
-                    new FaqItemModel
-                    {
-                        Question = "Non consectetur a erat nam at lectus urna duis?",
-                        Answer = "Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida."
-                    },
-                    new FaqItemModel
-                    {
-                        Question = "Feugiat scelerisque varius morbi enim nunc faucibus?",
-                        Answer = "Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices."
-                    },
-                    new FaqItemModel
-                    {
-                        Question = "Dolor sit amet consectetur adipiscing elit pellentesque?",
-                        Answer = "Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim."
-                    },
-                    new FaqItemModel
-                    {
-                        Question = "Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?",
-                        Answer = "Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices."
-                    },
-                    new FaqItemModel
-                    {
-                        Question = "Tempus quam pellentesque nec nam aliquam sem et tortor?",
-                        Answer = "Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in."
-                    },
-                    new FaqItemModel
-                    {
-                        Question = "Perspiciatis quod quo quos nulla quo illum ullam?",
-                        Answer = "Enim ea facilis quaerat voluptas quidem et dolorem. Quis et consequatur non sed in suscipit sequi."
-                    }
-                }
-            };
+            // FaqData = new FaqSectionModel
+            // {
+            //     SectionTitle = "Frequently Asked Questions",
+            //     SectionDescription = "Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit",
+            //     FaqItems = new List<FaqItemModel>
+            //     {
+            //         new FaqItemModel
+            //         {
+            //             Question = "Non consectetur a erat nam at lectus urna duis?",
+            //             Answer = "Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida."
+            //         },
+            //         new FaqItemModel
+            //         {
+            //             Question = "Feugiat scelerisque varius morbi enim nunc faucibus?",
+            //             Answer = "Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices."
+            //         },
+            //         new FaqItemModel
+            //         {
+            //             Question = "Dolor sit amet consectetur adipiscing elit pellentesque?",
+            //             Answer = "Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim."
+            //         },
+            //         new FaqItemModel
+            //         {
+            //             Question = "Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?",
+            //             Answer = "Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices."
+            //         },
+            //         new FaqItemModel
+            //         {
+            //             Question = "Tempus quam pellentesque nec nam aliquam sem et tortor?",
+            //             Answer = "Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in."
+            //         },
+            //         new FaqItemModel
+            //         {
+            //             Question = "Perspiciatis quod quo quos nulla quo illum ullam?",
+            //             Answer = "Enim ea facilis quaerat voluptas quidem et dolorem. Quis et consequatur non sed in suscipit sequi."
+            //         }
+            //     }
+            // };
 
             TeamData = new TeamSectionModel
             {
@@ -368,7 +368,7 @@ namespace StrongerSoftworks.Web.Components.Pages
                     {
                         Name = "Alex Leistra",
                         Position = "Software Developer",
-                        Description = "Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa quae aut. Ipsum exercitationem iure minima enim corporis et voluptate.",
+                        Description = "As a dedicated web developer, I specialize in creating innovative, user-friendly websites tailored to your unique vision. With a passion for design and a commitment to excellence, I ensure that every project is not only visually captivating but also optimized for performance and functionality. My mission is to deliver high-quality digital experiences that elevate your brand and engage your audience. Let's work together to bring your ideas to life!",
                         ImageUrl = "/bundle/img/team/alex.png",
                         Delay = 100,
                         SocialLinks = new List<SocialLink>
@@ -387,7 +387,7 @@ namespace StrongerSoftworks.Web.Components.Pages
                 ContactInfos = new List<ContactInfo>
                 {
                     // new ContactInfo { Title = "Address", DetailLine1 = "A108 Adam Street", DetailLine2 = "New York, NY 535022", Icon = "bi bi-geo-alt" },
-                    new ContactInfo { Title = "Call Us", DetailLine1 = "(519)701-2014", DetailLine2 = "", Icon = "bi bi-telephone" },
+                    new ContactInfo { Title = "Text or Call Us", DetailLine1 = "(519)701-2014", DetailLine2 = "", Icon = "bi bi-telephone" },
                     new ContactInfo { Title = "Email Us", DetailLine1 = "alex@strongersoftworks.ca", DetailLine2 = "", Icon = "bi bi-envelope" },
                     //new ContactInfo { Title = "Open Hours", DetailLine1 = "Monday - Friday", DetailLine2 = "9:00AM - 05:00PM", Icon = "bi bi-clock" }
                 }

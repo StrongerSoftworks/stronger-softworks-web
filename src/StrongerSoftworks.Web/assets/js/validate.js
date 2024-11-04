@@ -28,7 +28,7 @@
                         try {
                             grecaptcha.execute(recaptcha, { action: 'form_submit' })
                                 .then(token => {
-                                    //formData.set('recaptcha-response', token);
+                                    formData.set('recaptcha-response', token);
                                     form_submit(thisForm, action, formData);
                                 })
                         } catch (error) {
