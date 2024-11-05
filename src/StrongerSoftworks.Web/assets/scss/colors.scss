@@ -1,32 +1,72 @@
-﻿:root {
-    --background-color: #ffffff;
-    /* Background color for the entire website, including individual sections */
-    --default-color: #444444;
-    /* Default color used for the majority of the text content across the entire website */
-    --heading-color: #2c4964;
-    /* Color for headings, subheadings and title throughout the website */
-    --accent-color: #5846f9;
-    /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-    --surface-color: #ffffff;
-    /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-    --contrast-color: #ffffff;
-    /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+﻿$white: #ffffff;
+
+$light: #d8efee;
+$dark: #14141f;
+$primary: #4e3297;
+$secondary: #5d5896;
+$info: #3f244a;
+$accent1: #36e2c2;
+$accent2: #007e73;
+$accent3: #a6dfd8;
+$success: #00a965;
+$warning: #e1cd00;
+$danger: #f12300;
+
+$colors: () !default;
+$colors: map-merge((
+            /* Background color for the entire website, including individual sections */
+            "background-color": $white,
+
+            /* Default color used for the majority of the text content across the entire website */
+            "default-color": $dark,
+
+            /* Color for headings, subheadings and title throughout the website */
+            "heading-color": $primary,
+
+            /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+            "accent-color": $accent2,
+
+            /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+            "surface-color": $white,
+
+            /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+            "contrast-color": $dark,
+        ), $colors);
+
+:root {
+    @each $color, $value in $colors {
+        --#{$color}: #{$value};
+    }
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+$nav-colors: (
+    ) !default;
+$nav-colors: map-merge((
+            /* The default color of the main navmenu links */
+            "nav-color": rgba(255, 255, 255, 0.8),
+
+            /* Applied to main navmenu links when they are hovered over or active */
+            "nav-hover-color": $white,
+
+            /* Used as the background color for mobile navigation menu */
+            "nav-mobile-background-color": $white,
+
+            /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+            "nav-dropdown-background-color": $white,
+
+            /* Used for navigation links of the dropdown items in the navigation menu. */
+            "nav-dropdown-color": #444444,
+
+            /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+            "nav-dropdown-hover-color": #5846f9,
+        ), $nav-colors
+);
+
 :root {
-    --nav-color: rgba(255, 255, 255, 0.8);
-    /* The default color of the main navmenu links */
-    --nav-hover-color: #ffffff;
-    /* Applied to main navmenu links when they are hovered over or active */
-    --nav-mobile-background-color: #ffffff;
-    /* Used as the background color for mobile navigation menu */
-    --nav-dropdown-background-color: #ffffff;
-    /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-    --nav-dropdown-color: #444444;
-    /* Used for navigation links of the dropdown items in the navigation menu. */
-    --nav-dropdown-hover-color: #5846f9;
-    /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+    @each $color, $value in $nav-colors {
+        --#{$color}: #{$value};
+    }
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -44,13 +84,23 @@
     --contrast-color: #ffffff;
 }
 
+
+$accent-colors: () !default;
+$accent-colors: map-merge((
+            "background-color": $secondary,
+            "default-color": $white,
+            "heading-color": $white,
+            "accent-color": $accent3,
+            "surface-color": $primary,
+            "contrast-color": $white,
+        ), $accent-colors);
+
+
+
 .accent-background {
-    --background-color: #5846f9;
-    --default-color: #ffffff;
-    --heading-color: #ffffff;
-    --accent-color: #ffffff;
-    --surface-color: #7c25ba;
-    --contrast-color: #ffffff;
+    @each $color, $value in $accent-colors {
+        --#{$color}: #{$value};
+    }
 }
 
 $white: #ffffff;

@@ -27,7 +27,7 @@
 }
 
 .hero .btn-enter {
-    color: var(--contrast-color);
+    color: $accent1;
     font-family: var(--heading-font);
     font-weight: 500;
     font-size: 16px;
@@ -36,12 +36,12 @@
     padding: 10px 36px;
     border-radius: 4px;
     transition: 0.5s;
-    border: 2px solid var(--contrast-color);
+    border: 2px solid $accent1;
 }
 
 .hero .btn-enter:hover {
-    color: var(--accent-color);
-    background: var(--contrast-color);
+    color: $dark;
+    background: $accent1;
 }
 
 .hero .btn-watch-video {
@@ -109,28 +109,69 @@
 }
 
 .hero {
-    background: black;
+    background: $dark;
 
     .btn-enter:hover {
         color: black;
-        background: var(--contrast-color);
+        background: $accent1;
+    }
+
+    h1 {
+        color: $accent1;
+        font-family: MorePerfectDOSVGA;
+        font-weight: 500;
+        word-spacing: -24px;
+        word-spacing: -0.5em;
+        white-space: nowrap;
+
+        &:before {
+            content: 'C:\\>';
+        }
+
+        &:after {
+            content: '_';
+            animation: blinker 1s step-start infinite;
+        }
     }
 }
 
-#hero h1 {
-    font-family: MorePerfectDOSVGA;
-    font-weight: 500;
-    word-spacing: -24px;
-    word-spacing: -0.5em;
-    white-space: nowrap;
+.error-hero {
+    background: $dark;
 
-    &:before {
-        content: 'C:\\>';
+    .btn-enter{
+        max-width: 140px;
+
+        &:hover {
+            color: black;
+            background: $accent1;
+        }
     }
 
-    &:after {
-        content: '_';
-        animation: blinker 1s step-start infinite;
+    h1 {
+        font-size: 2rem;
+        word-spacing: normal;
+
+        &:after {
+            content: '';
+            animation: none;
+        }
+    }
+
+    h2 {
+        font-size: 2rem;
+        color: $accent1;
+        font-family: MorePerfectDOSVGA;
+        font-weight: 500;
+        white-space: nowrap;
+
+        &:before {
+            content: 'C:\\>';
+        }
+
+        &:after {
+            content: '_';
+            animation: blinker 1s step-start infinite;
+        }
     }
 }
 

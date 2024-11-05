@@ -2,8 +2,12 @@
 <picture>
     @foreach (var size in Sizes)
     {
+        var srcset = ImageUrl.Replace(extension, "-" + size.Width + ".avif 1x, ");
+        srcset += ImageUrl.Replace(extension, "-" + (size.Width * 1.5) + ".avif 1.5x, ");
+        srcset += ImageUrl.Replace(extension, "-" + (size.Width * 2) + ".avif 2x ");
+
         <source
-            srcset="@(ImageUrl.Replace(extension, "-" + size.Width + ".avif"))"
+            srcset="@srcset"
             type="image/avif"
             media="@("(max-width: " + size.Breakpoint + "px)")"
             width="@size.Width" />

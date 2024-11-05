@@ -27,12 +27,12 @@
                             <div class="social">
                                 @foreach (var social in member.SocialLinks)
                                 {
-                                    <a href="@social.Url"><i class="@social.IconClass"></i></a>
+                                    <a href="@social.Url" aria-label="Link to social media account"><i class="@social.IconClass"></i></a>
                                 }
                             </div>
                         </div>
                         <div class="member-info">
-                            <h4>@member.Name</h4>
+                            <h3>@member.Name</h3>
                             <span>@member.Position</span>
                             <p>@member.Description</p>
                         </div>

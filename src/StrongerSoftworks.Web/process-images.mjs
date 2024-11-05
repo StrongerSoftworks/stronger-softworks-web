@@ -60,7 +60,7 @@ function processImagesInDir(dir) {
                         console.error(err);
                     } else {
                         const resize = size => sharp(`${newDir}/${newFile}.avif`)
-                            .resize(size, size, { fit: 'inside' })
+                            .resize(size, null, { fit: 'inside' })
                             .toFile(`${newDir}/${newFile}-${size}.avif`);
 
                         Promise

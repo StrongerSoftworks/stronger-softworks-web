@@ -1,5 +1,8 @@
 using AspNetStatic;
 using Microsoft.AspNetCore.StaticFiles;
+using Sidio.Sitemap.AspNetCore;
+using Sidio.Sitemap.Blazor;
+using Sidio.Sitemap.Core.Services;
 using StrongerSoftworks.Web;
 using StrongerSoftworks.Web.Components;
 using StrongerSoftworks.Web.Helpers;
@@ -13,6 +16,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents();
+
+builder.Services
+    .AddHttpContextAccessor()
+    .AddDefaultSitemapServices<HttpContextBaseUrlProvider>();
 
 /*if (!builder.Environment.IsDevelopment())
 {
@@ -111,6 +118,7 @@ app.UseStaticFiles(new StaticFileOptions
 });
 app.UseAntiforgery();
 
+app.UseSitemap();
 app.MapRazorComponents<App>();
 
 if (runMode == RUN_MODE_SSG) {
