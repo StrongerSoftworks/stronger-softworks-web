@@ -49,16 +49,8 @@ jobs:
       working-directory: ./src/${{ inputs.web_project_name }}
       run: npm run build
     
-    - name: Setup dotnet
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '8.x'
-        cache: true
-    - name: Install dotnet dependencies
-      working-directory: ./src
-      run: dotnet restore
-    - name: Build
-      working-directory: ./src
+    - name: Build dotnet
+      working-directory: ./src/${{ inputs.web_project_name }}
       run: dotnet build --configuration Release
     # - name: Test
     #   working-directory: ./src
