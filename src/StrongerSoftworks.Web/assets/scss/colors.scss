@@ -21,16 +21,16 @@ $colors: map-merge((
             "default-color": $dark,
 
             /* Color for headings, subheadings and title throughout the website */
-            "heading-color": $primary,
+            "heading-color": $info,
 
             /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-            "accent-color": $accent2,
+            "accent-color": $primary,
 
             /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
             "surface-color": $white,
 
             /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
-            "contrast-color": $dark,
+            "contrast-color": $accent1,
         ), $colors);
 
 :root {

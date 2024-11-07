@@ -6,12 +6,12 @@
 
 <section id="@(TestimonialsData.Id ?? "testimonials")" class="testimonials section light-background">
     <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
+    <div class="container section-title">
         <h2>@TestimonialsData.SectionTitle</h2>
         <p>@TestimonialsData.SectionDescription</p>
     </div><!-- End Section Title -->
 
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="container">
         <div class="swiper init-swiper" data-speed="600" data-delay="5000">
             <div class="swiper-wrapper">
                 @foreach (var testimonial in TestimonialsData.Testimonials)

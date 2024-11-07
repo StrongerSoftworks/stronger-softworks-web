@@ -6,7 +6,7 @@
 
 <section id="@(PricingData.Id ?? "pricing")" class="pricing section">
     <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
+    <div class="container section-title">
         <h2>@PricingData.SectionTitle</h2>
         <p>@PricingData.SectionDescription</p>
     </div><!-- End Section Title -->
@@ -15,7 +15,7 @@
         <div class="row gy-4">
             @foreach (var item in PricingData.PricingItems)
             {
-                <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="@(100 * PricingData.PricingItems.IndexOf(item))">
+                <div class="col-lg-4">
                     <div class="pricing-item @(item.IsFeatured ? "featured" : "")">
                         <h3>@item.PlanName</h3>
                         <h4><sup>$</sup>@item.Price<span>@item.Frequency</span></h4>

@@ -49,4 +49,12 @@
 			}
 		}
 	}
+
+	@media (min-width: 576px) {
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
 }

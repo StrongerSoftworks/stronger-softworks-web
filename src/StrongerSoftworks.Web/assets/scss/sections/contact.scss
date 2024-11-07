@@ -87,15 +87,15 @@
 		}
 
 		button[type=submit] {
-			background: $accent3;
-			color: $contrast-color;
+			background: $primary;
+			color: $white;
 			border: 0;
 			padding: 10px 30px;
 			transition: 0.4s;
 			border-radius: 4px;
 
 			&:hover {
-				background: color-mix(in srgb, var(--accent-color), transparent 20%);
+				color: var(--contrast-color);
 			}
 		}
 

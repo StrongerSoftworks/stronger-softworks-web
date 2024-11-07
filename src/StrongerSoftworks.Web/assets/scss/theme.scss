@@ -80,13 +80,17 @@ h6 a {
 
 .scroll-top i {
     font-size: 24px;
-    color: var(--contrast-color);
+    color: $white;
     line-height: 0;
+
+    &:hover{
+        color: var(--contrast-color);
+    }
 }
 
 .scroll-top:hover {
-    background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-    color: var(--contrast-color);
+    background-color: var(--accent-color);
+    
 }
 
 .scroll-top.active {

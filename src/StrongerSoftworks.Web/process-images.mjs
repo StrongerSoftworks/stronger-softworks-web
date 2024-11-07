@@ -10,6 +10,16 @@ function processImagesInDir(dir) {
         const data = fs.readFileSync(`${dir}/image-settings.json`);
         dirSizes = JSON.parse(data);
     }
+
+    let responsiveSizes = [];
+    while(dirSizes.length) {
+        const size = dirSizes.pop()
+        responsiveSizes.push(size);
+        responsiveSizes.push(size*1.5);
+        responsiveSizes.push(size*2);
+    }
+    dirSizes = responsiveSizes;
+
     const fileList = fs.readdirSync(dir);
     for (const file of fileList) {
         const name = `${dir}/${file}`;

@@ -5,7 +5,6 @@
     [Parameter] public AboutSectionModel AboutData { get; set; }
 
     private PhotoSize[] aboutImageSizes = [
-        new PhotoSize() { Breakpoint = 576, Width = 240 },
         new PhotoSize() { Breakpoint = 992, Width = 480 },
         new PhotoSize() { Breakpoint = 1200, Width = 360 },
     ];
@@ -14,12 +13,7 @@
 <section id="@(AboutData.Id ?? "about")" class="about section">
     <div class="container">
         <div class="row gy-4">
-            <div class="col-lg-6 order-1 order-lg-2 d-flex flex-column flex-lg-row align-items-center">
-                <Picture ImageUrl="@AboutData.ImageUrl" AltText="@AboutData.ImageAltText" Width="480"
-                    Sizes="aboutImageSizes" />
-            </div>
-
-            <div class="col-lg-6 order-2 order-lg-1 content">
+            <div class="col-lg-6 order-1 order-lg-1 content">
                 <h2>@AboutData.Header</h2>
                 <p class="fst-italic">@AboutData.Paragraph</p>
                 <ul>
@@ -35,6 +29,11 @@
                         <i class="bi bi-arrow-right"></i>
                     </a>
                 }
+            </div>
+
+            <div class="col-lg-6 order-2 order-lg-2 d-flex flex-column flex-lg-row align-items-center">
+                <Picture ImageUrl="@AboutData.ImageUrl" AltText="@AboutData.ImageAltText" Width="480"
+                    Sizes="aboutImageSizes" />
             </div>
         </div>
     </div>
