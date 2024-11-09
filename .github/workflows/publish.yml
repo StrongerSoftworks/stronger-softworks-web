@@ -1,23 +1,6 @@
 name: 'Dotnet Static To S3'
 
-on:
-  workflow_dispatch:
-    inputs:
-      web_project_name:
-        required: true
-        type: string
-      region:
-        required: true
-        type: string
-      role:
-        required: true
-        type: string
-      bucket:
-        required: true
-        type: string
-      distribution_id:
-        required: true
-        type: string
+on: workflow_dispatch
 
 permissions:
   id-token: write
@@ -43,34 +26,34 @@ jobs:
       with:
         node-version: 20.x
     - name: Install npm Dependencies
-      working-directory: ./src/${{ inputs.web_project_name }}
+      working-directory: ./src/${{ vars.WEB_PROJECT_NAME }}
       run: npm install
     - name: Build application
-      working-directory: ./src/${{ inputs.web_project_name }}
+      working-directory: ./src/${{ vars.WEB_PROJECT_NAME }}
       run: npm run build
     
     - name: Build dotnet
-      working-directory: ./src/${{ inputs.web_project_name }}
+      working-directory: ./src/${{ vars.WEB_PROJECT_NAME }}
       run: dotnet build --configuration Release
     # - name: Test
     #   working-directory: ./src
     #   run: dotnet test
     - name: Build Static
-      working-directory: ./src/${{ inputs.web_project_name }}
+      working-directory: ./src/${{ vars.WEB_PROJECT_NAME }}
       run: dotnet run --launch-profile ssg
 
     - name: Configure aws credentials
       if: github.ref == 'refs/heads/main'
       uses: aws-actions/configure-aws-credentials@v4
       with:
-        aws-region: ${{inputs.region}}
-        role-to-assume: ${{inputs.role}}
+        aws-region: ${{vars.REGION}}
+        role-to-assume: ${{vars.ROLE}}
 
     - name: Deploy to S3
       if: github.ref == 'refs/heads/main'
-      run: aws s3 sync ./out s3://${{ inputs.bucket }}
+      run: aws s3 sync ./out s3://${{ vars.BUCKET }}
 
     - name: Invalidate CloudFront cache
       if: github.ref == 'refs/heads/main'
       run: |
-        aws cloudfront create-invalidation --distribution-id ${{inputs.distribution_id}} --paths "/*"
+        aws cloudfront create-invalidation --distribution-id ${{vars.DISTRIBUTION_ID}} --paths "/*"
