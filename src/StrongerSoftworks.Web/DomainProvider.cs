@@ -80,7 +80,7 @@ public class ConfigDomainProvider : IDomainProvider
             var builder = new UriBuilder
             {
                 Scheme = "https",
-                Host = "strongersoftworks.ca"
+                Host = "www.strongersoftworks.ca"
             };
             return builder;
         }
