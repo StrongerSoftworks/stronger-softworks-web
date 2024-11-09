@@ -76,27 +76,32 @@ $nav-colors: map-merge((
     --surface-color: #ffffff;
 }
 
-.dark-background {
-    --background-color: #060606;
-    --default-color: #ffffff;
-    --heading-color: #ffffff;
-    --surface-color: #202020;
-    --contrast-color: #ffffff;
-}
 
+
+$dark-colors: () !default;
+$dark-colors: map-merge((
+            "background-color": $dark,
+            "default-color": $white,
+            "heading-color": $white,
+            "accent-color": $accent3,
+            "surface-color": #202020,
+            "contrast-color": $white,
+        ), $dark-colors);
+.dark-background {
+    @each $color, $value in $dark-colors {
+        --#{$color}: #{$value};
+    }
+}
 
 $accent-colors: () !default;
 $accent-colors: map-merge((
             "background-color": $secondary,
             "default-color": $white,
             "heading-color": $white,
-            "accent-color": $accent3,
+            "accent-color": $accent1,
             "surface-color": $primary,
             "contrast-color": $white,
         ), $accent-colors);
-
-
-
 .accent-background {
     @each $color, $value in $accent-colors {
         --#{$color}: #{$value};

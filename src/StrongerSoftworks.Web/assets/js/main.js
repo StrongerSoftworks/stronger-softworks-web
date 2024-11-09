@@ -73,5 +73,7 @@
     }
   });
 
+  // init animation lib
+  AOS.init();
 
 })();

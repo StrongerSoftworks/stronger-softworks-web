@@ -37,8 +37,8 @@ namespace StrongerSoftworks.Web.Components.Pages
                 },
                 // ButtonText = "Read More",
                 // ButtonLink = "#",
-                ImageUrl = "/bundle/img/stronger-softworks.webp",
-                ImageAltText = "About Image"
+                // ImageUrl = "/bundle/img/stronger-softworks.webp",
+                // ImageAltText = "Stronger Softworks logo in a computer screen"
             };
 
             // StatsData = new StatsSectionModel
@@ -57,6 +57,8 @@ namespace StrongerSoftworks.Web.Components.Pages
                 Id = "web-development",
                 SectionTitle = "Our Web Development Services",
                 SectionDescription = "At our web development company, we specialize in creating, designing, and maintaining websites that help businesses of all sizes succeed online. We handle the entire website development process—from the initial concept and design to the final deployment—ensuring that each website meets the unique needs of our clients and aligns with their business goals.",
+                ImageUrl = "/bundle/img/stronger-softworks-logo-no-bg.avif",
+                ImageAltText = "Stronger Softworks logo in a computer screen",
                 ServiceItems = new List<ServiceItemModel>
                 {
                     new ServiceItemModel
@@ -161,12 +163,12 @@ namespace StrongerSoftworks.Web.Components.Pages
                         Description = "We provide detailed reports on website traffic, keyword rankings, and user behavior, helping you make data-driven decisions to grow your online presence.",
                         IconClass = "bi bi-graph-up"
                     },
-                    new FeatureItemModel
-                    {
-                        Title = "Link Building",
-                        Description = "Our team develops strategies to acquire high-quality backlinks from reputable sites, boosting your site's credibility and improving search rankings.",
-                        IconClass = "bi bi-link-45deg"
-                    }
+                    // new FeatureItemModel
+                    // {
+                    //     Title = "Link Building",
+                    //     Description = "Our team develops strategies to acquire high-quality backlinks from reputable sites, boosting your site's credibility and improving search rankings.",
+                    //     IconClass = "bi bi-link-45deg"
+                    // }
                 }
             };
 
@@ -370,13 +372,22 @@ namespace StrongerSoftworks.Web.Components.Pages
                         Position = "Software Developer",
                         Description = "As a dedicated web developer, I specialize in creating innovative, user-friendly websites tailored to your unique vision. With a passion for design and a commitment to excellence, I ensure that every project is not only visually captivating but also optimized for performance and functionality. My mission is to deliver high-quality digital experiences that elevate your brand and engage your audience. Let's work together to bring your ideas to life!",
                         ImageUrl = "/bundle/img/team/alex.png",
-                        Delay = 100,
                         SocialLinks = new List<SocialLink>
                         {
                             // new SocialLink { Url = "#", IconClass = "bi bi-twitter-x" },
                             // new SocialLink { Url = "#", IconClass = "bi bi-facebook" },
                             // new SocialLink { Url = "#", IconClass = "bi bi-instagram" },
                             new SocialLink { Url = "https://www.linkedin.com/in/alex-leistra-1032179a/", IconClass = "bi bi-linkedin" }
+                        }
+                    },
+                    new TeamMember
+                    {
+                        Name = "Charb Cloud Solutions Inc.",
+                        Position = "Software Developer",
+                        Description = "I specialize in providing Amazon Web Services (AWS) solutions for your business.",
+                        SocialLinks = new List<SocialLink>
+                        {
+                            new SocialLink { Url = "https://www.charbcloud.com/", IconClass = "bi bi-box-arrow-up-right" }
                         }
                     },
                 }

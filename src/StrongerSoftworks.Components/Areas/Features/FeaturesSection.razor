@@ -20,8 +20,8 @@
         <div class="row gy-4 d-flex justify-content-center">
             @foreach (var feature in FeaturesData.FeatureItems)
             {
-                <div class="features-item col-lg-6 d-flex mt-5 ps-lg-3">
-                    <i class="@feature.IconClass flex-shrink-0"></i>
+                <div class="features-item col-lg-6 d-flex mt-5 ps-lg-3" data-aos="fade-left" data-aos-delay="100">
+                    <i class="@feature.IconClass flex-shrink-0" data-aos="flip-left" data-aos-delay="300"></i>
                     <div>
                         <h3>@feature.Title</h3>
                         <p>@feature.Description</p>

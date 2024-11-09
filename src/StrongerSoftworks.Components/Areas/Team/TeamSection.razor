@@ -23,7 +23,11 @@
                 <div class="col-xl-4 col-lg-6 d-flex align-items-stretch">
                     <div class="team-member pt-3">
                         <div class="member-img">
-                            <Picture ImageUrl="@member.ImageUrl" AltText="@member.Name" Sizes="teamMemberPhotoSizes" Width="200" />
+                            @if(member.ImageUrl != null) {
+                                <Picture ImageUrl="@member.ImageUrl" AltText="@member.Name" Sizes="teamMemberPhotoSizes" Width="200" />
+                            } else {
+                                <div class="no-img"></div>
+                            }
                             <div class="social">
                                 @foreach (var social in member.SocialLinks)
                                 {

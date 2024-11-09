@@ -19,6 +19,8 @@ namespace StrongerSoftworks.Models
         public string SectionTitle { get; set; }
         public string SectionDescription { get; set; }
         public List<ServiceItemModel> ServiceItems { get; set; }
+        public string ImageUrl { get; set; }
+        public string ImageAltText { get; set; }
     }
 
 }

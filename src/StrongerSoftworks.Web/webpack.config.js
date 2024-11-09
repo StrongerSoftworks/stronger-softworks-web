@@ -13,6 +13,7 @@ module.exports = [
         mode: isDebugMode ? 'development' : 'production',
         entry: {
             bootstrap: './assets/js/bootstrap.js',
+            AOS: 'aos',
             // GLightbox: 'glightbox',
         },
         output: {
@@ -80,6 +81,7 @@ module.exports = [
             bootstrap: './assets/scss/bootstrap.scss',
             fonts: './assets/scss/fonts.scss',
             theme: './assets/scss/theme.scss',
+            aos: './node_modules/aos/dist/aos.css'
         },
         output: {
             path: path.resolve(__dirname, 'wwwroot/bundle/css'),

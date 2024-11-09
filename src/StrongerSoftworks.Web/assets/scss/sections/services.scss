@@ -1,9 +1,11 @@
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
-.services .service-item {
-    position: relative;
-    padding-top: 20px;
+.services {
+    .service-item {
+        position: relative;
+        padding-top: 20px;
+    }
 }
 
 .services .service-item .icon {
