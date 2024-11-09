@@ -7,7 +7,7 @@ namespace StrongerSoftworks.Web.Helpers;
 
 public static class StaticWebSiteHelper
 {
-    private static readonly string staticAssetExtensions = @"^\.(jpe?g|gif|png|avif|woff|woff2|ttf|)$";
+    private static readonly string staticAssetExtensions = @"^\.(jpe?g|gif|png|avif|webp|woff|woff2|ttf|)$";
 
 
 
@@ -20,7 +20,7 @@ public static class StaticWebSiteHelper
         string[] excludedFiles = [];
         string[] excludedFolders= [];
 
-        List<ResourceInfoBase> pages = new(2000)
+        List<ResourceInfoBase> pages = new List<ResourceInfoBase>
         {
             new PageResource("/"),
         };

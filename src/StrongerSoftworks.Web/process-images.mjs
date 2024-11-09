@@ -1,6 +1,5 @@
 ﻿import sharp from 'sharp'
 import fs from 'fs'
-import { readFile } from 'fs/promises';
 
 const defaultSizes = [ 240, 360, 480 ];
 
@@ -43,19 +42,6 @@ function processImagesInDir(dir) {
                     }
                 });
             }
-
-            // // PNG
-            // sharp(name)
-            //     .png({
-            //         quality: 90,
-            //         compressionLevel: 5,
-            //         effort: 3,
-            //     })
-            //     .toFile(`${newDir}/${newFile}.png`, (err) => {
-            //         if (err) {
-            //             console.error(err);
-            //         }
-            //     });
 
             // AVIF
             sharp(name)
