@@ -26,7 +26,7 @@ module.exports = [
         plugins: [
             new HtmlWebpackPlugin({
                 inject: false,
-                template: './WebpackTemplates/VendorScripts.ejs',
+                template: './WebpackTemplates/Scripts.ejs',
                 filename: path.join(__dirname, "./Components/Webpack/VendorScripts.razor"),
                 hash: true,
                 minify: !isDebugMode,
@@ -34,6 +34,61 @@ module.exports = [
                     const scripts = assets.js.map((filePath) => `<script src="/bundle/vendor/js${filePath}"></script>`).join("\n");
                     return { scripts };
                 },
+            }),
+        ],
+        devtool: isDebugMode ? 'source-map' : false,
+    },
+    {
+        stats: {warnings:false},
+        mode: isDebugMode ? 'development' : 'production',
+        entry: {
+            aos: './node_modules/aos/dist/aos.css'
+        },
+        output: {
+            path: path.resolve(__dirname, 'wwwroot/bundle/vendor/css'),
+            publicPath: '/',
+        },
+        resolve: {
+            extensions: ['.scss'],
+            preferRelative: true,
+        },
+        module: {
+            rules: [
+                {
+                    test: /\.s?css$/,
+                    use: [
+                        MiniCssExtractPlugin.loader,
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                sourceMap: true,
+                            },
+                        },
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                sourceMap: true,
+                            }
+                        },
+                    ]
+                },
+            ],
+        },
+        plugins: [
+            new HtmlWebpackPlugin({
+                inject: false,
+                template: './WebpackTemplates/StyleSheets.ejs',
+                filename: path.join(__dirname, "./Components/Webpack/VendorStylesSheets.razor"),
+                hash: true,
+                minify: !isDebugMode,
+                templateParameters: (compilation, assets) => {
+                    const styleSheets = assets.css.map((filePath) => `<link rel="stylesheet" href="/bundle/vendor/css${filePath}" />`).join("\n");
+                    return { styleSheets };
+                },
+            }),
+            new MiniCssExtractPlugin({
+                filename: "[name].css",
+                chunkFilename: "[id].css",
             }),
         ],
         devtool: isDebugMode ? 'source-map' : false,
@@ -81,7 +136,6 @@ module.exports = [
             bootstrap: './assets/scss/bootstrap.scss',
             fonts: './assets/scss/fonts.scss',
             theme: './assets/scss/theme.scss',
-            aos: './node_modules/aos/dist/aos.css'
         },
         output: {
             path: path.resolve(__dirname, 'wwwroot/bundle/css'),
