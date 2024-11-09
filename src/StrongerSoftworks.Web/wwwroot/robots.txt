@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: https://www.strongersoftworks.com/sitemap.xml
+Sitemap: https://www.strongersoftworks.ca/sitemap.xml

@@ -35,7 +35,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Production",
         "RUN_MODE": "ssg",
-        "HOST_URL": "https://strongersoftworks.com"
+        "HOST_URL": "https://strongersoftworks.ca"
       }
     },
     "IIS Express": {
