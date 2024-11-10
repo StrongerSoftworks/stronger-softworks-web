@@ -405,4 +405,4 @@ src/**/wwwroot/bundle/**/*
 out/
 
 # webpack generated components
-src/**/Webpack/*.razor
+src/StrongerSoftworks.Web/Components/Webpack/*.razor
