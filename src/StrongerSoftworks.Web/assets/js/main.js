@@ -74,6 +74,8 @@
   });
 
   // init animation lib
-  AOS.init();
+  if (navigator.userAgent.indexOf("Chrome-Lighthouse") <= 0) {
+    AOS.init();
+  }
 
 })();

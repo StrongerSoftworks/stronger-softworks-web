@@ -403,3 +403,6 @@ src/**/wwwroot/bundle/**/*
 
 # static site build
 out/
+
+# webpack generated components
+src/**/Webpack/*.razor

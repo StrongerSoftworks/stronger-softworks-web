@@ -1,8 +1,9 @@
-﻿using StrongerSoftworks.Models;
+﻿using Microsoft.AspNetCore.Components;
+using StrongerSoftworks.Models;
 
 namespace StrongerSoftworks.Web.Components.Pages
 {
-    public partial class Home
+    public partial class Home : ComponentBase
     {
         public HeroSectionModel? HeroData { get; private set; }
         public AboutSectionModel? AboutData { get; private set; }
@@ -369,7 +370,6 @@ namespace StrongerSoftworks.Web.Components.Pages
                     new TeamMember
                     {
                         Name = "Alex Leistra",
-                        Position = "Software Developer",
                         Description = "As a dedicated web developer, I specialize in creating innovative, user-friendly websites tailored to your unique vision. With a passion for design and a commitment to excellence, I ensure that every project is not only visually captivating but also optimized for performance and functionality. My mission is to deliver high-quality digital experiences that elevate your brand and engage your audience. Let's work together to bring your ideas to life!",
                         ImageUrl = "/bundle/img/team/alex.png",
                         SocialLinks = new List<SocialLink>
@@ -383,7 +383,6 @@ namespace StrongerSoftworks.Web.Components.Pages
                     new TeamMember
                     {
                         Name = "Charb Cloud Solutions Inc.",
-                        Position = "Software Developer",
                         Description = "I specialize in providing Amazon Web Services (AWS) solutions for your business.",
                         SocialLinks = new List<SocialLink>
                         {
