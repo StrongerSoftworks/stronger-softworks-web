@@ -23,6 +23,8 @@ public static class StaticWebSiteHelper
         List<ResourceInfoBase> pages = new List<ResourceInfoBase>
         {
             new PageResource("/"),
+            new PageResource("/sitemap.xml"),
+            new PageResource("/robots.txt"),
         };
 
         DirectoryInfo wwwRootDirectory = new(webRootPath);
@@ -47,14 +49,7 @@ public static class StaticWebSiteHelper
             string name = file.Name;
             string extension = file.Extension;
 
-            if (name.Equals("README.md", StringComparison.OrdinalIgnoreCase))
-            {
-                pages.Add(new PageResource(baseUri)
-                {
-                    OutFile = Path.Combine(baseUri, "index.html")
-                });
-            }
-            else if (extension.Equals(".js", StringComparison.OrdinalIgnoreCase))
+            if (extension.Equals(".js", StringComparison.OrdinalIgnoreCase))
             {
                 pages.Add(new JsResource(Path.Combine(baseUri, name).Replace('\\', '/')));
             }
