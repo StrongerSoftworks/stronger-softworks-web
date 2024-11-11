@@ -9,6 +9,7 @@ const isDebugMode = process.env.buildMode === 'Debug';
 console.log(`isDebugMode: ${isDebugMode}`);
 
 module.exports = [
+    // Vendor JS
     {
         mode: isDebugMode ? 'development' : 'production',
         entry: {
@@ -38,6 +39,7 @@ module.exports = [
         ],
         devtool: isDebugMode ? 'source-map' : false,
     },
+    // Vendor CSS
     {
         stats: {warnings:false},
         mode: isDebugMode ? 'development' : 'production',
@@ -90,9 +92,14 @@ module.exports = [
                 filename: "[name].css",
                 chunkFilename: "[id].css",
             }),
+            isDebugMode ? false : new PurgeCSSPlugin({
+                paths: glob.sync(`${path.join(__dirname, '../')}/**/*.{razor,cs,js}`, { ignore: ['**/node_modules/**'], noDir: true }),
+                skippedContentGlobs: ['node_modules']
+            }),
         ],
         devtool: isDebugMode ? 'source-map' : false,
     },
+    // JS
     {
         mode: isDebugMode ? 'development' : 'production',
         entry: {
@@ -129,6 +136,7 @@ module.exports = [
         ],
         devtool: isDebugMode ? 'source-map' : false,
     },
+    // CSS
     {
         stats: {warnings:false},
         mode: isDebugMode ? 'development' : 'production',
