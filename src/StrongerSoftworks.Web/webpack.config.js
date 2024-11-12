@@ -91,11 +91,7 @@ module.exports = [
             new MiniCssExtractPlugin({
                 filename: "[name].css",
                 chunkFilename: "[id].css",
-            }),
-            isDebugMode ? false : new PurgeCSSPlugin({
-                paths: glob.sync(`${path.join(__dirname, '../')}/**/*.{razor,cs,js}`, { ignore: ['**/node_modules/**'], noDir: true }),
-                skippedContentGlobs: ['node_modules']
-            }),
+            })
         ],
         devtool: isDebugMode ? 'source-map' : false,
     },
