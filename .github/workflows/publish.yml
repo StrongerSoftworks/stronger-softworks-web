@@ -21,26 +21,33 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-    
+
     - uses: actions/setup-node@v4
       with:
         node-version: 20.x
+
     - name: Install npm Dependencies
       working-directory: ./src/${{ vars.WEB_PROJECT_NAME }}
       run: npm install
-    - name: Build application
+
+    - name: Build assets
       working-directory: ./src/${{ vars.WEB_PROJECT_NAME }}
       run: npm run build
-    
-    - name: Build dotnet
-      working-directory: ./src/${{ vars.WEB_PROJECT_NAME }}
-      run: dotnet build --configuration Release
+
+    # - name: Build dotnet
+    #   working-directory: ./src/${{ vars.WEB_PROJECT_NAME }}
+    #   run: dotnet build --configuration Release
     # - name: Test
     #   working-directory: ./src
     #   run: dotnet test
-    - name: Build Static
+
+    - name: Build Static Site
       working-directory: ./src/${{ vars.WEB_PROJECT_NAME }}
       run: dotnet run --launch-profile ssg
+
+    - name: Post Build
+      working-directory: ./src/${{ vars.WEB_PROJECT_NAME }}
+      run: npm run gzip
 
     - name: Configure aws credentials
       if: github.ref == 'refs/heads/main'
@@ -51,7 +58,29 @@ jobs:
 
     - name: Deploy to S3
       if: github.ref == 'refs/heads/main'
-      run: aws s3 sync ./out s3://${{ vars.BUCKET }}
+      run: |
+        aws s3 sync ./out s3://${{ vars.BUCKET }} \
+        --exclude "*.html" \
+        --exclude "*.css" \
+        --exclude "*.js" \
+        --cache-control max-age=31536000 --delete
+
+    - name: Deploy to S3 CSS/JS
+      if: github.ref == 'refs/heads/main'
+      run: |
+        aws s3 sync ./out s3://${{ vars.BUCKET }} \
+        --exclude "*" \
+        --include "*.css" --content-encoding gzip \
+        --include "*.js" --content-encoding gzip \
+        --cache-control max-age=31536000 --delete
+
+    - name: Deploy to S3 HTML
+      if: github.ref == 'refs/heads/main'
+      run: |
+        aws s3 sync ./out s3://${{ vars.BUCKET }} \
+        --exclude "*" \
+        --include "*.html" --content-encoding gzip \
+        --delete
 
     - name: Invalidate CloudFront cache
       if: github.ref == 'refs/heads/main'

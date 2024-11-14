@@ -124,6 +124,12 @@ namespace StrongerSoftworks.Web.Components.Pages
                 {
                     new FeatureItemModel
                     {
+                        Title = "SEO Audit",
+                        Description = "We provide a comprehensive analysis of you website's performance in search engines. It identifies areas for improvement, such as site structure, content, technical issues, and backlink quality, to ensure the site is optimized for higher rankings and better user experience.",
+                        IconClass = "bi bi-list-columns"
+                    },
+                    new FeatureItemModel
+                    {
                         Title = "Keyword Research",
                         Description = "We identify the keywords that matter most to your business, targeting what your potential customers are searching for to improve your site's search engine rankings.",
                         IconClass = "bi bi-search"
@@ -142,7 +148,7 @@ namespace StrongerSoftworks.Web.Components.Pages
                     // },
                     new FeatureItemModel
                     {
-                        Title = "Local SEO",
+                        Title = "Local SEO Marketing",
                         Description = "We help local businesses by optimizing your site for location-specific searches, ensuring your business appears in relevant local search results and maps.",
                         IconClass = "bi bi-pin-map"
                     },
@@ -164,6 +170,7 @@ namespace StrongerSoftworks.Web.Components.Pages
                         Description = "We provide detailed reports on website traffic, keyword rankings, and user behavior, helping you make data-driven decisions to grow your online presence.",
                         IconClass = "bi bi-graph-up"
                     },
+                    // TODO Learn how to do this
                     // new FeatureItemModel
                     // {
                     //     Title = "Link Building",
