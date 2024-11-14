@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "build": "npm run images && npm run bundle:prod",
+    "gzip": "node gzip.js",
     "images": "node ./process-images.mjs",
-    "bundle:watch": "npx cross-env buildMode=Debug npx webpack --config webpack.config.js --watch",
-    "bundle": "npx cross-env buildMode=Debug npx webpack --config webpack.config.js",
+    "bundle:watch": "npx cross-env buildMode=debug npx webpack --config webpack.config.js --watch",
+    "bundle": "npx cross-env buildMode=debug npx webpack --config webpack.config.js",
     "bundle:prod": "npx webpack --config webpack.config.js"
   },
   "dependencies": {

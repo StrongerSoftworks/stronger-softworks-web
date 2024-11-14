@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { PurgeCSSPlugin } = require('purgecss-webpack-plugin');
 
-const isDebugMode = process.env.buildMode === 'Debug';
+const isDebugMode = process.env.buildMode === 'debug';
 
 console.log(`isDebugMode: ${isDebugMode}`);
 
