@@ -1,19 +1,20 @@
 ﻿@page "/"
+@using Sidio.Sitemap.Core
 @attribute [Sitemap("/")]
 
-@inject IDomainProvider DomainProvider;
+@inject IBaseUrlProvider BaseUrlProvider;
 
 <PageTitle>Stronger Softworks: Web Marketing and Search Engine Optimization</PageTitle>
 
 @{
-    var domain = DomainProvider.Domain;
+    var baseUrl = BaseUrlProvider.BaseUrl.GetComponents(UriComponents.SchemeAndServer, UriFormat.UriEscaped);
     
     // Open Graph
     var graph = OpenGraph.MakeGraph(
         title: "Stronger Softworks - Web Development and SEO", 
         type: "website", 
-        image: domain + "/bundle/img/stronger-softworks-480.avif",
-        url: domain, 
+        image: baseUrl + "/bundle/img/stronger-softworks-480.avif",
+        url: baseUrl, 
         description: "Let Us Help You Grow Your Business", 
         siteName: "Stronger Softworks");
 
@@ -23,7 +24,7 @@
     {
         AlternateName = "Stronger Softworks - Web Development and SEO",
         Name = "Stronger Softworks",
-        Url = DomainProvider.DomainUri,
+        Url = BaseUrlProvider.BaseUrl,
     };
 }
 
