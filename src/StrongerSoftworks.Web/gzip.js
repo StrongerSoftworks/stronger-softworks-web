@@ -11,9 +11,7 @@ async function compressFile(filePath) {
   const source = await fs.readFile(filePath);
   const compressed = zlib.gzipSync(source);
 
-  const compressedPath = `${filePath}`;
-  await fs.writeFile(compressedPath, compressed);
-  // await fs.unlink(filePath); // Delete original file
+  await fs.writeFile(filePath, compressed);
   console.log(`Compressed: ${filePath}`);
 }
 
@@ -39,7 +37,7 @@ async function compressFilesInDirectory(directory) {
   try {
     const files = await getFiles(directory);
     await Promise.all(files.map(file => compressFile(file)));
-    console.log('All files compressed and original files deleted.');
+    console.log('All files compressed.');
   } catch (error) {
     console.error('Error compressing files:', error);
   }
