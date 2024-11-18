@@ -3,11 +3,23 @@
 
 @code {
     [Parameter] public FeaturesSectionModel FeaturesData { get; set; }
-
     private PhotoSize[] featureImageSizes = [
         new PhotoSize() { Breakpoint = 576, Width = 480 },
         new PhotoSize() { Breakpoint = 992, Width = 480 },
     ];
+
+    private PictureModel pictureModel;
+
+    protected override void OnParametersSet() {
+        pictureModel = new PictureModel()
+        {
+            ImageUrl = FeaturesData.ImageUrl,
+            AltText = "Features Image",
+            Width = 480,
+            Sizes = featureImageSizes
+        };
+        base.OnParametersSet();
+    }
 }
 
 <section id="@(FeaturesData.Id ?? "features")" class="features section">
@@ -38,10 +50,9 @@
             </div>
 
             <div class="col-md-6 order-2 order-md-1 d-flex flex-column align-items-center">
-                <Picture ImageUrl="@FeaturesData.ImageUrl" AltText="Features Image" Width="480" Sizes="featureImageSizes" />
+                <Picture Model="@pictureModel" />
             </div>
         </div>
     </div>
-   
-</section>
 
+</section>

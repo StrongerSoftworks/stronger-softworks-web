@@ -30,11 +30,26 @@ namespace StrongerSoftworks.Web.Components.Pages
             {
                 Header = "Let Us Help You Grow Your Business",
                 Paragraph = "",
-                ListItems = new List<string>
+                ListItems = new List<SectionItem>
                 {
-                    "In today's digital age, having a strong online presence is crucial for businesses to thrive. At Stronger Softworks, we specialize in creating custom websites that not only reflect your brand's unique identity but also drive business growth. Whether you're looking to attract more customers or improve your customer experience, we provide tailored solutions designed to meet your goals.",
-                    "We understand the specific challenges that businesses face, which is why we focus on building websites that are affordable, easy to manage, and scalable. Our responsive designs ensure that your site looks and works perfectly across all devices—whether it's a desktop, tablet, or mobile phone. We also integrate features like content management systems (CMS) that allow you to easily update your website, keeping it fresh and relevant without the need for technical expertise.",
-                    "Beyond web design, we offer search engine optimization (SEO) services to help your business get noticed. We optimize your site with the right keywords, improve page load times, and ensure a user-friendly experience—all to help you rank higher on search engines like Google. Our local SEO strategies will also ensure that customers in your area can find you quickly and easily. Let us help you grow your business with a website that not only looks great but also drives results.",
+                    new SectionItem() {
+                        Title = "Build a New Website",
+                        Content = "If you want to refresh your current website or build a new website from the ground up we can help! Our websites are custom built to suite your business's needs.",
+                        Picture = null,
+                    },
+                    new SectionItem() {
+                        Title = "Reduce Website Expenses",
+                        Content = "Are you paying too much for your website? Do you have to pay for plugins and features that you don't need? We provide exactly what you need — no extra charges or hidden features behind costly tiers.",
+                        Picture = null,
+                    },
+                    new SectionItem() {
+                        Title = "Get Ahead of Your Competition",
+                        Content = "Do you want to stay ahead of your competition on Google? We create data-driven plans to get your website ahead of your competitors on search engines. Get more views with less spending on ads. And that's awesome 💪",
+                        Picture = null,
+                    },
+                    // "In today's digital age, having a strong online presence is crucial for businesses to thrive. At Stronger Softworks, we specialize in creating custom websites that not only reflect your brand's unique identity but also drive business growth. Whether you're looking to attract more customers or improve your customer experience, we provide tailored solutions designed to meet your goals.",
+                    // "We understand the specific challenges that businesses face, which is why we focus on building websites that are affordable, easy to manage, and scalable. Our responsive designs ensure that your site looks and works perfectly across all devices—whether it's a desktop, tablet, or mobile phone. We also integrate features like content management systems (CMS) that allow you to easily update your website, keeping it fresh and relevant without the need for technical expertise.",
+                    // "Beyond web design, we offer search engine optimization (SEO) services to help your business get noticed. We optimize your site with the right keywords, improve page load times, and ensure a user-friendly experience—all to help you rank higher on search engines like Google. Our local SEO strategies will also ensure that customers in your area can find you quickly and easily. Let us help you grow your business with a website that not only looks great but also drives results.",
                 },
                 // ButtonText = "Read More",
                 // ButtonLink = "#",
