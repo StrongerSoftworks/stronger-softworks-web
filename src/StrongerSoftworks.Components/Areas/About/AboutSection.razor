@@ -16,12 +16,15 @@
             <div class="content">
                 <h2>@AboutData.Header</h2>
                 <p class="fst-italic">@AboutData.Paragraph</p>
-                <ul>
                     @foreach (var item in AboutData.ListItems)
                     {
-                        <li><i class="bi bi-check-circle"></i> <span>@item</span></li>
+                        <div class="row pb-5">
+                            <div class="col-lg-6" data-aos="fade-right">
+                                <h3><i class="bi bi-check-circle" data-aos="flip-right" data-aos-delay="50"></i> @item.Title</h3>
+                                <p>@item.Content</p>
+                            </div>
+                        </div>
                     }
-                </ul>
                 @if (AboutData.ButtonLink != null)
                 {
                     <a href="@AboutData.ButtonLink" class="read-more">

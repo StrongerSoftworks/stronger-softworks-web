@@ -1,20 +1,14 @@
 .about {
 	.content {
-		h3 {
+		h2 {
 			font-size: 2rem;
 			font-weight: 700;
 		}
-		ul {
-			list-style: none;
-			padding: 0;
-			li {
-				padding-bottom: 10px;
-			}
-			i {
-				font-size: 1.25rem;
-				margin-right: 4px;
-				color: $accent-color;
-			}
+		i {
+			font-size: 1.25rem;
+			margin-right: 4px;
+			vertical-align: middle;
+			color: $accent-color;
 		}
 		p {
 			&:last-child {

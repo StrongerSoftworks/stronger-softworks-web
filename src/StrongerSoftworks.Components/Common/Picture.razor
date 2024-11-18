@@ -1,10 +1,10 @@
 ﻿@using StrongerSoftworks.Models
 <picture>
-    @foreach (var size in Sizes)
+    @foreach (var size in Model.Sizes)
     {
-        var srcset = ImageUrl.Replace(extension, "-" + size.Width + ".avif 1x, ");
-        srcset += ImageUrl.Replace(extension, "-" + (size.Width * 1.5) + ".avif 1.5x, ");
-        srcset += ImageUrl.Replace(extension, "-" + (size.Width * 2) + ".avif 2x ");
+        var srcset = Model.ImageUrl.Replace(extension, "-" + size.Width + ".avif 1x, ");
+        srcset += Model.ImageUrl.Replace(extension, "-" + (size.Width * 1.5) + ".avif 1.5x, ");
+        srcset += Model.ImageUrl.Replace(extension, "-" + (size.Width * 2) + ".avif 2x ");
 
         <source
             srcset="@srcset"
@@ -14,27 +14,23 @@
     }
     <img
         loading="lazy"
-        src="@(ImageUrl.Replace(extension, "-" + Width + ".avif"))"
-        alt="@AltText"
-        class="@(CssClass ?? "img-fluid")"
-        width="@Width"
+        src="@(Model.ImageUrl.Replace(extension, "-" + Model.Width + ".avif"))"
+        alt="@Model.AltText"
+        class="@(Model.CssClass ?? "img-fluid")"
+        width="@Model.Width"
         type="image/avif"
     />
 </picture>
 
 
 @code {
-    [Parameter] public PhotoSize[] Sizes { get; set; }
-    [Parameter] public required string ImageUrl { get; set; }
-    [Parameter] public required string AltText { get; set; }
-    [Parameter] public string CssClass { get; set; } = "";
-    [Parameter] public required int Width { get; set; }
+    [Parameter] public PictureModel Model { get; set; }
 
     private string extension = ".png";
 
     protected override void OnParametersSet()
     {
-        extension = ImageUrl.Substring(ImageUrl.LastIndexOf('.'));
+        extension = Model.ImageUrl.Substring(Model.ImageUrl.LastIndexOf('.'));
         base.OnParametersSet();
     }
 }

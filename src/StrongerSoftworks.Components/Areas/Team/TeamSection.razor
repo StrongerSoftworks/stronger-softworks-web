@@ -24,7 +24,13 @@
                     <div class="team-member pt-3">
                         <div class="member-img">
                             @if(member.ImageUrl != null) {
-                                <Picture ImageUrl="@member.ImageUrl" AltText="@member.Name" Sizes="teamMemberPhotoSizes" Width="200" />
+                                <Picture Model="@(new PictureModel()
+                                                {
+                                                    ImageUrl = member.ImageUrl,
+                                                    AltText = member.Name,
+                                                    Sizes = teamMemberPhotoSizes,
+                                                    Width = 200
+                                                })" />
                             } else {
                                 <div class="no-img"></div>
                             }
