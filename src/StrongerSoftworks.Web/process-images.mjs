@@ -28,7 +28,7 @@ function processImagesInDir(dir) {
             const newDir = `${dir}`.replace('assets', 'wwwroot/bundle');
             const newFile = file.slice(0, file.lastIndexOf("."));
             if (!fs.existsSync(newDir)) {
-                fs.mkdirSync(newDir);
+                fs.mkdirSync(newDir, {recursive: true});
             }
             if (file.endsWith('.json')) {
                 continue;
@@ -71,5 +71,8 @@ console.log('Processing images')
 
 if (!fs.existsSync('wwwroot/bundle')) {
     fs.mkdirSync('wwwroot/bundle');
+}
+if (!fs.existsSync('wwwroot/bundle/img')) {
+    fs.mkdirSync('wwwroot/bundle/img');
 }
 processImagesInDir('assets/img');
