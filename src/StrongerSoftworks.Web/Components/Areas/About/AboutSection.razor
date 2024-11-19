@@ -1,0 +1,31 @@
+﻿
+@code {
+    [Parameter] public required AboutSectionModel AboutData { get; set; }
+}
+
+<section id="@(AboutData.Id ?? "about")" class="about section">
+    <div class="container">
+        <div class="row gy-2">
+            <div class="content">
+                <h2>@AboutData.Header</h2>
+                <p class="fst-italic">@AboutData.Paragraph</p>
+                    @foreach (var item in AboutData.ListItems)
+                    {
+                        <div class="row pb-2">
+                            <div class="col-lg-6 my-auto @(AboutData.ListItems.IndexOf(item) == 1 ? "order-lg-2" : "order-lg-1")" data-aos="fade-right">
+                                <h3><i class="bi bi-check-circle" data-aos="flip-right" data-aos-delay="50"></i> @item.Title</h3>
+                                <p>@item.Content</p>
+                            </div>
+                            @if(item.Picture != null) {
+                                <div class="col-lg-6 @(AboutData.ListItems.IndexOf(item) == 1 ? "order-lg-1" : "order-lg-2")" data-aos="fade-left">
+                                    <div class="d-flex align-content-center align-items-center justify-content-center">
+                                        <Picture Model="@item.Picture" />
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+            </div>
+        </div>
+    </div>
+</section>

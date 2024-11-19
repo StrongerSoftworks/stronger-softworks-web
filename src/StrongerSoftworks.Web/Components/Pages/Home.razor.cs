@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
-using StrongerSoftworks.Models;
+using StrongerSoftworks.Web.Models;
 
 namespace StrongerSoftworks.Web.Components.Pages
 {
@@ -54,7 +54,7 @@ namespace StrongerSoftworks.Web.Components.Pages
                     },
                     new SectionItem() {
                         Title = "Get Ahead of Your Competition",
-                        Content = "Do you want to stay ahead of your competition on Google? We create data-driven plans to get your website ahead of your competitors on search engines. Get more views with less spending on ads. And that's awesome 💪",
+                        Content = "Do you want to stay ahead of your competition on Google? We create data-driven plans to get your website ahead of your competitors on search engines. Get more views while spending less on ads. And that's awesome 💪",
                         Picture = new PictureModel() {
                             Width = 480,
                             AltText = "A man sitting at a desk working on a computer. There are charts and graphs on the computer screen.",
@@ -62,14 +62,7 @@ namespace StrongerSoftworks.Web.Components.Pages
                             Sizes = [new PhotoSize(240, 576), new PhotoSize(360, 992)]
                         },
                     },
-                    // "In today's digital age, having a strong online presence is crucial for businesses to thrive. At Stronger Softworks, we specialize in creating custom websites that not only reflect your brand's unique identity but also drive business growth. Whether you're looking to attract more customers or improve your customer experience, we provide tailored solutions designed to meet your goals.",
-                    // "We understand the specific challenges that businesses face, which is why we focus on building websites that are affordable, easy to manage, and scalable. Our responsive designs ensure that your site looks and works perfectly across all devices—whether it's a desktop, tablet, or mobile phone. We also integrate features like content management systems (CMS) that allow you to easily update your website, keeping it fresh and relevant without the need for technical expertise.",
-                    // "Beyond web design, we offer search engine optimization (SEO) services to help your business get noticed. We optimize your site with the right keywords, improve page load times, and ensure a user-friendly experience—all to help you rank higher on search engines like Google. Our local SEO strategies will also ensure that customers in your area can find you quickly and easily. Let us help you grow your business with a website that not only looks great but also drives results.",
                 },
-                // ButtonText = "Read More",
-                // ButtonLink = "#",
-                // ImageUrl = "/bundle/img/stronger-softworks.webp",
-                // ImageAltText = "Stronger Softworks logo in a computer screen"
             };
 
             // StatsData = new StatsSectionModel
@@ -87,7 +80,7 @@ namespace StrongerSoftworks.Web.Components.Pages
             {
                 Id = "web-development",
                 SectionTitle = "Our Web Development Services",
-                SectionDescription = "At our web development company, we specialize in creating, designing, and maintaining websites that help businesses of all sizes succeed online. We handle the entire website development process—from the initial concept and design to the final deployment—ensuring that each website meets the unique needs of our clients and aligns with their business goals.",
+                SectionDescription = "At Stronger Softworks, we specialize in creating, designing, and maintaining websites that help businesses of all sizes succeed online. We handle the entire website development process—from the initial concept and design to the final deployment—ensuring that each website meets the unique needs of our clients and aligns with their business goals.",
                 ImageUrl = "/bundle/img/stronger-softworks-logo-no-bg.avif",
                 ImageAltText = "Stronger Softworks logo in a computer screen",
                 ServiceItems = new List<ServiceItemModel>
@@ -108,7 +101,19 @@ namespace StrongerSoftworks.Web.Components.Pages
                     {
                         Title = "User-Friendly Interfaces",
                         Description = "We prioritize usability by developing intuitive, easy-to-navigate websites that enhance user experience and encourage engagement.",
-                        IconClass = "bi bi-card-checklist",
+                        IconClass = "bi bi-window-fullscreen",
+                    },
+                    new ServiceItemModel
+                    {
+                        Title = "Website Accessibility",
+                        Description = "We believe the web should be for everyone. That's why we design websites that are accessible to all, including people with disabilities. Together, we can create a website that welcomes everyone and reflects your values of inclusivity and care.",
+                        IconClass = "bi bi-person-wheelchair",
+                    },
+                    new ServiceItemModel
+                    {
+                        Title = "Enterprise Grade Cloud Hosting",
+                        Description = "Every website we create is hosted on enterprise-grade cloud servers. This means your site loads quickly, stays online even during high traffic, and is protected with the latest technology. Let us handle the technical details while you focus on what you do best.",
+                        IconClass = "bi bi-cloud",
                     },
                     // new ServiceItemModel
                     // {
@@ -126,7 +131,7 @@ namespace StrongerSoftworks.Web.Components.Pages
                     {
                         Title = "Website Security",
                         Description = "Protecting your site and user data is a top priority. We integrate SSL certificates, security scans, and monitoring systems to ensure your site is secure against potential threats.",
-                        IconClass = "bi bi-lock",
+                        IconClass = "bi bi-shield",
                     },
                     new ServiceItemModel
                     {
@@ -162,19 +167,19 @@ namespace StrongerSoftworks.Web.Components.Pages
                     {
                         Title = "Keyword Research",
                         Description = "We identify the keywords that matter most to your business, targeting what your potential customers are searching for to improve your site's search engine rankings.",
-                        IconClass = "bi bi-search"
+                        IconClass = "bi bi-binoculars"
                     },
                     new FeatureItemModel
                     {
                         Title = "On-Page SEO Optimization",
                         Description = "By optimizing titles, meta descriptions, and content, we ensure your site is fully optimized for search engines like Google, helping you rank higher and attract more traffic.",
-                        IconClass = "bi bi-body-text"
+                        IconClass = "bi bi-search"
                     },
                     // new FeatureItemModel
                     // {
                     //     Title = "Content Creation",
                     //     Description = "We produce high-quality, SEO-optimized content, including blog posts, landing pages, and product descriptions, that attract visitors and establish your authority in your industry.",
-                    //     IconClass = "bi bi-camera-reels"
+                    //     IconClass = "bi bi-body-text"
                     // },
                     new FeatureItemModel
                     {

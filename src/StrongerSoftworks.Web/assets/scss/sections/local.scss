@@ -1,0 +1,22 @@
+.local{
+    .content {
+        position: relative;
+    }
+    .flag{
+        font-size: 1.5vw;
+        color: var(--accent-color);
+        page-break-inside: avoid;
+        font-family: monospace;
+        white-space: pre;
+        opacity: 0.1;
+    }
+    .title {
+        position: absolute;
+        left: 0; 
+        right: 0; 
+        top: 50%;
+        margin-inline: auto; 
+        width: fit-content;
+        z-index: 5;
+    }
+}

@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StrongerSoftworks.Components\StrongerSoftworks.Components.csproj" />
-    <ProjectReference Include="..\StrongerSoftworks.Models\StrongerSoftworks.Models.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="wwwroot\bundle\" />
     <Content Remove="assets\**" />
     <Content Include="assets\**" Watch="false" />

@@ -1,0 +1,45 @@
+﻿
+@code {
+    [Parameter] public required ServicesSectionModel ServicesData { get; set; }
+
+    private PhotoSize[] aboutImageSizes = [
+        new PhotoSize() { Breakpoint = 576, Width = 240 },
+        new PhotoSize() { Breakpoint = 992, Width = 360 },
+    ];
+
+    private PictureModel? pictureModel = null;
+
+    protected override void OnParametersSet() {
+        pictureModel = new PictureModel()
+        {
+            ImageUrl = ServicesData.ImageUrl,
+            AltText = ServicesData.ImageAltText,
+            Width = 480,
+            Sizes = aboutImageSizes
+        };
+        base.OnParametersSet();
+    }
+}
+
+
+<section id="@(ServicesData.Id ?? "services")" class="services section accent-background">
+    <div class="container section-title">
+        <h2>@ServicesData.SectionTitle</h2>
+        <p>@ServicesData.SectionDescription</p>
+    </div>
+
+    <div class="d-flex align-content-center align-items-center justify-content-center">
+        <Picture Model="@pictureModel" />
+    </div>
+
+    <div class="container">
+        <div class="row gy-4 d-flex justify-content-center">
+            @foreach (var service in ServicesData.ServiceItems)
+            {
+                <div class="col-xl-4 col-lg-6" data-aos="fade-left" data-aos-delay="100">
+                    <ServiceItem Title="@service.Title" Description="@service.Description" IconClass="@service.IconClass" Link="@service.Link" />
+                </div>
+            }
+        </div>
+    </div>
+</section>
