@@ -156,7 +156,7 @@ namespace StrongerSoftworks.Web.Components.Pages
                     {
                         Title = "SEO Audit",
                         Description = "We provide a comprehensive analysis of you website's performance in search engines. It identifies areas for improvement, such as site structure, content, technical issues, and backlink quality, to ensure the site is optimized for higher rankings and better user experience.",
-                        IconClass = "bi bi-list-check"
+                        IconClass = "bi bi-card-checklist"
                     },
                     new FeatureItemModel
                     {
