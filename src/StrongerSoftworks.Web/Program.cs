@@ -8,6 +8,7 @@ using StrongerSoftworks.Web;
 using StrongerSoftworks.Web.Components;
 using StrongerSoftworks.Web.Helpers;
 using System.Globalization;
+using WebMarkupMin.Core;
 
 
 const string RUN_MODE_SSG = "ssg";
@@ -86,6 +87,12 @@ builder.Services
 string runMode = Environment.GetEnvironmentVariable("RUN_MODE") ?? "ssr";
 
 if (runMode == RUN_MODE_SSG) {
+    builder.Services.AddSingleton(
+        sp => new HtmlMinificationSettings()
+        {
+            PreserveNewLines = true,
+            WhitespaceMinificationMode = WhitespaceMinificationMode.None,
+        });
     builder.Services.AddSingleton<IStaticResourcesInfoProvider>(provider =>
     {
         return StaticWebSiteHelper.GetStaticResourcesInfo(builder.Environment.WebRootPath);
