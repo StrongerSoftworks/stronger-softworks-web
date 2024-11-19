@@ -35,17 +35,32 @@ namespace StrongerSoftworks.Web.Components.Pages
                     new SectionItem() {
                         Title = "Build a New Website",
                         Content = "If you want to refresh your current website or build a new website from the ground up we can help! Our websites are custom built to suite your business's needs.",
-                        Picture = null,
+                        Picture = new PictureModel() {
+                            Width = 480,
+                            AltText = "A computer and a phone displaying web pages.",
+                            ImageUrl = "/bundle/img/about/new-website-1.avif",
+                            Sizes = [new PhotoSize(240, 576), new PhotoSize(360, 992)]
+                        },
                     },
                     new SectionItem() {
                         Title = "Reduce Website Expenses",
                         Content = "Are you paying too much for your website? Do you have to pay for plugins and features that you don't need? We provide exactly what you need — no extra charges or hidden features behind costly tiers.",
-                        Picture = null,
+                        Picture = new PictureModel() {
+                            Width = 480,
+                            AltText = "A woman looking at her phone. The phone is showing upwards trending charts.",
+                            ImageUrl = "/bundle/img/about/save-money-1.avif",
+                            Sizes = [new PhotoSize(240, 576), new PhotoSize(360, 992)]
+                        },
                     },
                     new SectionItem() {
                         Title = "Get Ahead of Your Competition",
                         Content = "Do you want to stay ahead of your competition on Google? We create data-driven plans to get your website ahead of your competitors on search engines. Get more views with less spending on ads. And that's awesome 💪",
-                        Picture = null,
+                        Picture = new PictureModel() {
+                            Width = 480,
+                            AltText = "A man sitting at a desk working on a computer. There are charts and graphs on the computer screen.",
+                            ImageUrl = "/bundle/img/about/competition-1.avif",
+                            Sizes = [new PhotoSize(240, 576), new PhotoSize(360, 992)]
+                        },
                     },
                     // "In today's digital age, having a strong online presence is crucial for businesses to thrive. At Stronger Softworks, we specialize in creating custom websites that not only reflect your brand's unique identity but also drive business growth. Whether you're looking to attract more customers or improve your customer experience, we provide tailored solutions designed to meet your goals.",
                     // "We understand the specific challenges that businesses face, which is why we focus on building websites that are affordable, easy to manage, and scalable. Our responsive designs ensure that your site looks and works perfectly across all devices—whether it's a desktop, tablet, or mobile phone. We also integrate features like content management systems (CMS) that allow you to easily update your website, keeping it fresh and relevant without the need for technical expertise.",
