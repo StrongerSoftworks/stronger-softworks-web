@@ -34,7 +34,7 @@ namespace StrongerSoftworks.Web.Components.Pages
                 {
                     new SectionItem() {
                         Title = "Build a New Website",
-                        Content = "If you want to refresh your current website or build a new website from the ground up we can help! Our websites are custom built to suite your business's needs.",
+                        Content = "If you want to refresh your current website or build a new website from the ground up we can help! Our websites are custom built to suit your business's needs.",
                         Picture = new PictureModel() {
                             Width = 480,
                             AltText = "A computer and a phone displaying web pages.",
