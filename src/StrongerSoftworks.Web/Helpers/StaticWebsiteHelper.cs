@@ -23,6 +23,8 @@ public static class StaticWebSiteHelper
         List<ResourceInfoBase> pages = new List<ResourceInfoBase>
         {
             new PageResource("/"),
+            new PageResource("/error"),
+            new PageResource("/404"),
             new PageResource("/sitemap.xml"),
             new PageResource("/robots.txt"),
         };
