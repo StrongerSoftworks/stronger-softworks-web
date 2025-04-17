@@ -421,16 +421,7 @@ namespace StrongerSoftworks.Web.Components.Pages
                             // new SocialLink { Url = "#", IconClass = "bi bi-instagram" },
                             new SocialLink { Url = "https://www.linkedin.com/in/alex-leistra-1032179a/", IconClass = "bi bi-linkedin" }
                         }
-                    },
-                    new TeamMember
-                    {
-                        Name = "Charb Cloud Solutions Inc.",
-                        Description = "I specialize in providing Amazon Web Services (AWS) solutions for your business.",
-                        SocialLinks = new List<SocialLink>
-                        {
-                            new SocialLink { Url = "https://www.charbcloud.com/", IconClass = "bi bi-box-arrow-up-right" }
-                        }
-                    },
+                    }
                 }
             };
 
