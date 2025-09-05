@@ -43,22 +43,22 @@ jobs:
           cache: "npm"
 
       - name: Install npm Dependencies
-        working-directory: ./src/StrongerSoftworks.Web
+        working-directory: ./src
         run: npm ci
 
       - name: Build assets
-        working-directory: ./src/StrongerSoftworks.Web
+        working-directory: ./src
         run: npm run build
 
       # - name: Build dotnet
-      #   working-directory: ./src/StrongerSoftworks.Web
+      #   working-directory: ./src
       #   run: dotnet build --configuration Release
       # - name: Test
-      #   working-directory: ./src/StrongerSoftworks.Web
+      #   working-directory: ./src
       #   run: dotnet test
 
       - name: Build Static Site
-        working-directory: ./src/StrongerSoftworks.Web
+        working-directory: ./src
         run: dotnet run --launch-profile ssg
 
       - name: Setup Pages
